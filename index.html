@@ -2,239 +2,1113 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>VISIQ Academy | 家庭環境に左右されない学びを</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VISIQ Academy | 家庭環境に左右されない学びの力を、すべての子に</title>
     <meta
       name="description"
-      content="VISIQ Academyは、小学生の保護者の方に向けて、家庭環境に左右されない学びの環境をつくる教育サービスです。無料体験会のお問い合わせはこちら。"
+      content="VISIQ Academyは、AIと対面コーチングで自走力を育てる小学生向け学習支援。家庭の負担を減らしながら、無料体験会で学び方の違いを体感できます。"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <meta property="og:title" content="VISIQ Academy | 自ら考え、自ら進む子へ" />
+    <meta
+      property="og:description"
+      content="家庭環境に左右されない学びの力を、すべての子に。AI × 対面コーチングで自走力を育てる無料体験会受付中。"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://visiq.example/" />
+    <meta property="og:image" content="https://visiq.example/assets/ogp.jpg" />
+    <meta name="theme-color" content="#142b63" />
+    <style>
+      :root {
+        --bg: #ffffff;
+        --bg-soft: #f5f8ff;
+        --bg-card: #fbfcff;
+        --ink: #162f68;
+        --ink-soft: #4e638f;
+        --line: #d8e2f4;
+        --line-soft: #e7edf9;
+        --teal: #158f9a;
+        --teal-soft: #e8f7f8;
+        --navy: #183b87;
+        --navy-deep: #122d65;
+        --rainbow: linear-gradient(135deg, #ff6f61, #ffb454, #ffe066, #5dd39e, #64b6f7, #8f82ff);
+        --radius: 16px;
+        --shadow: 0 10px 24px rgba(19, 46, 104, 0.08);
+        --container: min(1120px, calc(100% - 40px));
+        --mobile-cta-height: 74px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", "Segoe UI", sans-serif;
+        color: var(--ink);
+        background: var(--bg);
+        line-height: 1.75;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .container {
+        width: var(--container);
+        margin: 0 auto;
+      }
+
+      .section {
+        padding: 84px 0;
+      }
+
+      .section.soft {
+        background: var(--bg-soft);
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0 0 14px;
+      }
+
+      h1 {
+        font-size: clamp(1.95rem, 3.8vw, 3.25rem);
+        line-height: 1.25;
+      }
+
+      h2 {
+        font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+        line-height: 1.35;
+      }
+
+      h3 {
+        font-size: 1.08rem;
+        line-height: 1.5;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 14px;
+        padding: 5px 12px;
+        border-radius: 999px;
+        background: #edf3ff;
+        color: #2a4e99;
+        font-size: 0.82rem;
+        font-weight: 700;
+      }
+
+      .eyebrow::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 99px;
+        background: var(--rainbow);
+      }
+
+      .lead {
+        color: var(--ink-soft);
+        max-width: 64ch;
+      }
+
+      .section-intro {
+        color: var(--ink-soft);
+        max-width: 74ch;
+      }
+
+      .section-note {
+        margin-top: 14px;
+        color: #3e5f9f;
+        font-weight: 600;
+      }
+
+      .site-header {
+        position: fixed;
+        inset: 0 0 auto 0;
+        z-index: 20;
+        transition: background-color 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .site-header.scrolled {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 20px rgba(16, 42, 99, 0.1);
+      }
+
+      .header-inner {
+        min-height: 84px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .brand-logo {
+        width: 222px;
+        height: auto;
+      }
+
+      .nav-area {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .main-nav {
+        display: flex;
+        gap: 16px;
+        color: var(--ink-soft);
+        font-size: 0.9rem;
+      }
+
+      .main-nav a {
+        padding: 4px 0;
+      }
+
+      .main-nav a:hover,
+      .main-nav a:focus-visible {
+        color: var(--ink);
+      }
+
+      .menu-toggle {
+        display: none;
+        width: 44px;
+        height: 44px;
+        border: 1px solid var(--line);
+        background: #fff;
+        border-radius: 10px;
+        color: var(--ink);
+      }
+
+      .menu-toggle:focus-visible,
+      .cta-btn:focus-visible,
+      .sub-btn:focus-visible {
+        outline: 3px solid #a8bdf0;
+        outline-offset: 2px;
+      }
+
+      .cta-btn,
+      .sub-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 46px;
+        padding: 11px 18px;
+        border-radius: 999px;
+        font-size: 0.92rem;
+        font-weight: 700;
+        border: 1px solid transparent;
+      }
+
+      .cta-btn {
+        color: #fff;
+        background: linear-gradient(135deg, var(--navy), var(--navy-deep));
+        box-shadow: 0 7px 16px rgba(22, 47, 104, 0.24);
+      }
+
+      .sub-btn {
+        color: var(--ink);
+        background: #fff;
+        border-color: var(--line);
+      }
+
+      .hero {
+        padding-top: 136px;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 36px;
+        align-items: center;
+      }
+
+      .hero-actions {
+        margin-top: 24px;
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .trust-points {
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .trust-pill {
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: #edf3ff;
+        color: #2a4f98;
+        font-size: 0.8rem;
+        font-weight: 700;
+      }
+
+      .hero-visual {
+        border: 1px solid var(--line-soft);
+        border-radius: 20px;
+        background: var(--bg-card);
+        box-shadow: var(--shadow);
+        padding: 16px;
+      }
+
+      .hero-visual img {
+        border-radius: 14px;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        background: #e9f1ff;
+      }
+
+      .card-grid {
+        margin-top: 20px;
+        display: grid;
+        gap: 14px;
+      }
+
+      .grid-4 {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .card {
+        border: 1px solid var(--line-soft);
+        border-radius: var(--radius);
+        background: #fff;
+        padding: 18px;
+      }
+
+      .pain-icon,
+      .pillar-icon {
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 8px;
+        font-size: 1rem;
+      }
+
+      .pain-icon {
+        background: #eef4ff;
+      }
+
+      .pillar-icon {
+        background: var(--teal-soft);
+      }
+
+      .quote-box {
+        border-radius: var(--radius);
+        border: 1px solid #ceddf7;
+        background: linear-gradient(165deg, #ffffff 0%, #f4f8ff 100%);
+        padding: 24px;
+      }
+
+      .quote-box blockquote {
+        margin: 0;
+        font-size: clamp(1.2rem, 2.3vw, 1.65rem);
+        line-height: 1.6;
+        font-weight: 700;
+        color: var(--ink);
+      }
+
+      .quote-box p {
+        color: var(--ink-soft);
+        margin-top: 12px;
+      }
+
+      .compare-wrap {
+        margin-top: 18px;
+        border: 1px solid var(--line-soft);
+        border-radius: var(--radius);
+        overflow: hidden;
+      }
+
+      .compare-head,
+      .compare-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      .compare-head {
+        background: #f1f6ff;
+        font-weight: 700;
+      }
+
+      .compare-row:nth-child(even) {
+        background: #fbfdff;
+      }
+
+      .compare-cell {
+        padding: 14px 16px;
+        border-right: 1px solid var(--line-soft);
+        border-bottom: 1px solid var(--line-soft);
+      }
+
+      .compare-head .compare-cell:last-child,
+      .compare-row .compare-cell:last-child {
+        border-right: 0;
+      }
+
+      .compare-head .compare-cell:first-child {
+        color: var(--ink-soft);
+      }
+
+      .visiq-cell {
+        background: #f0f8fa;
+      }
+
+      .benefit-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 12px;
+      }
+
+      .benefit-list li {
+        border: 1px solid var(--line-soft);
+        border-radius: 12px;
+        padding: 12px 14px;
+        background: #fff;
+      }
+
+      .step-flow {
+        margin-top: 20px;
+        display: grid;
+        gap: 12px;
+      }
+
+      .step-item {
+        position: relative;
+        border: 1px solid var(--line-soft);
+        background: #fff;
+        border-radius: 14px;
+        padding: 16px 16px 16px 74px;
+      }
+
+      .step-item:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        left: 35px;
+        bottom: -14px;
+        width: 2px;
+        height: 14px;
+        background: #cfdcf4;
+      }
+
+      .step-num {
+        position: absolute;
+        left: 16px;
+        top: 16px;
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        color: #fff;
+        background: linear-gradient(145deg, var(--navy), #2751ae);
+      }
+
+      .community-box {
+        border: 1px solid #cfe0f8;
+        border-radius: var(--radius);
+        padding: 24px;
+        background: linear-gradient(160deg, #fefeff 0%, #f2f7ff 100%);
+      }
+
+      .story-grid {
+        margin-top: 20px;
+        display: grid;
+        gap: 14px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .story-card {
+        border-radius: 14px;
+        border: 1px solid var(--line-soft);
+        background: #fff;
+        padding: 16px;
+      }
+
+      .story-meta {
+        color: var(--ink-soft);
+        font-size: 0.85rem;
+      }
+
+      .story-note {
+        margin-top: 10px;
+        color: var(--ink-soft);
+        font-size: 0.82rem;
+      }
+
+      .check-list {
+        list-style: none;
+        margin: 18px 0 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .check-list li {
+        background: #fff;
+        border: 1px solid var(--line-soft);
+        border-radius: 12px;
+        padding: 12px 14px;
+      }
+
+      .check-list li::before {
+        content: "✓";
+        margin-right: 8px;
+        color: var(--teal);
+        font-weight: 700;
+      }
+
+      .faq-list {
+        margin-top: 18px;
+        display: grid;
+        gap: 10px;
+      }
+
+      .faq-item {
+        border: 1px solid var(--line-soft);
+        border-radius: 12px;
+        background: #fff;
+        overflow: hidden;
+      }
+
+      .faq-question {
+        width: 100%;
+        border: 0;
+        background: #fff;
+        text-align: left;
+        padding: 14px 16px;
+        font: inherit;
+        font-weight: 700;
+        color: var(--ink);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      .faq-answer {
+        padding: 0 16px;
+        max-height: 0;
+        overflow: hidden;
+        color: var(--ink-soft);
+        transition: max-height 0.25s ease, padding 0.25s ease;
+      }
+
+      .faq-item.open .faq-answer {
+        max-height: 220px;
+        padding: 0 16px 14px;
+      }
+
+      .faq-item.open .faq-toggle {
+        transform: rotate(45deg);
+      }
+
+      .faq-toggle {
+        transition: transform 0.2s ease;
+      }
+
+      .final-cta {
+        text-align: center;
+        border-radius: 18px;
+        border: 1px solid #ccdaf4;
+        background: linear-gradient(170deg, #ffffff 0%, #f1f7ff 100%);
+        padding: 34px 22px;
+      }
+
+      .cta-sub {
+        color: var(--ink-soft);
+        max-width: 62ch;
+        margin: 0 auto 18px;
+      }
+
+      .cta-points {
+        margin: 0 auto 20px;
+        max-width: 700px;
+        display: grid;
+        gap: 8px;
+        color: #3f5f9f;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(14px);
+        transition: opacity 0.45s ease, transform 0.45s ease;
+      }
+
+      .reveal.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .site-footer {
+        padding: 32px 0 42px;
+        color: #5f739f;
+        font-size: 0.9rem;
+      }
+
+      .mobile-cta {
+        display: none;
+      }
+
+      @media (max-width: 1024px) {
+        .grid-4 {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .hero-grid,
+        .story-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 860px) {
+        .main-nav {
+          display: none;
+        }
+
+        .menu-toggle {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .mobile-nav {
+          position: absolute;
+          top: 84px;
+          left: 0;
+          right: 0;
+          background: #fff;
+          border-bottom: 1px solid var(--line-soft);
+          box-shadow: 0 14px 18px rgba(17, 42, 99, 0.08);
+          display: none;
+        }
+
+        .mobile-nav.open {
+          display: block;
+        }
+
+        .mobile-nav .container {
+          padding: 10px 0 14px;
+          display: grid;
+          gap: 6px;
+        }
+
+        .mobile-nav a {
+          padding: 10px 4px;
+          color: var(--ink-soft);
+        }
+      }
+
+      @media (max-width: 720px) {
+        :root {
+          --container: min(1120px, calc(100% - 28px));
+        }
+
+        body {
+          padding-bottom: calc(var(--mobile-cta-height) + 14px);
+        }
+
+        .section {
+          padding: 66px 0;
+        }
+
+        .header-inner {
+          min-height: 72px;
+        }
+
+        .brand-logo {
+          width: 186px;
+        }
+
+        .header-cta {
+          display: none;
+        }
+
+        .hero {
+          padding-top: 106px;
+        }
+
+        .hero-actions {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .cta-btn,
+        .sub-btn {
+          width: 100%;
+        }
+
+        .grid-4,
+        .grid-3,
+        .check-list {
+          grid-template-columns: 1fr;
+        }
+
+        .compare-head {
+          display: none;
+        }
+
+        .compare-row {
+          grid-template-columns: 1fr;
+        }
+
+        .compare-cell {
+          border-right: 0;
+        }
+
+        .compare-cell:first-child {
+          font-weight: 700;
+          background: #f2f6ff;
+        }
+
+        .mobile-cta {
+          position: fixed;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          z-index: 30;
+          display: block;
+          background: rgba(255, 255, 255, 0.95);
+          border-top: 1px solid var(--line-soft);
+          backdrop-filter: blur(8px);
+          padding: 10px 12px;
+        }
+
+        .mobile-cta .cta-btn {
+          width: 100%;
+          min-height: 52px;
+          font-size: 0.98rem;
+        }
+      }
+    </style>
   </head>
   <body>
     <header class="site-header" id="top">
       <div class="container header-inner">
         <a href="#top" class="brand" aria-label="VISIQ Academy トップへ戻る">
-          <img src="assets/visiq-logo.png" alt="VISIQ Academy" class="brand-logo" width="220" height="44" />
+          <img src="assets/visiq-logo.png" alt="VISIQ Academy" class="brand-logo" width="222" height="44" />
         </a>
-        <nav class="main-nav" aria-label="メインナビゲーション">
-          <a href="#highlights">3つの特長</a>
-          <a href="#mission">理念</a>
-          <a href="#difference">違い</a>
-          <a href="#program">学びの特長</a>
-          <a href="#stages">成長ステージ</a>
-          <a href="#contact">無料体験会</a>
-        </nav>
-        <a class="cta-btn header-cta" href="#contact">無料体験会のご案内</a>
+        <div class="nav-area">
+          <nav class="main-nav" aria-label="グローバルナビゲーション">
+            <a href="#worries">お悩み</a>
+            <a href="#pillars">学びの柱</a>
+            <a href="#difference">違い</a>
+            <a href="#faq">FAQ</a>
+          </nav>
+          <button class="menu-toggle" id="menuToggle" aria-label="メニューを開閉" aria-expanded="false">☰</button>
+          <a class="cta-btn header-cta" href="#final-cta">無料体験会</a>
+        </div>
       </div>
+      <nav class="mobile-nav" id="mobileNav" aria-label="モバイルナビゲーション">
+        <div class="container">
+          <a href="#worries">お悩み</a>
+          <a href="#pillars">学びの柱</a>
+          <a href="#difference">違い</a>
+          <a href="#faq">FAQ</a>
+          <a href="#final-cta" class="cta-btn">無料体験会を予約する</a>
+        </div>
+      </nav>
     </header>
 
     <main>
-      <section class="hero section">
+      <section class="section hero">
         <div class="container hero-grid">
-          <div>
-            <p class="eyebrow">保護者の安心に寄り添う、次世代型の学習伴走</p>
-            <h1>家庭環境に左右されない学びの環境をつくる</h1>
+          <div class="reveal">
+            <p class="eyebrow">自ら考え、自ら進む子へ</p>
+            <h1>家庭環境に左右されない学びの力を、すべての子に。</h1>
             <p class="lead">
-              VISIQ Academyは、スタサプ・AI・教室での作戦会議を組み合わせて、子どもが自分で学べる力を育てる学習支援サービスです。難しそうに見えない、でも着実に前進できる学びを大切にしています。
+              VISIQ Academyは、小学生のための「AI × 対面コーチング」学習支援です。家での学びを続けやすくし、教室での作戦会議で自走力を育てることで、保護者の負担を減らしながら着実な成長につなげます。
             </p>
             <div class="hero-actions">
-              <a class="cta-btn" href="#contact">無料体験会をみる</a>
-              <a class="link-btn" href="#highlights">VISIQの学び方を知る</a>
+              <a class="cta-btn" href="#final-cta">無料体験会を予約する</a>
+              <a class="sub-btn" href="#pillars">学び方を詳しく見る</a>
+            </div>
+            <div class="trust-points" aria-label="信頼補強ポイント">
+              <span class="trust-pill">段階的な成長設計</span>
+              <span class="trust-pill">AI思考サポート</span>
+              <span class="trust-pill">コーチ伴走</span>
             </div>
           </div>
-          <div class="hero-visual" aria-hidden="true">
-            <div class="illustration-card">
-              <svg viewBox="0 0 320 220" role="img" aria-label="子どもと本のイラスト">
-                <title>学ぶ子どものやさしいイラスト</title>
-                <rect x="22" y="32" width="276" height="156" rx="16" fill="#f5f8ff"></rect>
-                <circle cx="116" cy="112" r="28" fill="#ffd9b8"></circle>
-                <path d="M82 168c8-26 22-40 34-40s26 14 34 40" fill="#9dc2ff"></path>
-                <circle cx="116" cy="106" r="3" fill="#253b7a"></circle>
-                <circle cx="128" cy="106" r="3" fill="#253b7a"></circle>
-                <path d="M113 117c4 4 10 4 14 0" stroke="#253b7a" stroke-width="2" fill="none"></path>
-                <rect x="150" y="118" width="76" height="46" rx="8" fill="#ffffff" stroke="#d5def2"></rect>
-                <line x1="164" y1="132" x2="214" y2="132" stroke="#8aa0d8" stroke-width="2"></line>
-                <line x1="164" y1="142" x2="214" y2="142" stroke="#8aa0d8" stroke-width="2"></line>
-                <line x1="164" y1="152" x2="201" y2="152" stroke="#8aa0d8" stroke-width="2"></line>
-                <path d="M88 84c10-18 40-22 58-8" stroke="#7b5efb" stroke-width="4" fill="none" stroke-linecap="round"></path>
-              </svg>
-            </div>
+          <div class="hero-visual reveal">
+            <img src="assets/hero-placeholder.jpg" alt="コーチと子どもが一緒に学ぶ様子（差し替え用画像）" />
           </div>
         </div>
       </section>
 
-      <section id="highlights" class="section highlights">
-        <div class="container">
-          <h2>VISIQ Academyの3つの特長</h2>
-          <p class="section-intro">
-            何をするサービスかがすぐ伝わるように、学びの流れを3つに整理しています。家庭での学習と教室での伴走を、無理なくつなげます。
-          </p>
-          <div class="highlights-grid">
-            <article class="card highlight-card">
-              <p class="highlight-icon" aria-hidden="true">🏠</p>
-              <p class="highlight-label">01</p>
-              <h3>スタサプで自宅学習</h3>
-              <p>毎日の学習を家庭でも続けやすい形に整えます。取り組み内容を見える化し、保護者の負担を減らしながら習慣化を支えます。</p>
+      <section id="worries" class="section soft">
+        <div class="container reveal">
+          <h2>こんなお悩みはありませんか？</h2>
+          <p class="section-intro">保護者の方の「毎日のモヤモヤ」から、VISIQ Academyは設計されています。</p>
+          <div class="card-grid grid-4">
+            <article class="card">
+              <div class="pain-icon" aria-hidden="true">🗣️</div>
+              <h3>「勉強しなさい」と言い続けてしまう</h3>
+              <p>声かけが親子のストレスになり、学習が前向きに進みにくい。</p>
             </article>
-            <article class="card highlight-card">
-              <p class="highlight-icon" aria-hidden="true">💬</p>
-              <p class="highlight-label">02</p>
-              <h3>AIで言語化</h3>
-              <p>学んだことを「説明できる状態」に導きます。AIを使って思考を言葉にすることで、わかったつもりを防ぎます。</p>
+            <article class="card">
+              <div class="pain-icon" aria-hidden="true">⏱️</div>
+              <h3>家だと学習が続かない</h3>
+              <p>始めるまでに時間がかかり、習慣化が難しい。</p>
             </article>
-            <article class="card highlight-card">
-              <p class="highlight-icon" aria-hidden="true">🧭</p>
-              <p class="highlight-label">03</p>
-              <h3>教室で作戦会議</h3>
-              <p>講師と一緒に「次に何をするか」を具体化します。子どもの状態に合わせて、無理なく自走力につながる計画を立てます。</p>
+            <article class="card">
+              <div class="pain-icon" aria-hidden="true">🪑</div>
+              <h3>塾でも受け身になってしまう</h3>
+              <p>「教わるだけ」で終わり、家で再現できない。</p>
+            </article>
+            <article class="card">
+              <div class="pain-icon" aria-hidden="true">😓</div>
+              <h3>親の見守り負担が大きい</h3>
+              <p>学習管理まで担うのは、忙しい日常では限界がある。</p>
             </article>
           </div>
-          <p class="section-cta-note">まずは無料体験会で、VISIQの学び方をご体感ください。</p>
         </div>
       </section>
 
-      <section id="mission" class="section alt">
-        <div class="container">
-          <h2>VISIQ Academyが大切にする理念</h2>
-          <p>
-            私たちは、学力だけでなく「学びに向かう姿勢」と「自分で進める力」を育てることを重視しています。家庭の状況にかかわらず、どの子にも質の高い学びの機会が届くよう、学習設計・伴走支援・保護者連携を一体で整えています。
-          </p>
-          <p class="section-cta-note">お子さまに合うかどうかを、体験を通してご確認いただけます。</p>
+      <section id="concept" class="section">
+        <div class="container reveal">
+          <div class="quote-box">
+            <blockquote>「自ら問い、自ら学び、自ら立て直せる子」を育てる。</blockquote>
+            <p>
+              VISIQ Academyは、単なる点数アップだけを目的にしません。AI時代に必要な「学び方」を獲得し、中学・高校でも通用する自走力の土台をつくります。
+            </p>
+          </div>
+          <p class="section-note">まずは無料体験会で、VISIQの学び方がお子さまに合うかをご確認ください。</p>
+        </div>
+      </section>
+
+      <section id="pillars" class="section soft">
+        <div class="container reveal">
+          <h2>VISIQ Academyの学びの3本柱</h2>
+          <p class="section-intro">インプット・思考・実行の循環をつくることで、子どもが自分で進める力を育てます。</p>
+          <div class="card-grid grid-3">
+            <article class="card">
+              <div class="pillar-icon" aria-hidden="true">🏠</div>
+              <h3>自宅でのインプット</h3>
+              <p>何をどこまで学ぶかを明確にし、家庭でも迷わず取り組める状態をつくります。</p>
+              <p class="section-intro">保護者メリット：毎日の「やること確認」に追われにくくなります。</p>
+            </article>
+            <article class="card">
+              <div class="pillar-icon" aria-hidden="true">🤖</div>
+              <h3>AIによる思考補助</h3>
+              <p>理解した内容を言語化し、「わかったつもり」を減らします。思考の整理をAIが支えます。</p>
+              <p class="section-intro">保護者メリット：学習の中身が見えやすくなり、会話が具体的になります。</p>
+            </article>
+            <article class="card">
+              <div class="pillar-icon" aria-hidden="true">🧭</div>
+              <h3>教室での作戦会議</h3>
+              <p>コーチと次の一歩を決め、実行を支援。つまずき時も立て直せる力を育てます。</p>
+              <p class="section-intro">保護者メリット：伴走を教室側が担うため、家庭の負担を軽減できます。</p>
+            </article>
+          </div>
+          <p class="section-note">「うちでも続くかな？」という不安は、体験会で具体的に解消できます。</p>
         </div>
       </section>
 
       <section id="difference" class="section">
-        <div class="container">
-          <h2>普通の塾との違い</h2>
+        <div class="container reveal">
+          <h2>一般的な塾との違い</h2>
+          <p class="section-intro">誇張せず、学習設計の違いを整理しました。</p>
+          <div class="compare-wrap" role="table" aria-label="一般的な塾とVISIQ Academyの比較">
+            <div class="compare-head" role="row">
+              <div class="compare-cell" role="columnheader">比較観点</div>
+              <div class="compare-cell" role="columnheader">一般的な塾</div>
+              <div class="compare-cell visiq-cell" role="columnheader">VISIQ Academy</div>
+            </div>
+            <div class="compare-row" role="row">
+              <div class="compare-cell">学習の形</div>
+              <div class="compare-cell">授業中心で受け身になりやすい</div>
+              <div class="compare-cell visiq-cell">自宅・AI・教室を連動し、主体的に進める</div>
+            </div>
+            <div class="compare-row" role="row">
+              <div class="compare-cell">家庭の役割</div>
+              <div class="compare-cell">家庭での管理負担が大きくなりやすい</div>
+              <div class="compare-cell visiq-cell">家庭環境に左右されにくい運用を設計</div>
+            </div>
+            <div class="compare-row" role="row">
+              <div class="compare-cell">評価の基準</div>
+              <div class="compare-cell">点数中心</div>
+              <div class="compare-cell visiq-cell">行動変化を起点に、学力へ接続</div>
+            </div>
+            <div class="compare-row" role="row">
+              <div class="compare-cell">AI活用</div>
+              <div class="compare-cell">限定的</div>
+              <div class="compare-cell visiq-cell">言語化・振り返りに活用し思考を可視化</div>
+            </div>
+            <div class="compare-row" role="row">
+              <div class="compare-cell">継続の仕組み</div>
+              <div class="compare-cell">本人任せになりやすい</div>
+              <div class="compare-cell visiq-cell">コーチ伴走で立て直しまで支援</div>
+            </div>
+          </div>
+          <p class="section-note">無料体験会では、この違いを実際の学習フローで確認できます。</p>
+        </div>
+      </section>
+
+      <section id="benefits" class="section soft">
+        <div class="container reveal">
+          <h2>保護者が感じる変化</h2>
+          <p class="section-intro">学習の変化が、家庭の日常の変化につながります。</p>
+          <ul class="benefit-list">
+            <li><strong>「勉強しなさい」が減る：</strong>子どもが次にやることを把握し、声かけ回数が減りやすくなります。</li>
+            <li><strong>学習の中身が見える：</strong>進捗だけでなく、何を理解し何で止まったかが把握しやすくなります。</li>
+            <li><strong>自分で進める姿勢が育つ：</strong>つまずいても、立て直して再開する力がつきます。</li>
+            <li><strong>先の学年にも活きる土台：</strong>中学・高校で必要な「学び方」そのものを身につけます。</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="steps" class="section">
+        <div class="container reveal">
+          <h2>成長ステップ制度（順位ではありません）</h2>
           <p class="section-intro">
-            他サービスを否定するのではなく、VISIQ Academyが重視している学びの設計の違いを、わかりやすく整理しています。
+            VISIQ Academyでは、ランクを優劣ではなく成長段階として扱います。比べるのは他人ではなく、昨日の自分です。
           </p>
-          <div class="compare-grid">
-            <article class="compare-card">
-              <h3>一般的な塾</h3>
-              <ul>
-                <li>教わることが中心になりやすい</li>
-                <li>家庭での実行は各家庭に委ねられやすい</li>
-                <li>点数の変化が主な評価軸になりやすい</li>
-              </ul>
+          <div class="step-flow">
+            <article class="step-item">
+              <span class="step-num">1</span>
+              <h3>スタート期</h3>
+              <p>学習リズムを整え、取りかかりの習慣をつくる段階。</p>
             </article>
-            <article class="compare-card visiq-side">
-              <h3>VISIQ Academy</h3>
-              <ul>
-                <li>自分で学ぶ仕組みを設計し、実行まで伴走する</li>
-                <li>家庭環境に左右されにくい運用で継続を支える</li>
-                <li>行動変化を起点に、結果として学力向上へつなげる</li>
-              </ul>
+            <article class="step-item">
+              <span class="step-num">2</span>
+              <h3>定着期</h3>
+              <p>基礎を反復し、理解を自分の言葉で説明できる段階。</p>
+            </article>
+            <article class="step-item">
+              <span class="step-num">3</span>
+              <h3>活用期</h3>
+              <p>学んだことを問題解決に使い、考え方を広げる段階。</p>
+            </article>
+            <article class="step-item">
+              <span class="step-num">4</span>
+              <h3>自走期</h3>
+              <p>目標設定から振り返りまでを、サポートを受けながら自分で回せる段階。</p>
             </article>
           </div>
-          <p class="section-cta-note">無料体験会では、この学習サイクルを実際にご覧いただけます。</p>
         </div>
       </section>
 
-      <section id="program" class="section">
-        <div class="container">
-          <h2>パンフレット10項目をWeb向けに再整理</h2>
-          <p class="section-intro">
-            情報を3つのまとまりに分けることで、「何のサービスか」「どう進むか」「どう成長するか」が一目でわかる構造にしています。
-          </p>
-          <div class="program-groups">
-            <article class="program-group">
-              <h3>VISIQ Academyとは</h3>
-              <p class="group-intro">教育理念と学ぶ土台を示す領域です。</p>
-              <ul>
-                <li>教育理念：将来につながる土台を日々の学びで育成</li>
-                <li>学習環境：家庭環境に左右されにくい支援設計</li>
-                <li>安心・安全設計：継続しやすい運営ルールの徹底</li>
-              </ul>
-            </article>
-            <article class="program-group">
-              <h3>学びの仕組み</h3>
-              <p class="group-intro">日々の実践を支える運用と伴走の領域です。</p>
-              <ul>
-                <li>学習プログラム：基礎と応用を行き来する段階設計</li>
-                <li>講師の伴走：個性に合わせた声かけで継続を支援</li>
-                <li>保護者コミュニケーション：学習状況をわかりやすく共有</li>
-              </ul>
-            </article>
-            <article class="program-group">
-              <h3>成長の見える化</h3>
-              <p class="group-intro">変化を確認し、次の一歩につなげる領域です。</p>
-              <ul>
-                <li>成長ステージ：順位ではなく成長段階として可視化</li>
-                <li>学習成果の見える化：小さな変化も次の行動へ接続</li>
-                <li>よくあるご質問：不安解消の情報を事前に明確化</li>
-                <li>無料体験会の流れ：お問い合わせから体験まで丁寧に案内</li>
-              </ul>
-            </article>
+      <section id="community" class="section soft">
+        <div class="container reveal">
+          <h2>コミュニティとしての価値</h2>
+          <div class="community-box">
+            <p>
+              VISIQ Academyは「一人で頑張る学び」にしません。学年を超えて学ぶ姿勢に触れ、先輩の行動が次の子のモデルになる環境を育てます。卒業後も「ここで学んでよかった」と誇れる場を目指しています。
+            </p>
           </div>
-          <p class="section-cta-note">不安がある段階でも、無料体験会から安心して始めていただけます。</p>
         </div>
       </section>
 
-      <section id="stages" class="section alt">
-        <div class="container">
-          <h2>成長ステージ（順位ではありません）</h2>
-          <p class="section-intro">
-            VISIQ Academyでは、ランクやステージを優劣ではなく成長段階として扱います。比べるのは他人ではなく、昨日の自分です。
-          </p>
-          <div class="stage-flow">
-            <article class="stage-step">
-              <p class="stage-badge">STEP 1</p>
-              <h3>ステージA：きっかけ期</h3>
-              <p>学びに向かう習慣を整え、安心して取り組める状態をつくります。</p>
+      <section id="stories" class="section">
+        <div class="container reveal">
+          <h2>実例ストーリー</h2>
+          <p class="section-intro">家庭での変化が見えた事例をご紹介します。</p>
+          <div class="story-grid">
+            <article class="story-card">
+              <p class="story-meta">小学4年・保護者さま</p>
+              <h3>「声かけの回数が半分以下に」</h3>
+              <p>週ごとの作戦会議後、子どもが自分で予定を確認して進めるようになりました。</p>
             </article>
-            <article class="stage-step">
-              <p class="stage-badge">STEP 2</p>
-              <h3>ステージB：定着期</h3>
-              <p>基礎理解を積み重ね、学習リズムを安定させて「できる」を増やします。</p>
+            <article class="story-card">
+              <p class="story-meta">小学5年・保護者さま</p>
+              <h3>「何を学んだか説明してくれる」</h3>
+              <p>AIで言語化する習慣がつき、学習内容を具体的に話してくれるようになりました。</p>
             </article>
-            <article class="stage-step">
-              <p class="stage-badge">STEP 3</p>
-              <h3>ステージC：活用期</h3>
-              <p>身につけた力を活用し、自分で計画・実行できる自走力へつなげます。</p>
+            <article class="story-card">
+              <p class="story-meta">小学6年・保護者さま</p>
+              <h3>「つまずいても立て直せる」</h3>
+              <p>一度止まっても、次に何をするかを自分で考える姿勢が育ちました。</p>
             </article>
           </div>
-          <p class="section-cta-note">体験会では、現在地に合ったステージの見立て方もご説明します。</p>
+          <p class="story-note">※いずれも一例です。成果には個人差があります。</p>
         </div>
       </section>
 
-      <section class="section pre-contact">
-        <div class="container pre-contact-inner">
-          <h2>無料体験会で、VISIQの学び方を確認しませんか</h2>
-          <p>
-            いきなり入会を決める必要はありません。まずはお子さまに合う学び方かどうかを、実際の体験を通じてご確認ください。
-          </p>
-          <a class="cta-btn" href="#contact">無料体験会の案内を見る</a>
+      <section id="fit" class="section soft">
+        <div class="container reveal">
+          <h2>こんなご家庭に向いています</h2>
+          <ul class="check-list">
+            <li>家での学習習慣を整えたい</li>
+            <li>親の見守り負担を減らしたい</li>
+            <li>受け身学習から抜け出したい</li>
+            <li>AI時代に合う学び方を身につけたい</li>
+            <li>中学・高校にもつながる土台を育てたい</li>
+            <li>子どもの「できた」を増やしたい</li>
+          </ul>
         </div>
       </section>
 
-      <section id="contact" class="section">
-        <div class="container contact-box">
-          <h2>お問い合わせ方法</h2>
-          <p>
-            現在は、無料体験会に関するご相談を個別に受け付けています。正式なお申し込み導線は準備中です。
-          </p>
-          <div class="contact-methods">
-            <article class="method-card">
-              <h3>メールで相談する</h3>
-              <p>学年・気になる点・ご希望の連絡方法を添えてお送りください。</p>
-              <a href="mailto:info@visiq.example" class="link-btn">info@visiq.example</a>
+      <section id="faq" class="section">
+        <div class="container reveal">
+          <h2>よくあるご質問</h2>
+          <div class="faq-list" aria-label="よくあるご質問一覧">
+            <article class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                どんな子に向いていますか？
+                <span class="faq-toggle" aria-hidden="true">＋</span>
+              </button>
+              <div class="faq-answer">
+                <p>学習習慣をつけたい子、受け身学習から抜け出したい子、考える力を育てたい子に向いています。</p>
+              </div>
             </article>
-            <article class="method-card">
-              <h3>LINEで相談する</h3>
-              <p>短いご質問でも問題ありません。教室スタッフが順次ご返信します。</p>
-              <a href="#" class="link-btn">LINE窓口（準備中）</a>
+            <article class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                勉強が苦手でも大丈夫ですか？
+                <span class="faq-toggle" aria-hidden="true">＋</span>
+              </button>
+              <div class="faq-answer">
+                <p>大丈夫です。現在地に合わせて段階設計し、つまずいた際の立て直しもコーチが伴走します。</p>
+              </div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                AIはどのように使いますか？
+                <span class="faq-toggle" aria-hidden="true">＋</span>
+              </button>
+              <div class="faq-answer">
+                <p>主に言語化・振り返り・思考整理に活用します。正解を出すだけでなく、考え方を育てるための補助として使います。</p>
+              </div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                保護者はどれくらい関わりますか？
+                <span class="faq-toggle" aria-hidden="true">＋</span>
+              </button>
+              <div class="faq-answer">
+                <p>毎日の細かい管理は不要です。必要な共有は教室側が行い、家庭の負担を減らす運用を重視しています。</p>
+              </div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                無料体験会では何をしますか？
+                <span class="faq-toggle" aria-hidden="true">＋</span>
+              </button>
+              <div class="faq-answer">
+                <p>現在の学習状況ヒアリング、学び方の体験、今後の進め方のご提案を行います。無理な勧誘はありません。</p>
+              </div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                体験後に必ず入会が必要ですか？
+                <span class="faq-toggle" aria-hidden="true">＋</span>
+              </button>
+              <div class="faq-answer">
+                <p>必要ありません。ご家庭でご検討いただき、納得いただけた場合のみ次のステップをご案内します。</p>
+              </div>
             </article>
           </div>
-          <p class="form-status">公開時には、Googleフォーム等の正式導線へ差し替え予定です。</p>
+        </div>
+      </section>
+
+      <section id="final-cta" class="section soft">
+        <div class="container reveal">
+          <div class="final-cta">
+            <h2>まずは無料体験会で、学び方の違いをご体感ください</h2>
+            <p class="cta-sub">
+              体験会では、お子さまの学習状態を確認しながら、VISIQ Academyの「AI × 対面コーチング」を実際に体験できます。参加後の無理な勧誘は行いません。
+            </p>
+            <div class="cta-points">
+              <span>・所要時間の目安：約60分</span>
+              <span>・ご家庭の悩みに合わせた個別相談つき</span>
+              <span>・その場での入会判断は不要です</span>
+            </div>
+            <a class="cta-btn" href="https://example.com/visiq-trial" target="_blank" rel="noopener noreferrer"
+              >無料体験会を予約する</a
+            >
+          </div>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="container">
-        <p>© VISIQ Academy</p>
+        <p>© VISIQ Academy. All rights reserved.</p>
       </div>
     </footer>
+
+    <div class="mobile-cta" aria-label="スマホ固定CTA">
+      <a class="cta-btn" href="https://example.com/visiq-trial" target="_blank" rel="noopener noreferrer">無料体験会を予約する</a>
+    </div>
+
+    <script>
+      const header = document.querySelector(".site-header");
+      const menuToggle = document.getElementById("menuToggle");
+      const mobileNav = document.getElementById("mobileNav");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 8) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
+
+      menuToggle.addEventListener("click", () => {
+        const open = mobileNav.classList.toggle("open");
+        menuToggle.setAttribute("aria-expanded", String(open));
+      });
+
+      mobileNav.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileNav.classList.remove("open");
+          menuToggle.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      document.querySelectorAll(".faq-question").forEach((button) => {
+        button.addEventListener("click", () => {
+          const item = button.closest(".faq-item");
+          const isOpen = item.classList.toggle("open");
+          button.setAttribute("aria-expanded", String(isOpen));
+        });
+      });
+
+      const revealTargets = document.querySelectorAll(".reveal");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+
+      revealTargets.forEach((el) => observer.observe(el));
+    </script>
   </body>
 </html>
