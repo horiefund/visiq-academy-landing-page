@@ -310,6 +310,43 @@
         padding: 18px;
       }
 
+      .phase-card {
+        height: 100%;
+      }
+
+      .phase-camp {
+        border-color: #b8c9ec;
+        background: linear-gradient(170deg, #ffffff 0%, #f1f6ff 100%);
+      }
+
+      .phase-label {
+        display: inline-block;
+        margin-bottom: 8px;
+        padding: 4px 10px;
+        border-radius: 999px;
+        background: #eaf1ff;
+        color: #2b4f99;
+        font-size: 0.8rem;
+        font-weight: 700;
+      }
+
+      .phase-list {
+        margin: 10px 0 0;
+        padding-left: 18px;
+        color: var(--ink-soft);
+      }
+
+      .phase-list li + li {
+        margin-top: 6px;
+      }
+
+      .cta-actions {
+        margin-top: 18px;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
       .pain-icon,
       .pillar-icon {
         width: 34px;
@@ -452,31 +489,6 @@
         background: linear-gradient(160deg, #fefeff 0%, #f2f7ff 100%);
       }
 
-      .story-grid {
-        margin-top: 20px;
-        display: grid;
-        gap: 14px;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
-      .story-card {
-        border-radius: 14px;
-        border: 1px solid var(--line-soft);
-        background: #fff;
-        padding: 16px;
-      }
-
-      .story-meta {
-        color: var(--ink-soft);
-        font-size: 0.85rem;
-      }
-
-      .story-note {
-        margin-top: 10px;
-        color: var(--ink-soft);
-        font-size: 0.82rem;
-      }
-
       .check-list {
         list-style: none;
         margin: 18px 0 0;
@@ -484,6 +496,54 @@
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 10px;
+      }
+
+      .example-grid {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .example-card {
+        border: 1px solid var(--line-soft);
+        border-radius: var(--radius);
+        background: #fff;
+        padding: 20px;
+      }
+
+      .example-kicker {
+        margin-bottom: 8px;
+        color: #5f73a2;
+        font-size: 0.86rem;
+        font-weight: 700;
+      }
+
+      .example-summary {
+        color: var(--ink);
+        font-weight: 700;
+      }
+
+      .skill-tags {
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+      }
+
+      .skill-tag {
+        padding: 4px 10px;
+        border-radius: 999px;
+        background: #edf3ff;
+        color: #2f4f95;
+        font-size: 0.78rem;
+        font-weight: 700;
+      }
+
+      .example-note {
+        margin-top: 12px;
+        color: var(--ink-soft);
+        font-size: 0.88rem;
       }
 
       .check-list li {
@@ -597,8 +657,7 @@
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
 
-        .hero-grid,
-        .story-grid {
+        .hero-grid {
           grid-template-columns: 1fr;
         }
 
@@ -673,8 +732,14 @@
           line-height: 1.8;
         }
 
+        .cta-actions {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
         .grid-4,
         .grid-3,
+        .example-grid,
         .check-list {
           grid-template-columns: 1fr;
         }
@@ -727,10 +792,10 @@
           <nav class="main-nav" aria-label="グローバルナビゲーション">
             <a href="#about">ABOUT</a>
             <a href="#model">学習モデル</a>
-            <a href="#trial">3か月体験</a>
+            <a href="#trial">体験プログラム</a>
             <a href="#faq">FAQ</a>
           </nav>
-          <a class="cta-btn header-cta" href="#final-cta">3か月体験に参加する</a>
+          <a class="cta-btn header-cta" href="#final-cta">無料体験会に参加する</a>
         </div>
       </div>
     </header>
@@ -817,7 +882,7 @@
               <p>学力は結果。本質は、主体的に人生を選べる力を育てることです。</p>
             </article>
           </div>
-          <p class="section-note">まずは3か月体験で、学び方が変わる入口をご確認ください。</p>
+          <p class="section-note">まずは無料体験会で、学び方が変わる入口かどうかをご確認ください。</p>
         </div>
       </section>
 
@@ -982,12 +1047,45 @@
 
       <section id="trial" class="section soft">
         <div class="container reveal">
-          <h2>3か月体験プログラム</h2>
-          <p class="section-intro">目的は、成績を一気に上げることではなく「学び方が変わる入口」をつくることです。</p>
-          <div class="step-flow">
-            <article class="step-item"><span class="step-num">1</span><h3>1か月目｜学び方を整える</h3><p>タイピング・学習ログ・AI対話入門・作戦会議の型を導入します。</p></article>
-            <article class="step-item"><span class="step-num">2</span><h3>2か月目｜問いを立てる／振り返る</h3><p>「なぜ」を立て、振り返り、次の行動へつなげる力を育てます。</p></article>
-            <article class="step-item"><span class="step-num">3</span><h3>3か月目｜自分で回す感覚を持つ</h3><p>Plan→Do→Check→Action を自分の言葉で運用できる状態を目指します。</p></article>
+          <h2>全体カリキュラム：4つのフェーズ</h2>
+          <p class="section-intro">
+            VISIQ Academyは、段階的に自走力を育てる4フェーズ設計です。入口に位置づくCAMP（3か月体験プログラム）で、学び方の土台を整えます。
+          </p>
+          <div class="card-grid grid-4">
+            <article class="card phase-card phase-camp">
+              <p class="phase-label">Phase 1: CAMP（3か月体験）</p>
+              <h3>自走力の基礎を導入するフェーズ</h3>
+              <p>目的は成績を一気に上げることではなく、「学び方が変わる入口」をつくることです。</p>
+              <ul class="phase-list">
+                <li>タイピング</li>
+                <li>学習ログ</li>
+                <li>AI対話入門</li>
+                <li>問いの立て方</li>
+                <li>作戦会議の型</li>
+              </ul>
+            </article>
+            <article class="card phase-card">
+              <p class="phase-label">Phase 2: Advance</p>
+              <h3>自走型学習への移行</h3>
+              <p>教科の先取りやPDCA運用を通じて、継続できる学習運用へ移行します。</p>
+            </article>
+            <article class="card phase-card">
+              <p class="phase-label">Phase 3: Beyond</p>
+              <h3>解像度を高める</h3>
+              <p>多面的思考・社会文脈・未来設計を扱い、判断の質を引き上げます。</p>
+            </article>
+            <article class="card phase-card">
+              <p class="phase-label">Phase 4: Synergy</p>
+              <h3>学びの好循環を生む</h3>
+              <p>他者支援や協働を通して、学びを自分だけで終わらせない力を育てます。</p>
+            </article>
+          </div>
+          <p class="section-note">詳しい料金・コース内容は資料でご確認いただけます。無料体験会でご家庭に合う進め方をご提案します。</p>
+          <div class="cta-actions">
+            <a class="sub-btn" href="assets/VISIQ_Academy.pdf" target="_blank" rel="noopener noreferrer"
+              >資料をダウンロードする</a
+            >
+            <a class="cta-btn" href="#final-cta">無料体験会に参加する</a>
           </div>
         </div>
       </section>
@@ -1046,28 +1144,47 @@
         </div>
       </section>
 
-      <section id="stories" class="section">
+      <section id="examples" class="section soft">
         <div class="container reveal">
-          <h2>実例ストーリー</h2>
-          <p class="section-intro">家庭での変化が見えた事例をご紹介します。</p>
-          <div class="story-grid">
-            <article class="story-card">
-              <p class="story-meta">小学4年・保護者さま</p>
-              <h3>「声かけの回数が半分以下に」</h3>
-              <p>週ごとの作戦会議後、子どもが自分で予定を確認して進めるようになりました。</p>
+          <h2>VISIQ Academyが目指す成長の実例</h2>
+          <p class="section-intro">
+            VISIQ Academyが重視するのは、点数そのものより「自分で学びを進める力」です。ここでは、実際に育ってきた力がどのように進路や日々の学びに結びついたかをご紹介します。
+          </p>
+          <div class="example-grid">
+            <article class="example-card">
+              <p class="example-kicker">長女の事例</p>
+              <h3>塾に頼らず、学びを自分で回す力が進学につながった</h3>
+              <p class="example-summary">
+                学習計画を自分で立て、振り返りを重ねる習慣を中高で継続し、現役・塾なしで一橋大学へ進学。
+              </p>
+              <p>
+                重要だったのは、結果の前に「問いを立てる」「やり方を見直す」「次の一手を決める」姿勢が日常化したことです。受け身ではなく、自分で学習を運転できる状態が、進路選択でも力を発揮しました。
+              </p>
+              <div class="skill-tags" aria-label="長女事例で育った力">
+                <span class="skill-tag">自走力</span>
+                <span class="skill-tag">学習習慣</span>
+                <span class="skill-tag">主体性</span>
+              </div>
             </article>
-            <article class="story-card">
-              <p class="story-meta">小学5年・保護者さま</p>
-              <h3>「何を学んだか説明してくれる」</h3>
-              <p>AIで言語化する習慣がつき、学習内容を具体的に話してくれるようになりました。</p>
-            </article>
-            <article class="story-card">
-              <p class="story-meta">小学6年・保護者さま</p>
-              <h3>「つまずいても立て直せる」</h3>
-              <p>一度止まっても、次に何をするかを自分で考える姿勢が育ちました。</p>
+            <article class="example-card">
+              <p class="example-kicker">長男の事例</p>
+              <h3>中学期から、先取りとIT活用を軸に探究的な学びが広がっている</h3>
+              <p class="example-summary">
+                教科の先取りだけでなく、ITツールを使って調べ、整理し、アウトプットする流れを自分で設計。
+              </p>
+              <p>
+                興味関心を起点に学びを深める過程で、学習は「やらされるもの」から「自分で広げるもの」へ変化しました。成績指標だけでは見えにくい、探究心と実行力の伸びが日々の行動に表れています。
+              </p>
+              <div class="skill-tags" aria-label="長男事例で育った力">
+                <span class="skill-tag">探究心</span>
+                <span class="skill-tag">先取り力</span>
+                <span class="skill-tag">IT活用</span>
+              </div>
             </article>
           </div>
-          <p class="story-note">※いずれも一例です。成果には個人差があります。</p>
+          <p class="example-note">
+            ※成果の形は一人ひとり異なりますが、VISIQ Academyはこうした「自分で学びを進める力」を育てることを目指しています。
+          </p>
         </div>
       </section>
 
@@ -1147,21 +1264,43 @@
         </div>
       </section>
 
+      <section id="trial-session" class="section">
+        <div class="container reveal">
+          <h2>無料体験会でわかること</h2>
+          <p class="section-intro">
+            無料体験会では、売り込みではなく「VISIQ Academyの考え方がお子さまに合うか」を確認することを重視します。
+          </p>
+          <ul class="benefit-list">
+            <li><strong>VISIQ Academyの考え方を知る：</strong>学びを“消費”から“資産”へ変える教育思想をご説明します。</li>
+            <li><strong>学習モデルの全体像を知る：</strong>教室Plan→家庭Do→教室Check→教室Actionの流れを体験的に確認できます。</li>
+            <li><strong>AI活用の考え方を体験する：</strong>AIに答えを任せるのではなく、一緒に考える使い方をお伝えします。</li>
+            <li>
+              <strong>次の選択肢を理解する：</strong>3か月体験プログラムや本コースの位置づけを把握し、ご家庭で落ち着いて判断できます。
+            </li>
+          </ul>
+        </div>
+      </section>
+
       <section id="final-cta" class="section soft">
         <div class="container reveal">
           <div class="final-cta">
-            <h2>未来への作戦会議を、3か月体験から始めよう。</h2>
+            <h2>未来への作戦会議を、無料体験会から始めよう。</h2>
             <p class="cta-sub">
-              VISIQ Academyは、学びを“消費”から“資産”へ変える教育プログラムです。3か月体験で、教室Plan→家庭Do→教室Check/Actionを実際に体験できます。参加後の無理な勧誘は行いません。
+              VISIQ Academyは、学びを“消費”から“資産”へ変える教育プログラムです。無料体験会で全体像を確認いただいた上で、必要に応じて3か月体験プログラムへ進めます。参加後の無理な勧誘は行いません。
             </p>
             <div class="cta-points">
               <span>・1か月目：学び方を整える</span>
               <span>・2か月目：問いを立てる／振り返る</span>
               <span>・3か月目：自分で学びを回す感覚を持つ</span>
             </div>
-            <a class="cta-btn" href="https://example.com/visiq-trial" target="_blank" rel="noopener noreferrer"
-              >3か月体験プログラムに参加する</a
-            >
+            <div class="cta-actions">
+              <a class="sub-btn" href="assets/VISIQ_Academy.pdf" target="_blank" rel="noopener noreferrer"
+                >資料をダウンロードする</a
+              >
+              <a class="cta-btn" href="https://example.com/visiq-trial" target="_blank" rel="noopener noreferrer"
+                >無料体験会に参加する</a
+              >
+            </div>
           </div>
         </div>
       </section>
@@ -1174,7 +1313,7 @@
     </footer>
 
     <div class="mobile-cta" aria-label="スマホ固定CTA">
-      <a class="cta-btn" href="https://example.com/visiq-trial" target="_blank" rel="noopener noreferrer">3か月体験に参加する</a>
+      <a class="cta-btn" href="https://example.com/visiq-trial" target="_blank" rel="noopener noreferrer">無料体験会に参加する</a>
     </div>
 
     <script>
