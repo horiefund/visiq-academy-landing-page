@@ -35,6 +35,7 @@
         --shadow: 0 10px 24px rgba(19, 46, 104, 0.08);
         --container: min(1120px, calc(100% - 40px));
         --mobile-cta-height: 74px;
+        --header-height: 84px;
       }
 
       * {
@@ -43,6 +44,10 @@
 
       html {
         scroll-behavior: smooth;
+      }
+
+      section[id] {
+        scroll-margin-top: calc(var(--header-height) + 18px);
       }
 
       body {
@@ -98,32 +103,6 @@
         line-height: 1.5;
       }
 
-      .eyebrow {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        margin-bottom: 14px;
-        padding: 5px 12px;
-        border-radius: 999px;
-        background: #edf3ff;
-        color: #2a4e99;
-        font-size: 0.82rem;
-        font-weight: 700;
-      }
-
-      .eyebrow::before {
-        content: "";
-        width: 8px;
-        height: 8px;
-        border-radius: 99px;
-        background: var(--rainbow);
-      }
-
-      .lead {
-        color: var(--ink-soft);
-        max-width: 64ch;
-      }
-
       .section-intro {
         color: var(--ink-soft);
         max-width: 74ch;
@@ -149,7 +128,7 @@
       }
 
       .header-inner {
-        min-height: 84px;
+        min-height: var(--header-height);
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -174,6 +153,7 @@
 
       .main-nav {
         display: flex;
+        align-items: center;
         gap: 16px;
         color: var(--ink-soft);
         font-size: 0.9rem;
@@ -188,17 +168,13 @@
         color: var(--ink);
       }
 
-      .menu-toggle {
-        display: none;
-        width: 44px;
-        height: 44px;
-        border: 1px solid var(--line);
-        background: #fff;
-        border-radius: 10px;
-        color: var(--ink);
+      .header-cta {
+        min-height: 42px;
+        padding: 9px 14px;
+        font-size: 0.86rem;
+        white-space: nowrap;
       }
 
-      .menu-toggle:focus-visible,
       .cta-btn:focus-visible,
       .sub-btn:focus-visible {
         outline: 3px solid #a8bdf0;
@@ -230,53 +206,87 @@
         border-color: var(--line);
       }
 
+      main {
+        padding-top: calc(var(--header-height) + 18px);
+      }
+
       .hero {
-        padding-top: 136px;
+        padding-top: 64px;
+        padding-bottom: 48px;
       }
 
       .hero-grid {
         display: grid;
-        grid-template-columns: 1.15fr 0.85fr;
-        gap: 36px;
-        align-items: center;
+        grid-template-columns: 1fr;
+        gap: 24px;
+        align-items: start;
       }
 
-      .hero-actions {
-        margin-top: 24px;
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
+      .hero-copy {
+        width: min(980px, 100%);
+        margin: 0 auto;
+        padding-inline: clamp(4px, 2.8vw, 26px);
       }
 
-      .trust-points {
-        margin-top: 20px;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-      }
-
-      .trust-pill {
-        padding: 6px 10px;
-        border-radius: 999px;
-        background: #edf3ff;
-        color: #2a4f98;
-        font-size: 0.8rem;
-        font-weight: 700;
+      .hero-statement {
+        margin: 0;
+        padding: 18px 20px;
+        border-left: 4px solid #2e57aa;
+        border-radius: 12px;
+        background: linear-gradient(170deg, #ffffff 0%, #f4f8ff 100%);
+        box-shadow: 0 8px 18px rgba(22, 47, 104, 0.07);
+        color: var(--ink);
+        font-size: clamp(1rem, 1.5vw, 1.15rem);
+        line-height: 1.85;
+        letter-spacing: 0.01em;
       }
 
       .hero-visual {
         border: 1px solid var(--line-soft);
-        border-radius: 20px;
+        border-radius: 24px;
         background: var(--bg-card);
         box-shadow: var(--shadow);
-        padding: 16px;
+        padding: 14px;
+        width: 100%;
       }
 
       .hero-visual img {
         border-radius: 14px;
-        aspect-ratio: 4 / 3;
+        width: 100%;
+        min-height: 520px;
+        aspect-ratio: 21 / 9;
         object-fit: cover;
+        object-position: left center;
         background: #e9f1ff;
+      }
+
+      .video-intro {
+        padding-top: 18px;
+      }
+
+      .video-card {
+        border: 1px solid var(--line-soft);
+        border-radius: 20px;
+        background: var(--bg-card);
+        box-shadow: var(--shadow);
+        padding: 20px;
+      }
+
+      .video-frame {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        border-radius: 14px;
+        overflow: hidden;
+        background: #0f1f47;
+        box-shadow: 0 8px 22px rgba(22, 47, 104, 0.15);
+      }
+
+      .video-player {
+        width: 100%;
+        height: 100%;
+        display: block;
+        background: #000;
       }
 
       .card-grid {
@@ -591,49 +601,17 @@
         .story-grid {
           grid-template-columns: 1fr;
         }
-      }
 
-      @media (max-width: 860px) {
-        .main-nav {
-          display: none;
-        }
-
-        .menu-toggle {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        .mobile-nav {
-          position: absolute;
-          top: 84px;
-          left: 0;
-          right: 0;
-          background: #fff;
-          border-bottom: 1px solid var(--line-soft);
-          box-shadow: 0 14px 18px rgba(17, 42, 99, 0.08);
-          display: none;
-        }
-
-        .mobile-nav.open {
-          display: block;
-        }
-
-        .mobile-nav .container {
-          padding: 10px 0 14px;
-          display: grid;
-          gap: 6px;
-        }
-
-        .mobile-nav a {
-          padding: 10px 4px;
-          color: var(--ink-soft);
+        .hero-visual img {
+          min-height: 0;
+          aspect-ratio: 16 / 10;
         }
       }
 
       @media (max-width: 720px) {
         :root {
           --container: min(1120px, calc(100% - 28px));
+          --header-height: 72px;
         }
 
         body {
@@ -644,30 +622,55 @@
           padding: 66px 0;
         }
 
-        .header-inner {
-          min-height: 72px;
-        }
-
         .brand-logo {
           width: 186px;
         }
 
+        .main-nav,
         .header-cta {
           display: none;
         }
 
         .hero {
-          padding-top: 106px;
+          padding-top: 56px;
+          padding-bottom: 40px;
         }
 
-        .hero-actions {
+        .video-intro {
+          padding-top: 0;
+        }
+
+        .hero-grid {
+          display: flex;
           flex-direction: column;
-          align-items: stretch;
+          gap: 18px;
         }
 
-        .cta-btn,
-        .sub-btn {
+        .hero-visual {
           width: 100%;
+        }
+
+        .hero-visual img {
+          width: 100%;
+          max-height: 260px;
+          aspect-ratio: 16 / 9;
+          object-position: center top;
+        }
+
+        .video-card {
+          padding: 14px;
+        }
+
+        .hero-copy {
+          width: 100%;
+          margin: 0;
+          padding-inline: 0;
+        }
+
+        .hero-statement {
+          padding: 14px 14px 14px 16px;
+          font-size: 0.98rem;
+          line-height: 1.8;
         }
 
         .grid-4,
@@ -722,47 +725,45 @@
         </a>
         <div class="nav-area">
           <nav class="main-nav" aria-label="グローバルナビゲーション">
-            <a href="#worries">お悩み</a>
-            <a href="#pillars">学びの柱</a>
-            <a href="#difference">違い</a>
+            <a href="#about">ABOUT</a>
+            <a href="#model">学習モデル</a>
+            <a href="#trial">3か月体験</a>
             <a href="#faq">FAQ</a>
           </nav>
-          <button class="menu-toggle" id="menuToggle" aria-label="メニューを開閉" aria-expanded="false">☰</button>
-          <a class="cta-btn header-cta" href="#final-cta">無料体験会</a>
+          <a class="cta-btn header-cta" href="#final-cta">3か月体験に参加する</a>
         </div>
       </div>
-      <nav class="mobile-nav" id="mobileNav" aria-label="モバイルナビゲーション">
-        <div class="container">
-          <a href="#worries">お悩み</a>
-          <a href="#pillars">学びの柱</a>
-          <a href="#difference">違い</a>
-          <a href="#faq">FAQ</a>
-          <a href="#final-cta" class="cta-btn">無料体験会を予約する</a>
-        </div>
-      </nav>
     </header>
 
     <main>
       <section class="section hero">
         <div class="container hero-grid">
-          <div class="reveal">
-            <p class="eyebrow">自ら考え、自ら進む子へ</p>
-            <h1>家庭環境に左右されない学びの力を、すべての子に。</h1>
-            <p class="lead">
-              VISIQ Academyは、小学生のための「AI × 対面コーチング」学習支援です。家での学びを続けやすくし、教室での作戦会議で自走力を育てることで、保護者の負担を減らしながら着実な成長につなげます。
-            </p>
-            <div class="hero-actions">
-              <a class="cta-btn" href="#final-cta">無料体験会を予約する</a>
-              <a class="sub-btn" href="#pillars">学び方を詳しく見る</a>
-            </div>
-            <div class="trust-points" aria-label="信頼補強ポイント">
-              <span class="trust-pill">段階的な成長設計</span>
-              <span class="trust-pill">AI思考サポート</span>
-              <span class="trust-pill">コーチ伴走</span>
-            </div>
-          </div>
           <div class="hero-visual reveal">
             <img src="assets/hero-placeholder.jpg" alt="コーチと子どもが一緒に学ぶ様子（差し替え用画像）" />
+          </div>
+          <div class="reveal hero-copy">
+            <p class="hero-statement">
+              VISIQ Academyは、一般的な塾ではありません。教科を教えることだけを目的にせず、AIと対面コーチングを通して「学び方そのもの」を育てる教育プログラムです。対象は、小学生からです。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section video-intro">
+        <div class="container reveal">
+          <div class="video-card">
+            <h2>VISIQ Academyを、まず動画でご覧ください</h2>
+            <p class="section-intro">
+              学びを“消費”から“資産”へ変える考え方と、VISIQ Academyの全体像を短くご紹介します。
+            </p>
+            <div class="video-frame">
+              <!-- poster画像は必要に応じて assets/video-poster.jpg 等へ差し替えてください -->
+              <video class="video-player" controls playsinline preload="metadata" poster="assets/hero-placeholder.jpg">
+                <source src="assets/visiq-intro.mp4" type="video/mp4" />
+                お使いのブラウザでは動画を再生できません。
+                <a href="assets/visiq-intro.mp4">動画ファイルを直接開く</a>
+              </video>
+            </div>
           </div>
         </div>
       </section>
@@ -796,47 +797,137 @@
         </div>
       </section>
 
-      <section id="concept" class="section">
+      <section id="about" class="section">
         <div class="container reveal">
-          <div class="quote-box">
-            <blockquote>「自ら問い、自ら学び、自ら立て直せる子」を育てる。</blockquote>
-            <p>
-              VISIQ Academyは、単なる点数アップだけを目的にしません。AI時代に必要な「学び方」を獲得し、中学・高校でも通用する自走力の土台をつくります。
-            </p>
-          </div>
-          <p class="section-note">まずは無料体験会で、VISIQの学び方がお子さまに合うかをご確認ください。</p>
-        </div>
-      </section>
-
-      <section id="pillars" class="section soft">
-        <div class="container reveal">
-          <h2>VISIQ Academyの学びの3本柱</h2>
-          <p class="section-intro">インプット・思考・実行の循環をつくることで、子どもが自分で進める力を育てます。</p>
+          <h2>ABOUT｜VISIQ Academyとは何か</h2>
+          <p class="section-intro">
+            VISIQ Academyは一般的な塾ではありません。知識を渡す前に、学び方を育てる。答えを受け取る前に、自分で問いを立てる。人生を主体的に設計する土台を、小学生のうちから整えます。
+          </p>
           <div class="card-grid grid-3">
             <article class="card">
-              <div class="pillar-icon" aria-hidden="true">🏠</div>
-              <h3>自宅でのインプット</h3>
-              <p>何をどこまで学ぶかを明確にし、家庭でも迷わず取り組める状態をつくります。</p>
-              <p class="section-intro">保護者メリット：毎日の「やること確認」に追われにくくなります。</p>
+              <h3>学び方を育てる</h3>
+              <p>知識の量よりも、学ぶ力そのものを育てる設計です。</p>
             </article>
             <article class="card">
-              <div class="pillar-icon" aria-hidden="true">🤖</div>
-              <h3>AIによる思考補助</h3>
-              <p>理解した内容を言語化し、「わかったつもり」を減らします。思考の整理をAIが支えます。</p>
-              <p class="section-intro">保護者メリット：学習の中身が見えやすくなり、会話が具体的になります。</p>
+              <h3>自走力をつくる</h3>
+              <p>問い・調べ・考え・振り返り・次の一歩を、自分で回せるようにします。</p>
             </article>
             <article class="card">
-              <div class="pillar-icon" aria-hidden="true">🧭</div>
-              <h3>教室での作戦会議</h3>
-              <p>コーチと次の一歩を決め、実行を支援。つまずき時も立て直せる力を育てます。</p>
-              <p class="section-intro">保護者メリット：伴走を教室側が担うため、家庭の負担を軽減できます。</p>
+              <h3>人生を設計する土台</h3>
+              <p>学力は結果。本質は、主体的に人生を選べる力を育てることです。</p>
             </article>
           </div>
-          <p class="section-note">「うちでも続くかな？」という不安は、体験会で具体的に解消できます。</p>
+          <p class="section-note">まずは3か月体験で、学び方が変わる入口をご確認ください。</p>
         </div>
       </section>
 
-      <section id="difference" class="section">
+      <section id="why-now" class="section soft">
+        <div class="container reveal">
+          <h2>WHY NOW｜なぜ今、必要なのか</h2>
+          <p class="section-intro">教材不足の時代ではありません。いま不足しているのは、自走力です。</p>
+          <div class="card-grid grid-3">
+            <article class="card">
+              <h3>環境がある ≠ 学べている</h3>
+              <p>情報・教材・アプリは豊富でも、使いこなす力が育っていないケースが増えています。</p>
+            </article>
+            <article class="card">
+              <h3>不足は教材ではない</h3>
+              <p>足りないのは知識量より、学びを自分で回す技術です。</p>
+            </article>
+            <article class="card">
+              <h3>教科指導だけでは届かない</h3>
+              <p>「教わるだけ」では変わりにくい領域に、いまの子どもたちは立っています。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="name-meaning" class="section">
+        <div class="container reveal">
+          <h2>NAME｜Vision × IQ = Resolution</h2>
+          <p class="section-intro">
+            VISIQが育てたいのは、偏差値の高い子ではなく「解像度の高い人」です。見えるものの先を捉える視点と、思考の質を掛け合わせ、世界の見え方をくっきりさせる力を育てます。
+          </p>
+          <div class="card-grid grid-3">
+            <article class="card">
+              <h3>Vision</h3>
+              <p>見えるものの、その先を捉える視点。</p>
+            </article>
+            <article class="card">
+              <h3>IQ</h3>
+              <p>知識・理解・処理・思考の質。</p>
+            </article>
+            <article class="card">
+              <h3>Resolution</h3>
+              <p>世界の見え方がくっきりする力。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="elementary" class="section soft">
+        <div class="container reveal">
+          <h2>なぜ、小学生のうちからなのか</h2>
+          <p class="section-intro">
+            とくに小4前後は、学力の壁というより思考の壁が出やすい時期です。習慣・学び方・自己認識が固まりきる前だからこそ、土台を作り直せます。
+          </p>
+          <div class="card-grid grid-3">
+            <article class="card"><h3>小学校</h3><p>土台が動かせる時期。学び方を変える余地が大きい。</p></article>
+            <article class="card"><h3>中学校</h3><p>修正コストが上がり、後追い対応になりやすい。</p></article>
+            <article class="card"><h3>高校以降</h3><p>やり直しが難しくなり、選択肢が狭まりやすい。</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="model" class="section">
+        <div class="container reveal">
+          <h2>学習モデル｜教室は「作戦会議」の場</h2>
+          <p class="section-intro">VISIQの学習サイクルは、教室でPlanし、家庭でDoし、教室でCheck/Actionする設計です。</p>
+          <div class="step-flow">
+            <article class="step-item"><span class="step-num">P</span><h3>Plan（教室）</h3><p>目標・優先順位・進め方を小グループで設計します。</p></article>
+            <article class="step-item"><span class="step-num">D</span><h3>Do（家庭）</h3><p>家庭学習で実行。学習ログで過程を残し、次回に接続します。</p></article>
+            <article class="step-item"><span class="step-num">C</span><h3>Check（教室）</h3><p>実行内容を振り返り、言語化し、プレゼン共有で理解を深めます。</p></article>
+            <article class="step-item"><span class="step-num">A</span><h3>Action（教室）</h3><p>次の一歩を再設計し、継続可能な形へアップデートします。</p></article>
+          </div>
+          <p class="section-note">授業を受ける場所ではなく、未来への作戦会議を行う場所です。</p>
+        </div>
+      </section>
+
+      <section id="typing-ai" class="section soft">
+        <div class="container reveal">
+          <h2>タイピングとAIの位置づけ</h2>
+          <div class="card-grid grid-3">
+            <article class="card">
+              <h3>タイピングは入口</h3>
+              <p>ただのPCスキルではなく、思考を外に出し客観視するための基礎技術です。</p>
+            </article>
+            <article class="card">
+              <h3>AIは答えを出す道具ではない</h3>
+              <p>丸写しのためではなく、問いを整理し、別視点を得るためのパートナーとして使います。</p>
+            </article>
+            <article class="card">
+              <h3>学び方そのものが変わる</h3>
+              <p>書く速度と対話の質が上がることで、考える速度と深さが変わります。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="persona" class="section">
+        <div class="container reveal">
+          <h2>VISIQ Academyが育てたい人物像</h2>
+          <ul class="check-list">
+            <li>問いを立てられる</li>
+            <li>複数の視点を持てる</li>
+            <li>感情を整理して判断できる</li>
+            <li>自分で学び続けられる</li>
+            <li>将来を主体的に設計できる</li>
+            <li>偏差値だけで語られない強さを持つ</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="difference" class="section soft">
         <div class="container reveal">
           <h2>一般的な塾との違い</h2>
           <p class="section-intro">誇張せず、学習設計の違いを整理しました。</p>
@@ -872,11 +963,11 @@
               <div class="compare-cell visiq-cell">コーチ伴走で立て直しまで支援</div>
             </div>
           </div>
-          <p class="section-note">無料体験会では、この違いを実際の学習フローで確認できます。</p>
+          <p class="section-note">体験参加では、この違いを実際の作戦会議で確認できます。</p>
         </div>
       </section>
 
-      <section id="benefits" class="section soft">
+      <section id="benefits" class="section">
         <div class="container reveal">
           <h2>保護者が感じる変化</h2>
           <p class="section-intro">学習の変化が、家庭の日常の変化につながります。</p>
@@ -889,11 +980,23 @@
         </div>
       </section>
 
+      <section id="trial" class="section soft">
+        <div class="container reveal">
+          <h2>3か月体験プログラム</h2>
+          <p class="section-intro">目的は、成績を一気に上げることではなく「学び方が変わる入口」をつくることです。</p>
+          <div class="step-flow">
+            <article class="step-item"><span class="step-num">1</span><h3>1か月目｜学び方を整える</h3><p>タイピング・学習ログ・AI対話入門・作戦会議の型を導入します。</p></article>
+            <article class="step-item"><span class="step-num">2</span><h3>2か月目｜問いを立てる／振り返る</h3><p>「なぜ」を立て、振り返り、次の行動へつなげる力を育てます。</p></article>
+            <article class="step-item"><span class="step-num">3</span><h3>3か月目｜自分で回す感覚を持つ</h3><p>Plan→Do→Check→Action を自分の言葉で運用できる状態を目指します。</p></article>
+          </div>
+        </div>
+      </section>
+
       <section id="steps" class="section">
         <div class="container reveal">
-          <h2>成長ステップ制度（順位ではありません）</h2>
+          <h2>ランク制度（成長の可視化）</h2>
           <p class="section-intro">
-            VISIQ Academyでは、ランクを優劣ではなく成長段階として扱います。比べるのは他人ではなく、昨日の自分です。
+            ランクは競争のためではなく、成長段階を見える化するための仕組みです。比べるのは他人ではなく、昨日の自分です。
           </p>
           <div class="step-flow">
             <article class="step-item">
@@ -922,11 +1025,23 @@
 
       <section id="community" class="section soft">
         <div class="container reveal">
-          <h2>コミュニティとしての価値</h2>
+          <h2>VISIQ Community構想</h2>
           <div class="community-box">
             <p>
-              VISIQ Academyは「一人で頑張る学び」にしません。学年を超えて学ぶ姿勢に触れ、先輩の行動が次の子のモデルになる環境を育てます。卒業後も「ここで学んでよかった」と誇れる場を目指しています。
+              学びが循環する場所をつくります。一人の工夫が別の誰かを育て、解像度の高い人材ネットワークへ育っていく。学びを将来の人的資産へ接続する土台を目指します。
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="with-parents" class="section">
+        <div class="container reveal">
+          <h2>保護者との関係</h2>
+          <div class="card-grid grid-4">
+            <article class="card"><h3>親の代わりにはならない</h3><p>VISIQは家庭の代替ではなく、家庭を支える第三者です。</p></article>
+            <article class="card"><h3>親を責めない</h3><p>子育ての正解を押し付ける場ではありません。</p></article>
+            <article class="card"><h3>まなざしを重ねる</h3><p>親のまなざしと第三者のまなざしをつなぎ、子どもを支えます。</p></article>
+            <article class="card"><h3>保護者にもAI体験を</h3><p>学びの土台を家庭にもインストールできるよう支援します。</p></article>
           </div>
         </div>
       </section>
@@ -1012,11 +1127,11 @@
             </article>
             <article class="faq-item">
               <button class="faq-question" type="button" aria-expanded="false">
-                無料体験会では何をしますか？
+                3か月体験プログラムでは何をしますか？
                 <span class="faq-toggle" aria-hidden="true">＋</span>
               </button>
               <div class="faq-answer">
-                <p>現在の学習状況ヒアリング、学び方の体験、今後の進め方のご提案を行います。無理な勧誘はありません。</p>
+                <p>1か月目で学び方の型を整え、2か月目で問いと振り返りを育て、3か月目で自分で回す感覚をつくります。</p>
               </div>
             </article>
             <article class="faq-item">
@@ -1035,17 +1150,17 @@
       <section id="final-cta" class="section soft">
         <div class="container reveal">
           <div class="final-cta">
-            <h2>まずは無料体験会で、学び方の違いをご体感ください</h2>
+            <h2>未来への作戦会議を、3か月体験から始めよう。</h2>
             <p class="cta-sub">
-              体験会では、お子さまの学習状態を確認しながら、VISIQ Academyの「AI × 対面コーチング」を実際に体験できます。参加後の無理な勧誘は行いません。
+              VISIQ Academyは、学びを“消費”から“資産”へ変える教育プログラムです。3か月体験で、教室Plan→家庭Do→教室Check/Actionを実際に体験できます。参加後の無理な勧誘は行いません。
             </p>
             <div class="cta-points">
-              <span>・所要時間の目安：約60分</span>
-              <span>・ご家庭の悩みに合わせた個別相談つき</span>
-              <span>・その場での入会判断は不要です</span>
+              <span>・1か月目：学び方を整える</span>
+              <span>・2か月目：問いを立てる／振り返る</span>
+              <span>・3か月目：自分で学びを回す感覚を持つ</span>
             </div>
             <a class="cta-btn" href="https://example.com/visiq-trial" target="_blank" rel="noopener noreferrer"
-              >無料体験会を予約する</a
+              >3か月体験プログラムに参加する</a
             >
           </div>
         </div>
@@ -1059,13 +1174,11 @@
     </footer>
 
     <div class="mobile-cta" aria-label="スマホ固定CTA">
-      <a class="cta-btn" href="https://example.com/visiq-trial" target="_blank" rel="noopener noreferrer">無料体験会を予約する</a>
+      <a class="cta-btn" href="https://example.com/visiq-trial" target="_blank" rel="noopener noreferrer">3か月体験に参加する</a>
     </div>
 
     <script>
       const header = document.querySelector(".site-header");
-      const menuToggle = document.getElementById("menuToggle");
-      const mobileNav = document.getElementById("mobileNav");
 
       window.addEventListener("scroll", () => {
         if (window.scrollY > 8) {
@@ -1073,18 +1186,6 @@
         } else {
           header.classList.remove("scrolled");
         }
-      });
-
-      menuToggle.addEventListener("click", () => {
-        const open = mobileNav.classList.toggle("open");
-        menuToggle.setAttribute("aria-expanded", String(open));
-      });
-
-      mobileNav.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-          mobileNav.classList.remove("open");
-          menuToggle.setAttribute("aria-expanded", "false");
-        });
       });
 
       document.querySelectorAll(".faq-question").forEach((button) => {
