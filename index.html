@@ -241,6 +241,16 @@
         letter-spacing: 0.01em;
       }
 
+      .hero-actions {
+        margin-top: 14px;
+      }
+
+      .hero-note {
+        margin-top: 8px;
+        color: #5f76a7;
+        font-size: 0.9rem;
+      }
+
       .hero-visual {
         border: 1px solid var(--line-soft);
         border-radius: 24px;
@@ -312,6 +322,8 @@
 
       .phase-card {
         height: 100%;
+        display: flex;
+        flex-direction: column;
       }
 
       .phase-camp {
@@ -345,6 +357,213 @@
         display: flex;
         gap: 10px;
         flex-wrap: wrap;
+      }
+
+      .survey-wrap {
+        max-width: 920px;
+      }
+
+      .survey-card {
+        margin-top: 18px;
+        border: 1px solid var(--line-soft);
+        border-radius: 20px;
+        background: linear-gradient(170deg, #ffffff 0%, #f7faff 100%);
+        box-shadow: var(--shadow);
+        padding: 22px;
+      }
+
+      .survey-form {
+        margin-top: 14px;
+      }
+
+      .form-kicker {
+        margin-bottom: 4px;
+        color: #4d67a1;
+        font-size: 0.82rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .field-block {
+        display: grid;
+        gap: 7px;
+      }
+
+      .survey-form fieldset {
+        margin: 0;
+        padding: 0;
+        border: 0;
+      }
+
+      .field-full {
+        grid-column: 1 / -1;
+      }
+
+      .field-label {
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: var(--ink);
+      }
+
+      .field-label .required {
+        margin-left: 6px;
+        color: #2752a6;
+        font-size: 0.78rem;
+      }
+
+      .field-label .optional {
+        margin-left: 6px;
+        color: var(--ink-soft);
+        font-size: 0.78rem;
+        font-weight: 600;
+      }
+
+      .survey-form input[type="text"],
+      .survey-form input[type="email"],
+      .survey-form select,
+      .survey-form textarea {
+        width: 100%;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: #fff;
+        color: var(--ink);
+        padding: 11px 12px;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .survey-form textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+
+      .survey-form input::placeholder,
+      .survey-form textarea::placeholder {
+        color: #7f91b4;
+      }
+
+      .survey-form input:focus-visible,
+      .survey-form select:focus-visible,
+      .survey-form textarea:focus-visible {
+        outline: none;
+        border-color: #86a4dd;
+        box-shadow: 0 0 0 4px rgba(145, 173, 232, 0.24);
+      }
+
+      .choice-list {
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: #fff;
+        padding: 12px;
+        display: grid;
+        gap: 8px;
+      }
+
+      .choice-list label {
+        display: flex;
+        align-items: flex-start;
+        gap: 9px;
+        color: var(--ink-soft);
+        font-size: 0.93rem;
+        line-height: 1.45;
+      }
+
+      .choice-list input {
+        margin-top: 2px;
+      }
+
+      .form-note {
+        margin-top: 10px;
+        color: #5a71a2;
+        font-size: 0.85rem;
+      }
+
+      .form-error {
+        margin-top: 10px;
+        color: #a13333;
+        font-size: 0.86rem;
+      }
+
+      .form-error[hidden] {
+        display: none;
+      }
+
+      .form-actions {
+        margin-top: 16px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .form-submit {
+        border: 0;
+        cursor: pointer;
+      }
+
+      .form-submit:disabled {
+        opacity: 0.68;
+        cursor: wait;
+      }
+
+      .form-result {
+        margin-top: 16px;
+        border: 1px solid #cad8f2;
+        border-radius: 14px;
+        background: #f7faff;
+        padding: 14px;
+      }
+
+      .form-result[hidden] {
+        display: none;
+      }
+
+      .form-result h3 {
+        margin-bottom: 8px;
+      }
+
+      .form-result p {
+        color: var(--ink-soft);
+      }
+
+      .fold-form {
+        margin-top: 18px;
+        border: 1px solid var(--line-soft);
+        border-radius: 14px;
+        background: #fff;
+      }
+
+      .fold-form summary {
+        cursor: pointer;
+        list-style: none;
+        padding: 14px 16px;
+        font-weight: 700;
+        color: var(--ink);
+      }
+
+      .fold-form summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .fold-form summary::after {
+        content: "＋";
+        float: right;
+        color: #4f67a0;
+      }
+
+      .fold-form[open] summary::after {
+        content: "−";
+      }
+
+      .fold-form .fold-content {
+        padding: 0 16px 16px;
       }
 
       .pain-icon,
@@ -546,6 +765,21 @@
         font-size: 0.88rem;
       }
 
+      #examples {
+        padding-top: 96px;
+        padding-bottom: 96px;
+      }
+
+      #examples .section-intro {
+        font-size: 1.02rem;
+      }
+
+      #examples .example-card {
+        border-color: #cfdbf3;
+        background: linear-gradient(168deg, #ffffff 0%, #f8fbff 100%);
+        box-shadow: 0 8px 18px rgba(20, 46, 102, 0.08);
+      }
+
       .check-list li {
         background: #fff;
         border: 1px solid var(--line-soft);
@@ -675,10 +909,20 @@
 
         body {
           padding-bottom: calc(var(--mobile-cta-height) + 14px);
+          line-height: 1.82;
         }
 
         .section {
-          padding: 66px 0;
+          padding: 58px 0;
+        }
+
+        h2 {
+          font-size: clamp(1.34rem, 6.3vw, 1.7rem);
+        }
+
+        .section-intro {
+          font-size: 0.98rem;
+          line-height: 1.82;
         }
 
         .brand-logo {
@@ -728,13 +972,74 @@
 
         .hero-statement {
           padding: 14px 14px 14px 16px;
-          font-size: 0.98rem;
-          line-height: 1.8;
+          font-size: 1rem;
+          line-height: 1.88;
         }
 
         .cta-actions {
           flex-direction: column;
           align-items: stretch;
+        }
+
+        .survey-card {
+          padding: 15px;
+        }
+
+        .form-grid {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+
+        .choice-list {
+          padding: 10px;
+        }
+
+        .card p,
+        .example-card p {
+          font-size: 0.97rem;
+          line-height: 1.82;
+        }
+
+        .choice-list label {
+          font-size: 0.95rem;
+          line-height: 1.62;
+        }
+
+        .form-note {
+          font-size: 0.9rem;
+          line-height: 1.7;
+        }
+
+        .faq-question {
+          font-size: 0.97rem;
+          line-height: 1.65;
+        }
+
+        .faq-answer {
+          font-size: 0.95rem;
+          line-height: 1.8;
+        }
+
+        .card {
+          padding: 15px;
+        }
+
+        .fold-form summary {
+          padding: 12px 14px;
+          font-size: 0.95rem;
+        }
+
+        .fold-form .fold-content {
+          padding: 0 14px 14px;
+        }
+
+        #examples {
+          padding-top: 66px;
+          padding-bottom: 66px;
+        }
+
+        #examples .section-intro {
+          font-size: 0.99rem;
         }
 
         .grid-4,
@@ -795,7 +1100,7 @@
             <a href="#trial">体験プログラム</a>
             <a href="#faq">FAQ</a>
           </nav>
-          <a class="cta-btn header-cta" href="#final-cta">無料体験会に参加する</a>
+          <a class="cta-btn header-cta" href="#trial-application">無料体験会に参加する</a>
         </div>
       </div>
     </header>
@@ -810,6 +1115,11 @@
             <p class="hero-statement">
               VISIQ Academyは、一般的な塾ではありません。教科を教えることだけを目的にせず、AIと対面コーチングを通して「学び方そのもの」を育てる教育プログラムです。対象は、小学生からです。
             </p>
+            <div class="cta-actions hero-actions">
+              <a class="sub-btn" href="#download-form">資料を受け取る</a>
+              <a class="cta-btn" href="#trial-application">無料体験会に参加する</a>
+            </div>
+            <p class="hero-note">まずは資料で全体像を確認し、必要に応じて無料体験会で学び方の違いをご体感いただけます。</p>
           </div>
         </div>
       </section>
@@ -819,14 +1129,12 @@
           <div class="video-card">
             <h2>VISIQ Academyを、まず動画でご覧ください</h2>
             <p class="section-intro">
-              学びを“消費”から“資産”へ変える考え方と、VISIQ Academyの全体像を短くご紹介します。
+              学びを“消費”から“資産”へ変える考え方と、VISIQ Academyの全体像を3分でご紹介します。
             </p>
             <div class="video-frame">
-              <!-- poster画像は必要に応じて assets/video-poster.jpg 等へ差し替えてください -->
               <video class="video-player" controls playsinline preload="metadata" poster="assets/hero-placeholder.jpg">
                 <source src="assets/visiq-intro.mp4" type="video/mp4" />
-                お使いのブラウザでは動画を再生できません。
-                <a href="assets/visiq-intro.mp4">動画ファイルを直接開く</a>
+                お使いのブラウザでは動画を再生できません。別ブラウザでお試しください。
               </video>
             </div>
           </div>
@@ -907,29 +1215,6 @@
         </div>
       </section>
 
-      <section id="name-meaning" class="section">
-        <div class="container reveal">
-          <h2>NAME｜Vision × IQ = Resolution</h2>
-          <p class="section-intro">
-            VISIQが育てたいのは、偏差値の高い子ではなく「解像度の高い人」です。見えるものの先を捉える視点と、思考の質を掛け合わせ、世界の見え方をくっきりさせる力を育てます。
-          </p>
-          <div class="card-grid grid-3">
-            <article class="card">
-              <h3>Vision</h3>
-              <p>見えるものの、その先を捉える視点。</p>
-            </article>
-            <article class="card">
-              <h3>IQ</h3>
-              <p>知識・理解・処理・思考の質。</p>
-            </article>
-            <article class="card">
-              <h3>Resolution</h3>
-              <p>世界の見え方がくっきりする力。</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
       <section id="elementary" class="section soft">
         <div class="container reveal">
           <h2>なぜ、小学生のうちからなのか</h2>
@@ -958,93 +1243,6 @@
         </div>
       </section>
 
-      <section id="typing-ai" class="section soft">
-        <div class="container reveal">
-          <h2>タイピングとAIの位置づけ</h2>
-          <div class="card-grid grid-3">
-            <article class="card">
-              <h3>タイピングは入口</h3>
-              <p>ただのPCスキルではなく、思考を外に出し客観視するための基礎技術です。</p>
-            </article>
-            <article class="card">
-              <h3>AIは答えを出す道具ではない</h3>
-              <p>丸写しのためではなく、問いを整理し、別視点を得るためのパートナーとして使います。</p>
-            </article>
-            <article class="card">
-              <h3>学び方そのものが変わる</h3>
-              <p>書く速度と対話の質が上がることで、考える速度と深さが変わります。</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="persona" class="section">
-        <div class="container reveal">
-          <h2>VISIQ Academyが育てたい人物像</h2>
-          <ul class="check-list">
-            <li>問いを立てられる</li>
-            <li>複数の視点を持てる</li>
-            <li>感情を整理して判断できる</li>
-            <li>自分で学び続けられる</li>
-            <li>将来を主体的に設計できる</li>
-            <li>偏差値だけで語られない強さを持つ</li>
-          </ul>
-        </div>
-      </section>
-
-      <section id="difference" class="section soft">
-        <div class="container reveal">
-          <h2>一般的な塾との違い</h2>
-          <p class="section-intro">誇張せず、学習設計の違いを整理しました。</p>
-          <div class="compare-wrap" role="table" aria-label="一般的な塾とVISIQ Academyの比較">
-            <div class="compare-head" role="row">
-              <div class="compare-cell" role="columnheader">比較観点</div>
-              <div class="compare-cell" role="columnheader">一般的な塾</div>
-              <div class="compare-cell visiq-cell" role="columnheader">VISIQ Academy</div>
-            </div>
-            <div class="compare-row" role="row">
-              <div class="compare-cell">学習の形</div>
-              <div class="compare-cell">授業中心で受け身になりやすい</div>
-              <div class="compare-cell visiq-cell">自宅・AI・教室を連動し、主体的に進める</div>
-            </div>
-            <div class="compare-row" role="row">
-              <div class="compare-cell">家庭の役割</div>
-              <div class="compare-cell">家庭での管理負担が大きくなりやすい</div>
-              <div class="compare-cell visiq-cell">家庭環境に左右されにくい運用を設計</div>
-            </div>
-            <div class="compare-row" role="row">
-              <div class="compare-cell">評価の基準</div>
-              <div class="compare-cell">点数中心</div>
-              <div class="compare-cell visiq-cell">行動変化を起点に、学力へ接続</div>
-            </div>
-            <div class="compare-row" role="row">
-              <div class="compare-cell">AI活用</div>
-              <div class="compare-cell">限定的</div>
-              <div class="compare-cell visiq-cell">言語化・振り返りに活用し思考を可視化</div>
-            </div>
-            <div class="compare-row" role="row">
-              <div class="compare-cell">継続の仕組み</div>
-              <div class="compare-cell">本人任せになりやすい</div>
-              <div class="compare-cell visiq-cell">コーチ伴走で立て直しまで支援</div>
-            </div>
-          </div>
-          <p class="section-note">体験参加では、この違いを実際の作戦会議で確認できます。</p>
-        </div>
-      </section>
-
-      <section id="benefits" class="section">
-        <div class="container reveal">
-          <h2>保護者が感じる変化</h2>
-          <p class="section-intro">学習の変化が、家庭の日常の変化につながります。</p>
-          <ul class="benefit-list">
-            <li><strong>「勉強しなさい」が減る：</strong>子どもが次にやることを把握し、声かけ回数が減りやすくなります。</li>
-            <li><strong>学習の中身が見える：</strong>進捗だけでなく、何を理解し何で止まったかが把握しやすくなります。</li>
-            <li><strong>自分で進める姿勢が育つ：</strong>つまずいても、立て直して再開する力がつきます。</li>
-            <li><strong>先の学年にも活きる土台：</strong>中学・高校で必要な「学び方」そのものを身につけます。</li>
-          </ul>
-        </div>
-      </section>
-
       <section id="trial" class="section soft">
         <div class="container reveal">
           <h2>全体カリキュラム：4つのフェーズ</h2>
@@ -1068,78 +1266,130 @@
               <p class="phase-label">Phase 2: Advance</p>
               <h3>自走型学習への移行</h3>
               <p>教科の先取りやPDCA運用を通じて、継続できる学習運用へ移行します。</p>
+              <ul class="phase-list">
+                <li>教科の先取り</li>
+                <li>PDCA運用</li>
+                <li>小さな探究</li>
+                <li>検定の導入</li>
+              </ul>
             </article>
             <article class="card phase-card">
               <p class="phase-label">Phase 3: Beyond</p>
               <h3>解像度を高める</h3>
               <p>多面的思考・社会文脈・未来設計を扱い、判断の質を引き上げます。</p>
+              <ul class="phase-list">
+                <li>多面的な思考</li>
+                <li>社会・経済・歴史</li>
+                <li>未来設計</li>
+                <li>論理と思考整理</li>
+              </ul>
             </article>
             <article class="card phase-card">
               <p class="phase-label">Phase 4: Synergy</p>
               <h3>学びの好循環を生む</h3>
               <p>他者支援や協働を通して、学びを自分だけで終わらせない力を育てます。</p>
+              <ul class="phase-list">
+                <li>他者支援</li>
+                <li>協働プロジェクト</li>
+                <li>後輩への伴走</li>
+                <li>Community接続</li>
+              </ul>
             </article>
           </div>
-          <p class="section-note">詳しい料金・コース内容は資料でご確認いただけます。無料体験会でご家庭に合う進め方をご提案します。</p>
+          <p class="section-note">各フェーズの詳細、指導設計、料金・運用の詳しい内容は資料PDFでご確認いただけます。</p>
           <div class="cta-actions">
-            <a class="sub-btn" href="assets/VISIQ_Academy.pdf" target="_blank" rel="noopener noreferrer"
+            <a class="sub-btn" href="#download-form"
               >資料をダウンロードする</a
             >
-            <a class="cta-btn" href="#final-cta">無料体験会に参加する</a>
+            <a class="cta-btn" href="#trial-application">無料体験会に参加する</a>
           </div>
         </div>
       </section>
 
-      <section id="steps" class="section">
-        <div class="container reveal">
-          <h2>ランク制度（成長の可視化）</h2>
+      <section id="download-form" class="section">
+        <div class="container reveal survey-wrap">
+          <p class="form-kicker">資料請求アンケートフォーム</p>
+          <h2>資料ダウンロードの前に、簡単なアンケートにご協力ください</h2>
           <p class="section-intro">
-            ランクは競争のためではなく、成長段階を見える化するための仕組みです。比べるのは他人ではなく、昨日の自分です。
+            お子さまの学年や関心に合わせて、今後のご案内をより分かりやすくお届けするための簡単なアンケートです。1分ほどで完了します。
           </p>
-          <div class="step-flow">
-            <article class="step-item">
-              <span class="step-num">1</span>
-              <h3>スタート期</h3>
-              <p>学習リズムを整え、取りかかりの習慣をつくる段階。</p>
-            </article>
-            <article class="step-item">
-              <span class="step-num">2</span>
-              <h3>定着期</h3>
-              <p>基礎を反復し、理解を自分の言葉で説明できる段階。</p>
-            </article>
-            <article class="step-item">
-              <span class="step-num">3</span>
-              <h3>活用期</h3>
-              <p>学んだことを問題解決に使い、考え方を広げる段階。</p>
-            </article>
-            <article class="step-item">
-              <span class="step-num">4</span>
-              <h3>自走期</h3>
-              <p>目標設定から振り返りまでを、サポートを受けながら自分で回せる段階。</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="community" class="section soft">
-        <div class="container reveal">
-          <h2>VISIQ Community構想</h2>
-          <div class="community-box">
-            <p>
-              学びが循環する場所をつくります。一人の工夫が別の誰かを育て、解像度の高い人材ネットワークへ育っていく。学びを将来の人的資産へ接続する土台を目指します。
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section id="with-parents" class="section">
-        <div class="container reveal">
-          <h2>保護者との関係</h2>
-          <div class="card-grid grid-4">
-            <article class="card"><h3>親の代わりにはならない</h3><p>VISIQは家庭の代替ではなく、家庭を支える第三者です。</p></article>
-            <article class="card"><h3>親を責めない</h3><p>子育ての正解を押し付ける場ではありません。</p></article>
-            <article class="card"><h3>まなざしを重ねる</h3><p>親のまなざしと第三者のまなざしをつなぎ、子どもを支えます。</p></article>
-            <article class="card"><h3>保護者にもAI体験を</h3><p>学びの土台を家庭にもインストールできるよう支援します。</p></article>
+          <p class="section-note">学習モデル・4フェーズ・よくある質問の詳細は、資料PDFでまとめて確認いただけます。</p>
+          <div class="survey-card">
+            <form class="survey-form js-form" id="pre-download-survey" data-form-type="documentRequestSurvey" novalidate>
+              <div class="form-grid">
+                <div class="field-block">
+                  <label class="field-label" for="parent-name">保護者名<span class="required">必須</span></label>
+                  <input id="parent-name" name="parentName" type="text" autocomplete="name" required />
+                </div>
+                <div class="field-block">
+                  <label class="field-label" for="parent-email">メールアドレス<span class="required">必須</span></label>
+                  <input id="parent-email" name="parentEmail" type="email" autocomplete="email" required />
+                </div>
+                <div class="field-block">
+                  <label class="field-label" for="child-grade">お子様の学年<span class="required">必須</span></label>
+                  <select id="child-grade" name="childGrade" required>
+                    <option value="">選択してください</option>
+                    <option value="年長">年長</option>
+                    <option value="小学校1年生">小学1年生</option>
+                    <option value="小学校2年生">小学2年生</option>
+                    <option value="小学校3年生">小学3年生</option>
+                    <option value="小学校4年生">小学4年生</option>
+                    <option value="小学校5年生">小学5年生</option>
+                    <option value="小学校6年生">小学6年生</option>
+                    <option value="中学1年生">中学1年生</option>
+                    <option value="中学2年生">中学2年生</option>
+                    <option value="中学3年生">中学3年生</option>
+                    <option value="その他">その他</option>
+                  </select>
+                </div>
+                <div class="field-block">
+                  <label class="field-label" for="children-count">お子様数<span class="optional">任意</span></label>
+                  <select id="children-count" name="childrenCount">
+                    <option value="">選択してください</option>
+                    <option value="1">1人</option>
+                    <option value="2">2人</option>
+                    <option value="3">3人以上</option>
+                  </select>
+                </div>
+                <fieldset class="field-block field-full">
+                  <legend class="field-label">気になっていること<span class="optional">任意・複数選択可</span></legend>
+                  <div class="choice-list">
+                    <label><input type="checkbox" name="concerns" value="勉強を自分からやらない" />勉強を自分からやらない</label>
+                    <label><input type="checkbox" name="concerns" value="学習習慣がつかない" />学習習慣がつかない</label>
+                    <label><input type="checkbox" name="concerns" value="受け身の学びになっている" />受け身の学びになっている</label>
+                    <label><input type="checkbox" name="concerns" value="AI時代に合った学び方が気になる" />AI時代に合った学び方が気になる</label>
+                    <label><input type="checkbox" name="concerns" value="中学以降を見据えた土台を作りたい" />中学以降を見据えた土台を作りたい</label>
+                    <label><input type="checkbox" name="concerns" value="タイピングやIT活用が気になる" />タイピングやIT活用が気になる</label>
+                    <label><input type="checkbox" name="concerns" value="何から始めればよいかわからない" />何から始めればよいかわからない</label>
+                    <label><input type="checkbox" name="concerns" value="その他" />その他</label>
+                  </div>
+                </fieldset>
+                <fieldset class="field-block field-full">
+                  <legend class="field-label">無料体験会への関心<span class="optional">任意</span></legend>
+                  <div class="choice-list">
+                    <label><input type="radio" name="trialInterest" value="とても関心がある" />とても関心がある</label>
+                    <label><input type="radio" name="trialInterest" value="関心がある" />関心がある</label>
+                    <label><input type="radio" name="trialInterest" value="関心はない" />関心はない</label>
+                  </div>
+                </fieldset>
+                <div class="field-block field-full">
+                  <label class="field-label" for="free-text">ご質問・気になること<span class="optional">任意</span></label>
+                  <textarea id="free-text" name="freeText" placeholder="ご不安な点や確認したいことがあればご記入ください。"></textarea>
+                </div>
+              </div>
+              <p class="form-note">※電話番号・住所・学校名などの詳細情報は、この段階では不要です。</p>
+              <p class="form-error" data-error-message hidden>送信できませんでした。お手数ですが、もう一度お試しください。</p>
+              <div class="form-actions">
+                <button class="cta-btn form-submit" type="submit">資料をダウンロードする</button>
+              </div>
+            </form>
+            <div class="form-result" id="download-next-actions" aria-live="polite" hidden>
+              <p class="section-note">ご回答ありがとうございます。次のご希望に合わせてお進みください。</p>
+              <div class="cta-actions">
+                <a class="sub-btn" href="assets/VISIQ_Academy.pdf" target="_blank" rel="noopener noreferrer">資料をダウンロードする</a>
+                <a class="cta-btn" href="#trial-application">無料体験会に参加する</a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -1188,23 +1438,10 @@
         </div>
       </section>
 
-      <section id="fit" class="section soft">
-        <div class="container reveal">
-          <h2>こんなご家庭に向いています</h2>
-          <ul class="check-list">
-            <li>家での学習習慣を整えたい</li>
-            <li>親の見守り負担を減らしたい</li>
-            <li>受け身学習から抜け出したい</li>
-            <li>AI時代に合う学び方を身につけたい</li>
-            <li>中学・高校にもつながる土台を育てたい</li>
-            <li>子どもの「できた」を増やしたい</li>
-          </ul>
-        </div>
-      </section>
-
       <section id="faq" class="section">
         <div class="container reveal">
           <h2>よくあるご質問</h2>
+          <p class="section-intro">保護者の方からよくいただくご質問を、参加前に確認しやすい形でまとめました。</p>
           <div class="faq-list" aria-label="よくあるご質問一覧">
             <article class="faq-item">
               <button class="faq-question" type="button" aria-expanded="false">
@@ -1261,6 +1498,7 @@
               </div>
             </article>
           </div>
+          <p class="section-note">より詳しい運用やコース設計は、資料PDFでも確認いただけます。</p>
         </div>
       </section>
 
@@ -1281,23 +1519,167 @@
         </div>
       </section>
 
+      <section id="trial-application" class="section soft">
+        <div class="container reveal survey-wrap">
+          <p class="form-kicker">無料体験会申込フォーム</p>
+          <h2>無料体験会のお申し込み</h2>
+          <p class="section-intro">ご希望内容を確認のうえ、担当より日程調整のご連絡を差し上げます。</p>
+          <p class="section-note">まずは無料体験会で、学び方の違いをご体感ください。</p>
+          <div class="survey-card">
+            <form class="survey-form js-form" id="trial-application-form" data-form-type="trialSession" novalidate>
+              <div class="form-grid">
+                <div class="field-block">
+                  <label class="field-label" for="trial-parent-name">保護者名<span class="required">必須</span></label>
+                  <input id="trial-parent-name" name="parentName" type="text" autocomplete="name" required />
+                </div>
+                <div class="field-block">
+                  <label class="field-label" for="trial-parent-email">メールアドレス<span class="required">必須</span></label>
+                  <input id="trial-parent-email" name="parentEmail" type="email" autocomplete="email" required />
+                </div>
+                <div class="field-block">
+                  <label class="field-label" for="trial-phone">電話番号<span class="optional">任意</span></label>
+                  <input id="trial-phone" name="phoneNumber" type="text" inputmode="tel" autocomplete="tel" placeholder="例）09012345678" />
+                </div>
+                <div class="field-block">
+                  <label class="field-label" for="trial-grade">お子様の学年<span class="required">必須</span></label>
+                  <select id="trial-grade" name="childGrade" required>
+                    <option value="">選択してください</option>
+                    <option value="年長">年長</option>
+                    <option value="小学1年生">小学1年生</option>
+                    <option value="小学2年生">小学2年生</option>
+                    <option value="小学3年生">小学3年生</option>
+                    <option value="小学4年生">小学4年生</option>
+                    <option value="小学5年生">小学5年生</option>
+                    <option value="小学6年生">小学6年生</option>
+                    <option value="中学1年生">中学1年生</option>
+                    <option value="中学2年生">中学2年生</option>
+                    <option value="中学3年生">中学3年生</option>
+                    <option value="その他">その他</option>
+                  </select>
+                </div>
+                <div class="field-block">
+                  <label class="field-label" for="trial-children-count">お子様数<span class="optional">任意</span></label>
+                  <select id="trial-children-count" name="childrenCount">
+                    <option value="">選択してください</option>
+                    <option value="1人">1人</option>
+                    <option value="2人">2人</option>
+                    <option value="3人以上">3人以上</option>
+                  </select>
+                </div>
+                <div class="field-block">
+                  <label class="field-label" for="trial-date">参加希望日<span class="optional">任意</span></label>
+                  <input id="trial-date" name="preferredDate" type="text" placeholder="例）土日午前・平日夕方 など" />
+                </div>
+                <div class="field-block field-full">
+                  <label class="field-label" for="trial-note">相談したいこと<span class="optional">任意</span></label>
+                  <textarea id="trial-note" name="consultation" placeholder="学習習慣や体験会で確認したいことをご記入ください。"></textarea>
+                </div>
+              </div>
+              <p class="form-error" data-error-message hidden>送信できませんでした。お手数ですが、もう一度お試しください。</p>
+              <div class="form-actions">
+                <button class="cta-btn form-submit" type="submit">無料体験会に申し込む</button>
+              </div>
+            </form>
+            <div class="form-result" id="trial-application-result" aria-live="polite" hidden>
+              <h3>お申し込みを受け付けました</h3>
+              <p>内容を確認のうえ、担当よりメールでご連絡いたします。日程調整まで少々お待ちください。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contract-application" class="section">
+        <div class="container reveal survey-wrap">
+          <p class="form-kicker">契約申込フォーム</p>
+          <h2>本契約をご希望の方へ（任意）</h2>
+          <p class="section-intro">本契約フォームは必要な方のみ開いてご利用いただけます。</p>
+          <details class="fold-form">
+            <summary>契約申込フォームを開く</summary>
+            <div class="fold-content">
+              <form class="survey-form js-form" id="contract-application-form" data-form-type="contractApplication" novalidate>
+                <div class="form-grid">
+                  <div class="field-block">
+                    <label class="field-label" for="contract-parent-name">保護者名<span class="required">必須</span></label>
+                    <input id="contract-parent-name" name="parentName" type="text" autocomplete="name" required />
+                  </div>
+                  <div class="field-block">
+                    <label class="field-label" for="contract-parent-email">メールアドレス<span class="required">必須</span></label>
+                    <input id="contract-parent-email" name="parentEmail" type="email" autocomplete="email" required />
+                  </div>
+                  <div class="field-block">
+                    <label class="field-label" for="contract-phone">電話番号<span class="required">必須</span></label>
+                    <input id="contract-phone" name="phoneNumber" type="text" inputmode="tel" autocomplete="tel" required />
+                  </div>
+                  <div class="field-block">
+                    <label class="field-label" for="contract-child-name">お子様氏名<span class="required">必須</span></label>
+                    <input id="contract-child-name" name="childName" type="text" required />
+                  </div>
+                  <div class="field-block">
+                    <label class="field-label" for="contract-grade">学年<span class="required">必須</span></label>
+                    <select id="contract-grade" name="childGrade" required>
+                      <option value="">選択してください</option>
+                      <option value="年長">年長</option>
+                      <option value="小学1年生">小学1年生</option>
+                      <option value="小学2年生">小学2年生</option>
+                      <option value="小学3年生">小学3年生</option>
+                      <option value="小学4年生">小学4年生</option>
+                      <option value="小学5年生">小学5年生</option>
+                      <option value="小学6年生">小学6年生</option>
+                      <option value="中学1年生">中学1年生</option>
+                      <option value="中学2年生">中学2年生</option>
+                      <option value="中学3年生">中学3年生</option>
+                      <option value="その他">その他</option>
+                    </select>
+                  </div>
+                  <div class="field-block">
+                    <label class="field-label" for="contract-course">希望コース<span class="required">必須</span></label>
+                    <select id="contract-course" name="preferredCourse" required>
+                      <option value="">選択してください</option>
+                      <option value="CAMP（3か月体験）">CAMP（3か月体験）</option>
+                      <option value="Advance">Advance</option>
+                      <option value="Beyond">Beyond</option>
+                      <option value="Synergy">Synergy</option>
+                      <option value="相談して決めたい">相談して決めたい</option>
+                    </select>
+                  </div>
+                  <div class="field-block">
+                    <label class="field-label" for="contract-start-date">契約開始希望日<span class="optional">任意</span></label>
+                    <input id="contract-start-date" name="preferredStartDate" type="text" placeholder="例）来月1日以降" />
+                  </div>
+                  <fieldset class="field-block field-full">
+                    <legend class="field-label">規約同意<span class="required">必須</span></legend>
+                    <div class="choice-list">
+                      <label><input type="checkbox" name="termsAgreement" value="同意する" required />利用規約および個人情報の取り扱いに同意します</label>
+                    </div>
+                  </fieldset>
+                </div>
+                <p class="form-error" data-error-message hidden>送信できませんでした。お手数ですが、もう一度お試しください。</p>
+                <div class="form-actions">
+                  <button class="cta-btn form-submit" type="submit">契約申込を送信する</button>
+                </div>
+              </form>
+              <div class="form-result" id="contract-application-result" aria-live="polite" hidden>
+                <h3>契約申込を受け付けました</h3>
+                <p>担当よりご契約手続きのご案内をお送りします。ご連絡まで少々お待ちください。</p>
+              </div>
+            </div>
+          </details>
+        </div>
+      </section>
+
+
       <section id="final-cta" class="section soft">
         <div class="container reveal">
           <div class="final-cta">
             <h2>未来への作戦会議を、無料体験会から始めよう。</h2>
             <p class="cta-sub">
-              VISIQ Academyは、学びを“消費”から“資産”へ変える教育プログラムです。無料体験会で全体像を確認いただいた上で、必要に応じて3か月体験プログラムへ進めます。参加後の無理な勧誘は行いません。
+              まずは資料で考え方と全体像をご理解いただき、そのうえで無料体験会（1日・1時間程度）で実際の学び方をご体感ください。ご家庭に合う進め方かどうかを落ち着いてご判断いただき、必要に応じてCAMPフェーズ（3か月体験プログラム）をご案内します。
             </p>
-            <div class="cta-points">
-              <span>・1か月目：学び方を整える</span>
-              <span>・2か月目：問いを立てる／振り返る</span>
-              <span>・3か月目：自分で学びを回す感覚を持つ</span>
-            </div>
             <div class="cta-actions">
-              <a class="sub-btn" href="assets/VISIQ_Academy.pdf" target="_blank" rel="noopener noreferrer"
+              <a class="sub-btn" href="#download-form"
                 >資料をダウンロードする</a
               >
-              <a class="cta-btn" href="https://example.com/visiq-trial" target="_blank" rel="noopener noreferrer"
+              <a class="cta-btn" href="#trial-application"
                 >無料体験会に参加する</a
               >
             </div>
@@ -1313,11 +1695,19 @@
     </footer>
 
     <div class="mobile-cta" aria-label="スマホ固定CTA">
-      <a class="cta-btn" href="https://example.com/visiq-trial" target="_blank" rel="noopener noreferrer">無料体験会に参加する</a>
+      <a class="cta-btn" href="#trial-application">無料体験会に参加する</a>
     </div>
 
     <script>
       const header = document.querySelector(".site-header");
+
+      window.history.scrollRestoration = "manual";
+      window.addEventListener("load", () => {
+        if (window.location.hash) {
+          history.replaceState(null, "", window.location.pathname + window.location.search);
+        }
+        window.scrollTo(0, 0);
+      });
 
       window.addEventListener("scroll", () => {
         if (window.scrollY > 8) {
@@ -1349,6 +1739,247 @@
       );
 
       revealTargets.forEach((el) => observer.observe(el));
+
+      const FORM_CONFIG = {
+        documentRequestSurvey: {
+          endpoint: "/api/forms/document-request-survey",
+          successTarget: "#download-next-actions",
+          airtable: {
+            tableName: "資料請求アンケート",
+            fieldMap: {
+              parentName: "保護者名",
+              parentEmail: "メールアドレス",
+              childGrade: "お子さまの学年",
+              childrenCount: "お子さま人数",
+              concerns: "気になっていること",
+              trialInterest: "無料体験会への関心",
+              freeText: "ご質問・気になること",
+            },
+            defaultFields: (payload) => ({
+              資料送付済み: false,
+              フォロー要否: payload.trialInterest === "とても関心がある" ? "要" : "不要",
+            }),
+          },
+        },
+        trialSession: {
+          endpoint: "/api/forms/trial-session",
+          successTarget: "#trial-application-result",
+          airtable: {
+            tableName: "無料体験会申込",
+            fieldMap: {
+              parentName: "保護者名",
+              parentEmail: "メールアドレス",
+              phoneNumber: "電話番号",
+              childGrade: "お子さまの学年",
+              childrenCount: "お子さま人数",
+              preferredDate: "参加希望日",
+              consultation: "相談したいこと",
+            },
+            defaultFields: {
+              申込ステータス: "新規",
+            },
+          },
+        },
+        contractApplication: {
+          endpoint: "/api/forms/contract-application",
+          successTarget: "#contract-application-result",
+          airtable: {
+            tableName: "契約申込",
+            fieldMap: {
+              parentName: "保護者名",
+              parentEmail: "メールアドレス",
+              phoneNumber: "電話番号",
+              childName: "お子さま氏名",
+              childGrade: "学年",
+              preferredCourse: "希望コース",
+              preferredStartDate: "契約開始希望日",
+              termsAgreement: "規約同意",
+            },
+            defaultFields: {
+              契約ステータス: "申込中",
+            },
+          },
+        },
+      };
+
+      const collectFormData = (form) => {
+        const formData = new FormData(form);
+        const payload = {};
+
+        formData.forEach((value, key) => {
+          if (payload[key]) {
+            const current = Array.isArray(payload[key]) ? payload[key] : [payload[key]];
+            payload[key] = [...current, value];
+          } else {
+            payload[key] = value;
+          }
+        });
+
+        return payload;
+      };
+
+      const toAirtableFields = (config, payload) => {
+        const fields = {};
+        Object.entries(config.airtable.fieldMap).forEach(([sourceKey, targetField]) => {
+          const value = payload[sourceKey];
+          if (value === undefined || value === "") return;
+          if (sourceKey === "childrenCount") {
+            const parsed = Number(value);
+            fields[targetField] = Number.isNaN(parsed) ? value : parsed;
+            return;
+          }
+          fields[targetField] = value;
+        });
+        const defaults =
+          typeof config.airtable.defaultFields === "function" ? config.airtable.defaultFields(payload) : config.airtable.defaultFields;
+        return { ...defaults, ...fields };
+      };
+
+      const submitToFormGateway = async ({ formType, payload }) => {
+        const config = FORM_CONFIG[formType];
+        const airtableRecord = {
+          tableName: config.airtable.tableName,
+          fields: toAirtableFields(config, payload),
+        };
+        // #region agent log
+        fetch("http://127.0.0.1:7881/ingest/9b823623-6f9d-4db7-af30-e1c69cc1c6c1", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "34ca24" },
+          body: JSON.stringify({
+            sessionId: "34ca24",
+            runId: "run-1",
+            hypothesisId: "H1",
+            location: "index.html:submitToFormGateway:1843",
+            message: "Prepared airtableRecord for submission",
+            data: {
+              formType,
+              endpoint: config?.endpoint,
+              tableName: airtableRecord.tableName,
+              fieldKeys: Object.keys(airtableRecord.fields || {}),
+              concernsCount: Array.isArray(airtableRecord.fields?.["気になっていること"])
+                ? airtableRecord.fields["気になっていること"].length
+                : 0,
+            },
+            timestamp: Date.now(),
+          }),
+        }).catch(() => {});
+        // #endregion agent log
+
+        const response = await fetch(config.endpoint, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ formType, airtableRecord }),
+        });
+
+        const responseBody = await response.json().catch(() => ({}));
+        // #region agent log
+        fetch("http://127.0.0.1:7881/ingest/9b823623-6f9d-4db7-af30-e1c69cc1c6c1", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "34ca24" },
+          body: JSON.stringify({
+            sessionId: "34ca24",
+            runId: "run-2",
+            hypothesisId: "H2",
+            location: "index.html:submitToFormGateway:1862",
+            message: "Received API response",
+            data: {
+              formType,
+              status: response.status,
+              ok: response.ok,
+              responseMessage: responseBody?.message || null,
+              responseMode: responseBody?.mode || null,
+              recordId: responseBody?.recordId || null,
+              responseBody,
+            },
+            timestamp: Date.now(),
+          }),
+        }).catch(() => {});
+        // #endregion agent log
+        if (!response.ok) {
+          throw new Error(responseBody.message || "Form request failed");
+        }
+        return responseBody;
+      };
+
+      const setFormSubmitting = (form, isSubmitting) => {
+        const button = form.querySelector(".form-submit");
+        if (!button) return;
+        button.disabled = isSubmitting;
+      };
+
+      const initializeForms = () => {
+        document.querySelectorAll(".js-form").forEach((form) => {
+          const formType = form.dataset.formType;
+          const config = FORM_CONFIG[formType];
+          if (!config) return;
+          const successSelector = config.successTarget;
+          const successBlock = successSelector ? document.querySelector(successSelector) : null;
+          const errorMessage = form.querySelector("[data-error-message]");
+
+          form.addEventListener("submit", async (event) => {
+            event.preventDefault();
+
+            if (errorMessage) errorMessage.hidden = true;
+            if (!form.reportValidity()) return;
+
+            const payload = collectFormData(form);
+            // #region agent log
+            fetch("http://127.0.0.1:7881/ingest/9b823623-6f9d-4db7-af30-e1c69cc1c6c1", {
+              method: "POST",
+              headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "34ca24" },
+              body: JSON.stringify({
+                sessionId: "34ca24",
+                runId: "run-1",
+                hypothesisId: "H1",
+                location: "index.html:formSubmit:1900",
+                message: "Form submit triggered",
+                data: {
+                  formType,
+                  payloadKeys: Object.keys(payload || {}),
+                  hasGrade: Boolean(payload?.childGrade),
+                  hasEmail: Boolean(payload?.parentEmail),
+                  concernsCount: Array.isArray(payload?.concerns) ? payload.concerns.length : payload?.concerns ? 1 : 0,
+                },
+                timestamp: Date.now(),
+              }),
+            }).catch(() => {});
+            // #endregion agent log
+            setFormSubmitting(form, true);
+
+            try {
+              await submitToFormGateway({ formType, payload });
+              if (successBlock) {
+                successBlock.hidden = false;
+                successBlock.scrollIntoView({ behavior: "smooth", block: "nearest" });
+              }
+            } catch (error) {
+              // #region agent log
+              fetch("http://127.0.0.1:7881/ingest/9b823623-6f9d-4db7-af30-e1c69cc1c6c1", {
+                method: "POST",
+                headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "34ca24" },
+                body: JSON.stringify({
+                  sessionId: "34ca24",
+                  runId: "run-1",
+                  hypothesisId: "H4",
+                  location: "index.html:formSubmitCatch:1932",
+                  message: "Form submit failed",
+                  data: {
+                    formType,
+                    errorMessage: error?.message || "unknown",
+                  },
+                  timestamp: Date.now(),
+                }),
+              }).catch(() => {});
+              // #endregion agent log
+              if (errorMessage) errorMessage.hidden = false;
+            } finally {
+              setFormSubmitting(form, false);
+            }
+          });
+        });
+      };
+
+      initializeForms();
     </script>
   </body>
 </html>
