@@ -251,6 +251,17 @@
         font-size: 0.9rem;
       }
 
+      .hero-origin {
+        margin-top: 12px;
+        padding: 12px 14px;
+        border: 1px solid var(--line-soft);
+        border-radius: 12px;
+        background: #fff;
+        color: var(--ink-soft);
+        font-size: 0.92rem;
+        line-height: 1.8;
+      }
+
       .hero-visual {
         border: 1px solid var(--line-soft);
         border-radius: 24px;
@@ -331,6 +342,24 @@
       .phase-camp {
         border-color: #b8c9ec;
         background: linear-gradient(170deg, #ffffff 0%, #f1f6ff 100%);
+      }
+
+      .long-goal-box {
+        margin-top: 14px;
+        border: 1px solid #cfdbf3;
+        border-radius: 14px;
+        background: linear-gradient(168deg, #ffffff 0%, #f8fbff 100%);
+        padding: 14px 16px;
+      }
+
+      .long-goal-box h3 {
+        margin-bottom: 6px;
+        font-size: 1rem;
+      }
+
+      .long-goal-box p {
+        margin-bottom: 0;
+        color: var(--ink-soft);
       }
 
       .phase-label {
@@ -1163,6 +1192,7 @@
             <a href="#about">ABOUT</a>
             <a href="#model">学習モデル</a>
             <a href="#trial">体験プログラム</a>
+            <a href="#examples">成長の実例</a>
             <a href="#faq">FAQ</a>
           </nav>
           <button
@@ -1183,8 +1213,9 @@
           <a class="mobile-menu-link" href="#about">ABOUT</a>
           <a class="mobile-menu-link" href="#model">学習モデル</a>
           <a class="mobile-menu-link" href="#trial">体験プログラム</a>
+          <a class="mobile-menu-link" href="#examples">成長の実例</a>
           <a class="mobile-menu-link" href="#faq">FAQ</a>
-          <a class="mobile-menu-link" href="#download-form">資料を受け取る</a>
+          <a class="mobile-menu-link" href="#intro-video">まず紹介動画を見る</a>
           <a class="cta-btn mobile-menu-cta" href="#trial-application">無料体験会に参加する</a>
         </div>
       </div>
@@ -1202,18 +1233,22 @@
               教科の点数だけを目指すのではなく、AIと対面コーチングで「学び方そのもの」を育てます。だから“問題が表面化する前”に、自走力の土台を整えられます。
             </p>
             <div class="cta-actions hero-actions">
-              <a class="sub-btn" href="#download-form">資料を受け取る（約1分）</a>
+              <a class="sub-btn" href="#intro-video">まず紹介動画を見る</a>
               <a class="cta-btn" href="#trial-application">無料体験会に参加する（1日/約1時間）</a>
             </div>
-            <p class="hero-note">最短ルート：資料→無料体験会。売り込みなしで、ご家庭に合うかを見極められます。</p>
+            <p class="hero-note">最短ルート：紹介動画→無料体験会。売り込みなしで、ご家庭に合うかを見極められます。</p>
+            <p class="hero-origin">
+              VISIQ Academyは、代表自身が家庭で積み重ねてきた教育実践と実績をもとに生まれた、自ら学ぶ力を育てる教育プログラムです。
+              その実践を再現性のある形に体系化し、現在の優れた教材やAI、対面コーチングを組み合わせて、小学生のうちから学び方の土台と自走力を育てます。
+            </p>
           </div>
         </div>
       </section>
 
-      <section class="section video-intro">
+      <section id="intro-video" class="section video-intro">
         <div class="container reveal">
           <div class="video-card">
-            <h2>VISIQ Academyを、まず動画でご覧ください</h2>
+            <h2>はじめての方へ｜VISIQ Academy紹介動画</h2>
             <p class="section-intro">
               学びを“消費”から“資産”へ変える考え方と、VISIQ Academyの全体像を3分でご紹介します。
             </p>
@@ -1230,30 +1265,51 @@
         </div>
       </section>
 
+      <section class="section">
+        <div class="container reveal">
+          <h2>VISIQの3つの仕組み</h2>
+          <p class="section-intro">学習を「家庭で実行できる形」にするために、次の3つを一体で設計しています。</p>
+          <div class="card-grid grid-3">
+            <article class="card">
+              <h3>自宅で学ぶ</h3>
+              <p>スタディサプリなどの教材で、子どもが自分のペースで進めます。</p>
+            </article>
+            <article class="card">
+              <h3>AIで言語化する</h3>
+              <p>AIは答えを出す道具ではなく、考えを言葉にする壁打ち相手として使います。</p>
+            </article>
+            <article class="card">
+              <h3>教室で作戦会議する</h3>
+              <p>振り返りを行い、次の1週間の学び方を子ども自身が設計します。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section id="worries" class="section soft">
         <div class="container reveal">
           <h2>こんなお悩みはありませんか？</h2>
-          <p class="section-intro">保護者の方の「毎日のモヤモヤ」から、VISIQ Academyは設計されています。</p>
+          <p class="section-intro">ご家庭で見え始める学習課題に対して、VISIQ Academyは小学生期から整えるアプローチを重視しています。</p>
           <div class="card-grid grid-4">
             <article class="card">
               <div class="pain-icon" aria-hidden="true">🗣️</div>
-              <h3>「勉強しなさい」と言い続けてしまう</h3>
-              <p>声かけが親子のストレスになり、学習が前向きに進みにくい。</p>
+              <h3>「勉強しなさい」と言っても、自分から動くようにならない</h3>
+              <p>声かけを重ねても、学習の主導権が子どもに移らない。</p>
             </article>
             <article class="card">
               <div class="pain-icon" aria-hidden="true">⏱️</div>
-              <h3>家だと学習が続かない</h3>
-              <p>始めるまでに時間がかかり、習慣化が難しい。</p>
+              <h3>スタサプや教材はあるのに、家庭学習がうまく回らない</h3>
+              <p>環境は整っていても、実行の型がなく継続しにくい。</p>
             </article>
             <article class="card">
               <div class="pain-icon" aria-hidden="true">🪑</div>
-              <h3>塾でも受け身になってしまう</h3>
-              <p>「教わるだけ」で終わり、家で再現できない。</p>
+              <h3>塾に通っていても、受け身のままに見える</h3>
+              <p>教室では進んでも、家庭での学び方に接続しづらい。</p>
             </article>
             <article class="card">
               <div class="pain-icon" aria-hidden="true">😓</div>
-              <h3>親の見守り負担が大きい</h3>
-              <p>学習管理まで担うのは、忙しい日常では限界がある。</p>
+              <h3>親が管理しないと止まってしまう</h3>
+              <p>毎日の管理負担が大きく、家庭だけで回すのが難しい。</p>
             </article>
           </div>
         </div>
@@ -1261,10 +1317,14 @@
 
       <section id="about" class="section">
         <div class="container reveal">
-          <h2>ABOUT｜VISIQ Academyとは何か</h2>
+          <h2>ABOUT｜教える塾ではなく、学び方を育てる場です</h2>
           <p class="section-intro">
             VISIQ Academyは、小学生の今だからこそ伸ばせる「学び方」を整える教育設計です。
             知識を渡す前に学び方を育て、答えを受け取る前に、自分で問いを立てます。
+          </p>
+          <p class="section-intro">
+            自走力とは、子どもが自分で考え、決め、進め、振り返り、立て直す力です。
+            VISIQ Academyでは、AIを答えを出す道具としてではなく、子どもが自分の考えを言葉にするための壁打ち相手として活用します。
           </p>
           <div class="card-grid grid-3">
             <article class="card">
@@ -1357,6 +1417,13 @@
             CAMP（3か月体験プログラム）で自走力の基礎を作ります。
             その後、本コース（Advance/Beyond/Synergy）で力を伸ばしていきます。
           </p>
+          <div class="long-goal-box">
+            <h3>カリキュラムの長期目標</h3>
+            <p>
+              VISIQ Academyでは、小学生のうちから自分で学びを進める力を育て、中学3年生までにスタディサプリの大学入試共通テスト対策講座まで到達することを、一つの長期目標としています。
+              これは急がせるための目標ではなく、自走学習の力が育つことで、自然と先取りが可能になる状態を目指すものです。
+            </p>
+          </div>
           <div class="card-grid grid-4">
             <article class="card phase-card phase-camp">
               <p class="phase-label">Phase 1: CAMP（3か月体験）</p>
@@ -1406,8 +1473,8 @@
           </div>
           <p class="section-note">各フェーズの詳細、指導設計、料金・運用の詳しい内容は資料PDFでご確認いただけます。</p>
           <div class="cta-actions">
-            <a class="sub-btn" href="#download-form"
-              >資料をダウンロードする</a
+            <a class="sub-btn" href="#intro-video"
+              >まず紹介動画を見る</a
             >
             <a class="cta-btn" href="#trial-application">無料体験会に参加する</a>
           </div>
@@ -1628,6 +1695,11 @@
 
       <section id="trial-application" class="section soft">
         <div class="container reveal survey-wrap">
+          <p class="form-kicker">体験会に参加される方へ｜事前説明動画</p>
+          <p class="section-intro">体験会前に、進め方を短く確認されたい方はこちらをご覧ください。</p>
+          <div class="cta-actions">
+            <a class="sub-btn" href="#intro-video">体験会の事前説明を見る</a>
+          </div>
           <p class="form-kicker">無料体験会申込フォーム</p>
           <h2>無料体験会のお申し込み</h2>
           <p class="section-intro">ご希望内容を確認のうえ、担当より日程調整のご連絡を差し上げます。</p>
