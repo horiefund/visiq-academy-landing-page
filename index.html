@@ -919,24 +919,42 @@
 
       .hamburger-btn {
         display: none;
-        width: 44px;
-        height: 44px;
+        width: 64px;
+        min-height: 52px;
         border-radius: 12px;
         border: 1px solid var(--line-soft);
         background: #fff;
+        color: var(--navy);
         align-items: center;
         justify-content: center;
-        gap: 5px;
+        flex-direction: column;
+        gap: 4px;
         padding: 0;
         cursor: pointer;
       }
 
-      .hamburger-btn span {
+      .hamburger-icon {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+      }
+
+      .hamburger-icon span {
         display: block;
-        width: 18px;
+        width: 20px;
         height: 2px;
-        background: var(--ink-soft);
+        background: var(--navy);
         border-radius: 999px;
+      }
+
+      .hamburger-label {
+        font-size: 0.72rem;
+        line-height: 1;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        color: var(--ink-soft);
       }
 
       .mobile-menu {
@@ -1203,9 +1221,12 @@
             aria-controls="mobile-menu"
             aria-expanded="false"
           >
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
+            <span class="hamburger-icon" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+            <span class="hamburger-label">メニュー</span>
           </button>
           <a class="cta-btn header-cta" href="#trial-application">無料体験会に参加する</a>
         </div>
