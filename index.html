@@ -1150,9 +1150,10 @@
     </style>
   </head>
   <body>
-    <header class="site-header" id="top">
+    <div id="top" aria-hidden="true"></div>
+    <header class="site-header">
       <div class="container header-inner">
-        <a href="#top" class="brand" aria-label="VISIQ Academy トップへ戻る">
+        <a href="#top" class="brand" data-scroll-top aria-label="VISIQ Academy トップへ戻る">
           <img src="assets/visiq-logo.png" alt="VISIQ Academy" class="brand-logo" width="222" height="44" />
         </a>
         <div class="nav-area">
@@ -1883,6 +1884,14 @@
           if (e.key === "Escape") setMobileMenuOpen(false);
         });
       }
+
+      document.querySelectorAll("[data-scroll-top]").forEach((el) => {
+        el.addEventListener("click", (event) => {
+          event.preventDefault();
+          setMobileMenuOpen?.(false);
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      });
 
       const FORM_CONFIG = {
         documentRequestSurvey: {
