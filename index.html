@@ -886,6 +886,64 @@
         display: none;
       }
 
+      .hamburger-btn {
+        display: none;
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        border: 1px solid var(--line-soft);
+        background: #fff;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        padding: 0;
+        cursor: pointer;
+      }
+
+      .hamburger-btn span {
+        display: block;
+        width: 18px;
+        height: 2px;
+        background: var(--ink-soft);
+        border-radius: 999px;
+      }
+
+      .mobile-menu {
+        position: absolute;
+        top: var(--header-height);
+        right: 20px;
+        width: min(280px, calc(100vw - 40px));
+        background: #fff;
+        border: 1px solid var(--line-soft);
+        border-radius: 16px;
+        box-shadow: 0 18px 60px rgba(16, 42, 99, 0.18);
+        padding: 12px;
+        z-index: 60;
+        max-height: calc(100vh - var(--header-height) - 16px);
+        overflow: auto;
+      }
+
+      .mobile-menu-link {
+        display: block;
+        padding: 12px 12px;
+        border-radius: 12px;
+        color: var(--ink);
+        font-weight: 800;
+        font-size: 0.95rem;
+      }
+
+      .mobile-menu-link:hover,
+      .mobile-menu-link:focus-visible {
+        background: var(--bg-soft);
+        outline: none;
+      }
+
+      .mobile-menu-cta {
+        margin-top: 6px;
+        width: 100%;
+        text-align: center;
+      }
+
       @media (max-width: 1024px) {
         .grid-4 {
           grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -932,6 +990,10 @@
         .main-nav,
         .header-cta {
           display: none;
+        }
+
+        .hamburger-btn {
+          display: inline-flex;
         }
 
         .hero {
@@ -1100,7 +1162,27 @@
             <a href="#trial">体験プログラム</a>
             <a href="#faq">FAQ</a>
           </nav>
+          <button
+            class="hamburger-btn"
+            id="hamburger-btn"
+            type="button"
+            aria-label="メニューを開く"
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </button>
           <a class="cta-btn header-cta" href="#trial-application">無料体験会に参加する</a>
+        </div>
+        <div id="mobile-menu" class="mobile-menu" hidden>
+          <a class="mobile-menu-link" href="#about">ABOUT</a>
+          <a class="mobile-menu-link" href="#model">学習モデル</a>
+          <a class="mobile-menu-link" href="#trial">体験プログラム</a>
+          <a class="mobile-menu-link" href="#faq">FAQ</a>
+          <a class="mobile-menu-link" href="#download-form">資料を受け取る</a>
+          <a class="cta-btn mobile-menu-cta" href="#trial-application">無料体験会に参加する</a>
         </div>
       </div>
     </header>
@@ -1113,13 +1195,14 @@
           </div>
           <div class="reveal hero-copy">
             <p class="hero-statement">
-              VISIQ Academyは、一般的な塾ではありません。教科を教えることだけを目的にせず、AIと対面コーチングを通して「学び方そのもの」を育てる教育プログラムです。対象は、小学生からです。
+              VISIQ Academyは、小学生からしか入会できません。
+              教科の点数だけを目指すのではなく、AIと対面コーチングで「学び方そのもの」を育てます。だから“問題が表面化する前”に、自走力の土台を整えられます。
             </p>
             <div class="cta-actions hero-actions">
-              <a class="sub-btn" href="#download-form">資料を受け取る</a>
-              <a class="cta-btn" href="#trial-application">無料体験会に参加する</a>
+              <a class="sub-btn" href="#download-form">資料を受け取る（約1分）</a>
+              <a class="cta-btn" href="#trial-application">無料体験会に参加する（1日/約1時間）</a>
             </div>
-            <p class="hero-note">まずは資料で全体像を確認し、必要に応じて無料体験会で学び方の違いをご体感いただけます。</p>
+            <p class="hero-note">最短ルート：資料→無料体験会。売り込みなしで、ご家庭に合うかを見極められます。</p>
           </div>
         </div>
       </section>
@@ -1137,6 +1220,9 @@
                 お使いのブラウザでは動画を再生できません。別ブラウザでお試しください。
               </video>
             </div>
+            <p class="form-note">
+              ※動画内の風景や登場人物はすべてイメージです。実際の教室・受講風景とは異なります。
+            </p>
           </div>
         </div>
       </section>
@@ -1174,23 +1260,27 @@
         <div class="container reveal">
           <h2>ABOUT｜VISIQ Academyとは何か</h2>
           <p class="section-intro">
-            VISIQ Academyは一般的な塾ではありません。知識を渡す前に、学び方を育てる。答えを受け取る前に、自分で問いを立てる。人生を主体的に設計する土台を、小学生のうちから整えます。
+            VISIQ Academyは、小学生の今だからこそ伸ばせる「学び方」を整える教育設計です。
+            知識を渡す前に学び方を育て、答えを受け取る前に、自分で問いを立てます。
           </p>
           <div class="card-grid grid-3">
             <article class="card">
               <h3>学び方を育てる</h3>
-              <p>知識の量よりも、学ぶ力そのものを育てる設計です。</p>
+              <p>答え探しではなく「問い→考え→振り返り」の型を育てます。</p>
             </article>
             <article class="card">
               <h3>自走力をつくる</h3>
-              <p>問い・調べ・考え・振り返り・次の一歩を、自分で回せるようにします。</p>
+              <p>家庭でも回る学習ログと振り返りで、自分で進める力を作ります。</p>
             </article>
             <article class="card">
               <h3>人生を設計する土台</h3>
-              <p>学力は結果。本質は、主体的に人生を選べる力を育てることです。</p>
+              <p>中学以降で求められる判断力の“前段”を、小学生のうちに整えます。</p>
             </article>
           </div>
-          <p class="section-note">まずは無料体験会で、学び方が変わる入口かどうかをご確認ください。</p>
+          <p class="section-note">
+            まずは無料体験会で、学び方の違いを確かめてください。
+            合う方はCAMP（3か月体験）→本コースへ進みます。
+          </p>
         </div>
       </section>
 
@@ -1217,15 +1307,28 @@
 
       <section id="elementary" class="section soft">
         <div class="container reveal">
-          <h2>なぜ、小学生のうちからなのか</h2>
+          <h2>小学生からしか入会できない理由</h2>
           <p class="section-intro">
-            とくに小4前後は、学力の壁というより思考の壁が出やすい時期です。習慣・学び方・自己認識が固まりきる前だからこそ、土台を作り直せます。
+            小学生のうちは、学習習慣と「考え方」がまだ作り替えられる時期です。
+            VISIQ Academyは、“問題が表面化してから対処する”のではなく、学び方と自走力の土台を今のうちに整えます。
           </p>
           <div class="card-grid grid-3">
-            <article class="card"><h3>小学校</h3><p>土台が動かせる時期。学び方を変える余地が大きい。</p></article>
-            <article class="card"><h3>中学校</h3><p>修正コストが上がり、後追い対応になりやすい。</p></article>
-            <article class="card"><h3>高校以降</h3><p>やり直しが難しくなり、選択肢が狭まりやすい。</p></article>
+            <article class="card">
+              <h3>低学年（1-2年）</h3>
+              <p>始める・続ける・振り返る「型」を身につけます。</p>
+            </article>
+            <article class="card">
+              <h3>中学年（3-4年）</h3>
+              <p>問いを立て、考えを言語化する力を育てます。</p>
+            </article>
+            <article class="card">
+              <h3>高学年（5-6年）</h3>
+              <p>探究と計画づくりで「自分で回す」学びへ進みます。</p>
+            </article>
           </div>
+          <p class="section-note">
+            こんなご家庭に向いています：小学生の今から「学び方の土台」と自走力を整えたい方です。
+          </p>
         </div>
       </section>
 
@@ -1247,7 +1350,9 @@
         <div class="container reveal">
           <h2>全体カリキュラム：4つのフェーズ</h2>
           <p class="section-intro">
-            VISIQ Academyは、段階的に自走力を育てる4フェーズ設計です。入口に位置づくCAMP（3か月体験プログラム）で、学び方の土台を整えます。
+            無料体験会で「学び方の違い」を体感し、
+            CAMP（3か月体験プログラム）で自走力の基礎を作ります。
+            その後、本コース（Advance/Beyond/Synergy）で力を伸ばしていきます。
           </p>
           <div class="card-grid grid-4">
             <article class="card phase-card phase-camp">
@@ -1336,12 +1441,14 @@
                     <option value="小学校4年生">小学4年生</option>
                     <option value="小学校5年生">小学5年生</option>
                     <option value="小学校6年生">小学6年生</option>
-                    <option value="中学1年生">中学1年生</option>
-                    <option value="中学2年生">中学2年生</option>
-                    <option value="中学3年生">中学3年生</option>
-                    <option value="その他">その他</option>
+                      <option value="その他">その他・ご相談</option>
                   </select>
                 </div>
+                  <div class="field-block field-full">
+                    <p class="form-note">
+                      現在は小学生のお子さまを対象としています。対象学年について不明な場合は、無料体験会でご相談ください。
+                    </p>
+                  </div>
                 <div class="field-block">
                   <label class="field-label" for="children-count">お子様数<span class="optional">任意</span></label>
                   <select id="children-count" name="childrenCount">
@@ -1506,15 +1613,12 @@
         <div class="container reveal">
           <h2>無料体験会でわかること</h2>
           <p class="section-intro">
-            無料体験会では、売り込みではなく「VISIQ Academyの考え方がお子さまに合うか」を確認することを重視します。
+            無料体験会では、売り込みではなく「小学生の今だからこそ伸ばせる学び方」を確かめます。
           </p>
           <ul class="benefit-list">
-            <li><strong>VISIQ Academyの考え方を知る：</strong>学びを“消費”から“資産”へ変える教育思想をご説明します。</li>
-            <li><strong>学習モデルの全体像を知る：</strong>教室Plan→家庭Do→教室Check→教室Actionの流れを体験的に確認できます。</li>
-            <li><strong>AI活用の考え方を体験する：</strong>AIに答えを任せるのではなく、一緒に考える使い方をお伝えします。</li>
-            <li>
-              <strong>次の選択肢を理解する：</strong>3か月体験プログラムや本コースの位置づけを把握し、ご家庭で落ち着いて判断できます。
-            </li>
+            <li><strong>無料体験会：</strong>学び方の違いをその場で体験します（売り込みなし）。</li>
+            <li><strong>CAMP（3か月体験）：</strong>自走力の基礎を作る進め方をイメージできます。</li>
+            <li><strong>本コース（Advance/Beyond/Synergy）：</strong>小学生の今から伸ばす「学びを回す力」の先がわかります。</li>
           </ul>
         </div>
       </section>
@@ -1551,11 +1655,13 @@
                     <option value="小学4年生">小学4年生</option>
                     <option value="小学5年生">小学5年生</option>
                     <option value="小学6年生">小学6年生</option>
-                    <option value="中学1年生">中学1年生</option>
-                    <option value="中学2年生">中学2年生</option>
-                    <option value="中学3年生">中学3年生</option>
-                    <option value="その他">その他</option>
+                    <option value="その他">その他・ご相談</option>
                   </select>
+                </div>
+                <div class="field-block field-full">
+                  <p class="form-note">
+                    現在は小学生のお子さまを対象としています。対象学年について不明な場合は、無料体験会でご相談ください。
+                  </p>
                 </div>
                 <div class="field-block">
                   <label class="field-label" for="trial-children-count">お子様数<span class="optional">任意</span></label>
@@ -1625,11 +1731,13 @@
                       <option value="小学4年生">小学4年生</option>
                       <option value="小学5年生">小学5年生</option>
                       <option value="小学6年生">小学6年生</option>
-                      <option value="中学1年生">中学1年生</option>
-                      <option value="中学2年生">中学2年生</option>
-                      <option value="中学3年生">中学3年生</option>
-                      <option value="その他">その他</option>
+                      <option value="その他">その他・ご相談</option>
                     </select>
+                  </div>
+                  <div class="field-block field-full">
+                    <p class="form-note">
+                      現在は小学生のお子さまを対象としています。対象学年について不明な場合は、無料体験会でご相談ください。
+                    </p>
                   </div>
                   <div class="field-block">
                     <label class="field-label" for="contract-course">希望コース<span class="required">必須</span></label>
@@ -1673,7 +1781,8 @@
           <div class="final-cta">
             <h2>未来への作戦会議を、無料体験会から始めよう。</h2>
             <p class="cta-sub">
-              まずは資料で考え方と全体像をご理解いただき、そのうえで無料体験会（1日・1時間程度）で実際の学び方をご体感ください。ご家庭に合う進め方かどうかを落ち着いてご判断いただき、必要に応じてCAMPフェーズ（3か月体験プログラム）をご案内します。
+              VISIQ Academyは小学生からしか入会できません。
+              だからこそ、無料体験会（1日・約1時間）で学び方の違いを確かめ、CAMP（3か月体験）へ進むかを落ち着いてご判断ください。
             </p>
             <div class="cta-actions">
               <a class="sub-btn" href="#download-form"
@@ -1739,6 +1848,41 @@
       );
 
       revealTargets.forEach((el) => observer.observe(el));
+
+      // Mobile header hamburger menu (開閉 + リンクタップでクローズ)
+      const hamburgerBtn = document.getElementById("hamburger-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const setMobileMenuOpen = (open) => {
+        if (!hamburgerBtn || !mobileMenu) return;
+        hamburgerBtn.setAttribute("aria-expanded", String(open));
+        hamburgerBtn.setAttribute("aria-label", open ? "メニューを閉じる" : "メニューを開く");
+        mobileMenu.hidden = !open;
+      };
+
+      if (hamburgerBtn && mobileMenu) {
+        hamburgerBtn.addEventListener("click", () => {
+          const nextOpen = mobileMenu.hidden;
+          setMobileMenuOpen(nextOpen);
+        });
+
+        mobileMenu.querySelectorAll("a").forEach((a) => {
+          a.addEventListener("click", () => setMobileMenuOpen(false));
+        });
+
+        document.addEventListener("click", (e) => {
+          if (mobileMenu.hidden) return;
+          const target = e.target;
+          const clickedInsideMenu = mobileMenu.contains(target);
+          const clickedHamburger = hamburgerBtn.contains(target);
+          if (!clickedInsideMenu && !clickedHamburger) {
+            setMobileMenuOpen(false);
+          }
+        });
+
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") setMobileMenuOpen(false);
+        });
+      }
 
       const FORM_CONFIG = {
         documentRequestSurvey: {
