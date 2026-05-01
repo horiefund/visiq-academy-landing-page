@@ -1274,8 +1274,8 @@
               学びを“消費”から“資産”へ変える考え方と、VISIQ Academyの全体像を3分でご紹介します。
             </p>
             <div class="video-frame">
-              <video class="video-player" controls playsinline preload="metadata" poster="assets/visiq-video-thumbnail.png">
-                <source src="assets/visiq-intro.mp4" type="video/mp4" />
+              <video id="intro-video-player" class="video-player" controls playsinline preload="metadata" poster="assets/visiq-video-thumbnail.png">
+                <source id="intro-video-source" src="assets/visiq-intro.mp4" type="video/mp4" />
                 お使いのブラウザでは動画を再生できません。別ブラウザでお試しください。
               </video>
             </div>
@@ -1717,9 +1717,31 @@
       <section id="trial-application" class="section soft">
         <div class="container reveal survey-wrap">
           <p class="form-kicker">体験会に参加される方へ｜事前説明動画</p>
-          <p class="section-intro">体験会前に、進め方を短く確認されたい方はこちらをご覧ください。</p>
-          <div class="cta-actions">
-            <a class="sub-btn" href="#intro-video">体験会の事前説明を見る</a>
+          <div class="survey-card">
+            <h2>無料体験会の前に、ぜひご覧ください</h2>
+            <p class="section-intro">
+              VISIQ Academyは、早期詰め込み教育ではありません。
+              小学生のうちから、自分で考え、進め、振り返る“学び方の土台”を育てるための教育プログラムです。
+            </p>
+            <p class="section-intro">
+              「まだ早いのではないか」「AIを使うのは少し不安」そう感じる方にこそ、まず知っていただきたい内容を動画にまとめました。
+              体験会をより有意義な時間にするため、事前にこちらをご覧ください。
+            </p>
+            <div class="cta-actions">
+              <a class="sub-btn" href="#pre-trial-video" data-open-details-target="pre-trial-video">事前説明動画を見る</a>
+              <a class="cta-btn" href="#trial-application-form">無料体験会に申し込む</a>
+            </div>
+            <details id="pre-trial-video" class="fold-form">
+              <summary>事前説明動画を再生する</summary>
+              <div class="fold-content">
+                <div class="video-frame">
+                  <video id="pre-trial-video-player" class="video-player" controls playsinline preload="metadata" poster="assets/visiq-pre-trial-thumbnail.png">
+                    <source id="pre-trial-video-source" src="assets/visiq-pre-trial.mp4" type="video/mp4" />
+                    お使いのブラウザでは動画を再生できません。別ブラウザでお試しください。
+                  </video>
+                </div>
+              </div>
+            </details>
           </div>
           <p class="form-kicker">無料体験会申込フォーム</p>
           <h2>無料体験会のお申し込み</h2>
@@ -1985,6 +2007,39 @@
           event.preventDefault();
           setMobileMenuOpen?.(false);
           window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      });
+
+      // Keep intro video and pre-trial video references separate.
+      const introVideoUrl = "assets/visiq-intro.mp4";
+      const introVideoPosterUrl = "assets/visiq-video-thumbnail.png";
+      const preTrialVideoUrl = "assets/visiq-pre-trial.mp4";
+      const preTrialVideoPosterUrl = "assets/visiq-pre-trial-thumbnail.png";
+
+      const introVideoPlayer = document.getElementById("intro-video-player");
+      const introVideoSource = document.getElementById("intro-video-source");
+      if (introVideoPlayer && introVideoSource) {
+        introVideoSource.src = introVideoUrl;
+        introVideoPlayer.poster = introVideoPosterUrl;
+        introVideoPlayer.load();
+      }
+
+      const preTrialVideoPlayer = document.getElementById("pre-trial-video-player");
+      const preTrialVideoSource = document.getElementById("pre-trial-video-source");
+      if (preTrialVideoPlayer && preTrialVideoSource) {
+        preTrialVideoSource.src = preTrialVideoUrl;
+        preTrialVideoPlayer.poster = preTrialVideoPosterUrl;
+        preTrialVideoPlayer.load();
+      }
+
+      document.querySelectorAll("[data-open-details-target]").forEach((el) => {
+        el.addEventListener("click", (event) => {
+          const detailsId = el.getAttribute("data-open-details-target");
+          const detailsEl = detailsId ? document.getElementById(detailsId) : null;
+          if (!detailsEl) return;
+          event.preventDefault();
+          detailsEl.open = true;
+          detailsEl.scrollIntoView({ behavior: "smooth", block: "start" });
         });
       });
 
