@@ -390,6 +390,21 @@
         flex-wrap: wrap;
       }
 
+      .final-cta-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        align-items: stretch;
+      }
+
+      .final-cta-actions .sub-btn,
+      .final-cta-actions .cta-btn {
+        width: 100%;
+        min-height: 52px;
+        white-space: normal;
+        text-align: center;
+      }
+
       .survey-wrap {
         max-width: 920px;
       }
@@ -882,6 +897,34 @@
         padding: 34px 22px;
       }
 
+      .support-card {
+        border: 1px solid var(--line-soft);
+        border-radius: 14px;
+        background: #fff;
+        padding: 18px;
+      }
+
+      .support-card h2 {
+        font-size: clamp(1.15rem, 2.1vw, 1.45rem);
+      }
+
+      .support-list {
+        margin: 10px 0 0;
+        padding-left: 18px;
+        color: var(--ink-soft);
+      }
+
+      .support-list li + li {
+        margin-top: 6px;
+      }
+
+      .support-note {
+        margin-top: 10px;
+        color: #5d709a;
+        font-size: 0.84rem;
+        line-height: 1.7;
+      }
+
       .cta-sub {
         color: var(--ink-soft);
         max-width: 62ch;
@@ -1012,6 +1055,7 @@
         :root {
           --container: min(1120px, calc(100% - 28px));
           --header-height: 72px;
+          --mobile-cta-height: 92px;
         }
 
         body {
@@ -1090,6 +1134,19 @@
         .cta-actions {
           flex-direction: column;
           align-items: stretch;
+        }
+
+        .final-cta-actions {
+          grid-template-columns: 1fr 1fr;
+          gap: 8px;
+        }
+
+        .final-cta-actions .sub-btn,
+        .final-cta-actions .cta-btn {
+          min-height: 48px;
+          padding: 10px 10px;
+          font-size: 0.85rem;
+          line-height: 1.4;
         }
 
         .survey-card {
@@ -1188,12 +1245,30 @@
           border-top: 1px solid var(--line-soft);
           backdrop-filter: blur(8px);
           padding: 10px 12px;
+          box-sizing: border-box;
         }
 
+        .mobile-cta-inner {
+          width: 100%;
+          max-width: 100%;
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 8px;
+          align-items: stretch;
+        }
+
+        .mobile-cta .sub-btn,
         .mobile-cta .cta-btn {
           width: 100%;
-          min-height: 52px;
-          font-size: 0.98rem;
+          min-width: 0;
+          min-height: 48px;
+          padding: 10px 8px;
+          font-size: 0.85rem;
+          line-height: 1.38;
+          white-space: normal;
+          text-align: center;
+          box-sizing: border-box;
         }
       }
     </style>
@@ -1902,7 +1977,7 @@
               VISIQ Academyは小学生からしか入会できません。
               だからこそ、無料体験会（1日・約1時間）で学び方の違いを確かめ、CAMP（3か月体験）へ進むかを落ち着いてご判断ください。
             </p>
-            <div class="cta-actions">
+            <div class="cta-actions final-cta-actions">
               <a class="sub-btn" href="#download-form"
                 >資料をダウンロードする</a
               >
@@ -1910,6 +1985,26 @@
                 >無料体験会に参加する</a
               >
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="support" class="section">
+        <div class="container reveal survey-wrap">
+          <div class="support-card">
+            <h2>VISIQ自走教育支援基金</h2>
+            <p class="section-intro">
+              VISIQ Academyでは、家庭環境に左右されず、子どもたちがAI・タイピング・探究・自宅学習に取り組める環境づくりを進めています。いただいたご支援は、学習用MacBook等の貸与、AI学習環境の整備、探究活動を支える備品の整備などに活用させていただきます。
+            </p>
+            <ul class="support-list">
+              <li>学習用MacBook等の貸与制度</li>
+              <li>AI学習環境の整備</li>
+              <li>タイピング・探究・制作活動を支える環境づくり</li>
+              <li>家庭環境に左右されにくい学習機会の提供</li>
+            </ul>
+            <p class="support-note">
+              ※ご支援の税務上の取り扱いについては、運営形態や支援方法により異なります。寄付金控除等の対象となるかは、税理士等の専門家にご確認ください。
+            </p>
           </div>
         </div>
       </section>
@@ -1922,7 +2017,10 @@
     </footer>
 
     <div class="mobile-cta" aria-label="スマホ固定CTA">
-      <a class="cta-btn" href="#trial-application">無料体験会に参加する</a>
+      <div class="mobile-cta-inner">
+        <a class="sub-btn" href="#download-form">資料をダウンロードする</a>
+        <a class="cta-btn" href="#trial-application">無料体験会に参加する</a>
+      </div>
     </div>
 
     <script>
