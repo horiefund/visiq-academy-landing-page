@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>個人情報の取り扱いについて | VISIQ Academy</title>
+    <meta name="description" content="VISIQ Academyにおける個人情報の取り扱い（公開前の初期案）です。" />
+    <meta name="theme-color" content="#142b63" />
+    <style>
+      :root {
+        --bg: #ffffff;
+        --bg-soft: #f5f8ff;
+        --ink: #162f68;
+        --ink-soft: #4e638f;
+        --line-soft: #e7edf9;
+        --navy: #183b87;
+        --navy-deep: #122d65;
+        --container: min(820px, calc(100% - 32px));
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", "Segoe UI", sans-serif;
+        color: var(--ink);
+        background: var(--bg);
+        line-height: 1.85;
+        font-size: 0.98rem;
+      }
+      a {
+        color: var(--navy);
+        text-decoration: underline;
+      }
+      a:hover,
+      a:focus-visible {
+        color: var(--navy-deep);
+      }
+      .container {
+        width: var(--container);
+        margin: 0 auto;
+      }
+      .doc-header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: rgba(255, 255, 255, 0.96);
+        border-bottom: 1px solid var(--line-soft);
+        backdrop-filter: blur(8px);
+      }
+      .doc-header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 72px;
+        gap: 16px;
+      }
+      .doc-brand img {
+        width: min(200px, 52vw);
+        height: auto;
+      }
+      .doc-nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 14px;
+        font-size: 0.82rem;
+        color: var(--ink-soft);
+      }
+      .doc-nav a {
+        color: inherit;
+        text-decoration: none;
+        font-weight: 700;
+      }
+      .doc-nav a:hover,
+      .doc-nav a:focus-visible {
+        color: var(--navy);
+        text-decoration: underline;
+      }
+      .doc-main {
+        padding: 40px 0 72px;
+        background: var(--bg-soft);
+      }
+      .doc-card {
+        background: #fff;
+        border: 1px solid var(--line-soft);
+        border-radius: 18px;
+        padding: clamp(20px, 4vw, 32px);
+        box-shadow: 0 10px 28px rgba(19, 46, 104, 0.06);
+      }
+      h1 {
+        margin: 0 0 12px;
+        font-size: clamp(1.35rem, 3.2vw, 1.75rem);
+        line-height: 1.35;
+        color: var(--ink);
+      }
+      .doc-lead {
+        margin: 0 0 28px;
+        color: var(--ink-soft);
+        font-size: 0.95rem;
+      }
+      h2 {
+        margin: 32px 0 10px;
+        font-size: 1.05rem;
+        line-height: 1.45;
+        color: var(--ink);
+        border-left: 4px solid #2e57aa;
+        padding-left: 12px;
+      }
+      h2:first-of-type {
+        margin-top: 0;
+      }
+      p,
+      li {
+        margin: 0 0 12px;
+        color: var(--ink-soft);
+      }
+      ul {
+        margin: 0 0 12px;
+        padding-left: 1.2em;
+        color: var(--ink-soft);
+      }
+      .doc-note {
+        margin-top: 28px;
+        padding: 14px 16px;
+        border-radius: 12px;
+        background: #f7faff;
+        border: 1px solid var(--line-soft);
+        color: #5d709a;
+        font-size: 0.84rem;
+        line-height: 1.75;
+      }
+      .doc-footer {
+        padding: 28px 0 40px;
+        background: #fff;
+        border-top: 1px solid var(--line-soft);
+        color: var(--ink-soft);
+        font-size: 0.88rem;
+      }
+      .doc-footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 16px;
+        margin-bottom: 10px;
+      }
+      @media (max-width: 640px) {
+        body {
+          font-size: 0.95rem;
+        }
+        .doc-header-inner {
+          flex-direction: column;
+          align-items: flex-start;
+          padding-block: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="doc-header">
+      <div class="container doc-header-inner">
+        <a class="doc-brand" href="index.html" aria-label="VISIQ Academy トップへ"
+          ><img src="assets/visiq-logo.png" alt="VISIQ Academy" width="222" height="44"
+        /></a>
+        <nav class="doc-nav" aria-label="法務ページ">
+          <a href="terms.html">利用規約</a>
+          <a href="privacy.html">個人情報</a>
+          <a href="legal.html">特商法表記</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="doc-main">
+      <div class="container">
+        <article class="doc-card">
+          <h1>個人情報の取り扱いについて</h1>
+          <p class="doc-lead">
+            VISIQ Academy（以下「当スクール」といいます）は、お預かりした個人情報を適切に取り扱います。本ページは公開前の初期案であり、最終公開前に専門家確認および実態に合わせた改定を行う前提です。
+          </p>
+
+          <h2>取得する情報</h2>
+          <p>当スクールは、業務の遂行に必要な範囲で、以下の情報を取得する場合があります（すべてが必須ではありません）。</p>
+          <ul>
+            <li>保護者氏名、児童氏名</li>
+            <li>メールアドレス、電話番号</li>
+            <li>学年、お子さま人数、参加希望日、希望コース等の申込・問い合わせ内容</li>
+            <li>体験会・契約・問い合わせに関するやり取りの内容</li>
+            <li>学習の進捗や記録に関する情報（学習ログ、提出物、面談記録等。取得範囲はサービス内容により異なります）</li>
+            <li>決済に必要な情報（決済代行サービスが取得・保管する場合があります）</li>
+            <li>アクセスログ、Cookie、端末情報等（ウェブサイト運用のため）</li>
+          </ul>
+
+          <h2>利用目的</h2>
+          <p>取得した情報は、以下の目的の範囲内で利用します。</p>
+          <ul>
+            <li>体験会・入会・契約等の手続き、本人確認、連絡</li>
+            <li>教育サービスの提供、指導・サポート、安全管理</li>
+            <li>料金請求、決済、会計処理</li>
+            <li>お問い合わせ対応、紛争対応</li>
+            <li>サービス改善のための分析（可能な限り匿名化・統計化した上で行う場合があります）</li>
+            <li>法令に基づく対応</li>
+          </ul>
+
+          <h2>第三者提供</h2>
+          <p>
+            当スクールは、法令に基づく場合を除き、ご本人の同意なく個人情報を第三者に提供しません。ただし、外部サービスへの委託に伴い、委託先が必要な範囲で情報を取り扱う場合があります（後述の「外部サービスの利用」を参照）。
+          </p>
+
+          <h2>外部サービスの利用</h2>
+          <p>当スクールは、業務遂行のために以下のような外部サービス（例）を利用する場合があります。各サービスのプライバシーポリシー等に従い、必要な契約・設定を行います。</p>
+          <ul>
+            <li>顧客管理・フォーム・データベース（例：Airtable）</li>
+            <li>ホスティング・デプロイ（例：Vercel）</li>
+            <li>決済（例：Stripe）</li>
+            <li>メール配信・通知（例：SendGrid、Gmail、その他当スクール所定の手段）</li>
+            <li>AI関連サービス（学習支援・運用効率化のため。利用する場合は目的・範囲をできる限り明確化します）</li>
+          </ul>
+
+          <h2>安全管理</h2>
+          <p>当スクールは、個人情報の漏えい、滅失、毀損等を防止するため、組織的・人的・物理的・技術的安全管理措置を講じます。委託先についても、必要に応じて監督を行います。</p>
+
+          <h2>開示・訂正・削除等</h2>
+          <p>
+            ご本人から、当スクールが保有する個人情報の開示、訂正、利用停止、削除等の請求があった場合、法令に従い適切に対応します。請求方法は、末尾の窓口までご連絡ください。
+          </p>
+
+          <h2>お問い合わせ窓口</h2>
+          <p>個人情報の取扱いに関するお問い合わせは、当スクールの公式連絡先（ウェブサイト記載のメールアドレス等）にて受け付けます。<!-- TODO: 公開時に正式窓口（メール・受付時間）を追記 --></p>
+
+          <h2>改定</h2>
+          <p>本ポリシーは、法令の改正や事業内容の変更等に応じて改定されることがあります。改定後の内容は、本ページに掲載した時点から効力を生じるものとします。</p>
+
+          <p class="doc-note">
+            本ページは公開前の初期案です。最終公開前に専門家（弁護士等）による確認を行い、実態（取得項目、委託先、Cookie方針等）に合わせて更新してください。
+          </p>
+        </article>
+      </div>
+    </main>
+
+    <footer class="doc-footer">
+      <div class="container">
+        <div class="doc-footer-links">
+          <a href="index.html">トップページへ戻る</a>
+          <a href="terms.html">利用規約</a>
+          <a href="legal.html">特定商取引法に基づく表記</a>
+        </div>
+        <p>© VISIQ Academy</p>
+      </div>
+    </footer>
+  </body>
+</html>

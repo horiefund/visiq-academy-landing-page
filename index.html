@@ -524,6 +524,13 @@
         margin-top: 2px;
       }
 
+      .choice-list a,
+      .form-note a {
+        color: var(--navy);
+        text-decoration: underline;
+        font-weight: 700;
+      }
+
       .form-note {
         margin-top: 10px;
         color: #5a71a2;
@@ -1953,8 +1960,21 @@
                   <fieldset class="field-block field-full">
                     <legend class="field-label">規約同意<span class="required">必須</span></legend>
                     <div class="choice-list">
-                      <label><input type="checkbox" name="termsAgreement" value="同意する" required />利用規約および個人情報の取り扱いに同意します</label>
+                      <label>
+                        <input type="checkbox" name="termsAgreement" value="同意する" required />
+                        <span>
+                          <a href="terms.html" target="_blank" rel="noopener noreferrer">利用規約</a>および<a
+                            href="privacy.html"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            >個人情報の取り扱い</a
+                          >に同意します
+                        </span>
+                      </label>
                     </div>
+                    <p class="form-note">
+                      <a href="legal.html" target="_blank" rel="noopener noreferrer">特定商取引法に基づく表記</a>
+                    </p>
                   </fieldset>
                 </div>
                 <p class="form-error" data-error-message hidden>送信できませんでした。お手数ですが、もう一度お試しください。</p>

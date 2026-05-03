@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VISIQ Academy 利用規約</title>
+    <meta name="description" content="VISIQ Academyの利用規約（公開前の初期案）です。" />
+    <meta name="theme-color" content="#142b63" />
+    <style>
+      :root {
+        --bg: #ffffff;
+        --bg-soft: #f5f8ff;
+        --ink: #162f68;
+        --ink-soft: #4e638f;
+        --line-soft: #e7edf9;
+        --navy: #183b87;
+        --navy-deep: #122d65;
+        --container: min(820px, calc(100% - 32px));
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", "Segoe UI", sans-serif;
+        color: var(--ink);
+        background: var(--bg);
+        line-height: 1.85;
+        font-size: 0.98rem;
+      }
+      a {
+        color: var(--navy);
+        text-decoration: underline;
+      }
+      a:hover,
+      a:focus-visible {
+        color: var(--navy-deep);
+      }
+      .container {
+        width: var(--container);
+        margin: 0 auto;
+      }
+      .doc-header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: rgba(255, 255, 255, 0.96);
+        border-bottom: 1px solid var(--line-soft);
+        backdrop-filter: blur(8px);
+      }
+      .doc-header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 72px;
+        gap: 16px;
+      }
+      .doc-brand img {
+        width: min(200px, 52vw);
+        height: auto;
+      }
+      .doc-nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 14px;
+        font-size: 0.82rem;
+        color: var(--ink-soft);
+      }
+      .doc-nav a {
+        color: inherit;
+        text-decoration: none;
+        font-weight: 700;
+      }
+      .doc-nav a:hover,
+      .doc-nav a:focus-visible {
+        color: var(--navy);
+        text-decoration: underline;
+      }
+      .doc-main {
+        padding: 40px 0 72px;
+        background: var(--bg-soft);
+      }
+      .doc-card {
+        background: #fff;
+        border: 1px solid var(--line-soft);
+        border-radius: 18px;
+        padding: clamp(20px, 4vw, 32px);
+        box-shadow: 0 10px 28px rgba(19, 46, 104, 0.06);
+      }
+      h1 {
+        margin: 0 0 12px;
+        font-size: clamp(1.35rem, 3.2vw, 1.75rem);
+        line-height: 1.35;
+        color: var(--ink);
+      }
+      .doc-lead {
+        margin: 0 0 28px;
+        color: var(--ink-soft);
+        font-size: 0.95rem;
+      }
+      h2 {
+        margin: 32px 0 10px;
+        font-size: 1.05rem;
+        line-height: 1.45;
+        color: var(--ink);
+        border-left: 4px solid #2e57aa;
+        padding-left: 12px;
+      }
+      h2:first-of-type {
+        margin-top: 0;
+      }
+      p,
+      li {
+        margin: 0 0 12px;
+        color: var(--ink-soft);
+      }
+      ol {
+        margin: 0 0 12px;
+        padding-left: 1.25em;
+        color: var(--ink-soft);
+      }
+      .doc-note {
+        margin-top: 28px;
+        padding: 14px 16px;
+        border-radius: 12px;
+        background: #f7faff;
+        border: 1px solid var(--line-soft);
+        color: #5d709a;
+        font-size: 0.84rem;
+        line-height: 1.75;
+      }
+      .doc-footer {
+        padding: 28px 0 40px;
+        background: #fff;
+        border-top: 1px solid var(--line-soft);
+        color: var(--ink-soft);
+        font-size: 0.88rem;
+      }
+      .doc-footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 16px;
+        margin-bottom: 10px;
+      }
+      @media (max-width: 640px) {
+        body {
+          font-size: 0.95rem;
+        }
+        .doc-header-inner {
+          flex-direction: column;
+          align-items: flex-start;
+          padding-block: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="doc-header">
+      <div class="container doc-header-inner">
+        <a class="doc-brand" href="index.html" aria-label="VISIQ Academy トップへ"
+          ><img src="assets/visiq-logo.png" alt="VISIQ Academy" width="222" height="44"
+        /></a>
+        <nav class="doc-nav" aria-label="法務ページ">
+          <a href="terms.html">利用規約</a>
+          <a href="privacy.html">個人情報</a>
+          <a href="legal.html">特商法表記</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="doc-main">
+      <div class="container">
+        <article class="doc-card">
+          <h1>VISIQ Academy 利用規約</h1>
+          <p class="doc-lead">
+            本規約は、VISIQ Academy（以下「当スクール」といいます）が提供する教育プログラムおよび関連サービス（以下「本サービス」といいます）の利用条件を定めるものです。詳細な手続・料金等は、別途当スクール所定の案内・申込書・契約書等により定める場合があります。
+          </p>
+
+          <h2>第1条（目的）</h2>
+          <p>本規約は、利用者（保護者および受講する児童を含みます。以下同じ）と当スクールとの間の権利義務関係を明確にし、本サービスの円滑な提供を図ることを目的とします。</p>
+
+          <h2>第2条（サービス内容）</h2>
+          <p>
+            本サービスの内容、提供形態（対面・オンライン・自宅学習の組合せ等）、教材・ツールの利用条件は、当スクールの案内に基づきます。当スクールは、運営上や教育上の必要性がある場合、サービス内容を変更・追加・終了することがあり、その際は当スクール所定の方法で周知します。
+          </p>
+
+          <h2>第3条（申込）</h2>
+          <p>利用者は、当スクール所定の方法により申込みを行うものとします。申込内容に虚偽があった場合、当スクールは申込の取消、契約解除等の措置を講じることがあります。</p>
+
+          <h2>第4条（体験会）</h2>
+          <p>無料体験会の参加条件、日程、実施方法等は、都度当スクールの案内に従います。体験会の内容は、本サービスの一部を紹介するものであり、将来の契約内容を保証するものではありません。</p>
+
+          <h2>第5条（入会および契約）</h2>
+          <p>入会および本契約の成立時期、契約内容は、当スクール所定の申込手続完了および当スクールからの承諾通知等、別途定めるところによります。</p>
+
+          <h2>第6条（料金および支払）</h2>
+          <p>料金体系、支払方法、支払時期等は、当スクールの案内または個別契約に従います。未払いが生じた場合、当スクールは催告のうえ、受講停止等の措置を講じることがあります。</p>
+
+          <h2>第7条（キャンセル・欠席・振替）</h2>
+          <p>キャンセル、欠席、振替の取扱いは、当スクール所定の方法に従います。やむを得ない事情がある場合は、速やかに当スクールへ連絡してください。</p>
+
+          <h2>第8条（退会・休会・中途解約）</h2>
+          <p>退会、休会、中途解約の条件、手続、精算等は、当スクール所定の方法および個別契約の定めに従います。</p>
+
+          <h2>第9条（学習用PC等の貸与）</h2>
+          <p>学習用機器等を貸与する場合、その条件、返却、故障・紛失時の対応等は、別途当スクール所定の貸与規程または個別合意に従います。</p>
+
+          <h2>第10条（AI利用）</h2>
+          <p>
+            本サービスにおいてAIツール等を利用する場合、利用者は当スクールの指導方針および利用上の注意に従うものとします。AIの出力内容は常に正確であるとは限らず、利用者は自己責任において活用するものとします。
+          </p>
+
+          <h2>第11条（禁止事項）</h2>
+          <p>利用者は、以下の行為をしてはなりません。</p>
+          <ol>
+            <li>法令または公序良俗に違反する行為</li>
+            <li>当スクール、他の利用者または第三者の権利を侵害する行為</li>
+            <li>本サービスの運営を妨害する行為</li>
+            <li>当スクールの名誉・信用を毀損する行為</li>
+            <li>その他、当スクールが不適切と判断する行為</li>
+          </ol>
+
+          <h2>第12条（知的財産権）</h2>
+          <p>本サービスに関する教材、資料、システム、商標等に関する知的財産権は、当スクールまたは正当な権利者に帰属します。当スクールの許諾なく、私的利用の範囲を超えて複製・頒布・改変等をしてはなりません。</p>
+
+          <h2>第13条（個人情報の取り扱い）</h2>
+          <p>個人情報の取扱いについては、別途定める<a href="privacy.html">個人情報の取り扱いについて</a>に従います。</p>
+
+          <h2>第14条（サービス内容の変更・中止）</h2>
+          <p>当スクールは、天災地変、法令改正、設備故障、感染症対応、講師の都合等やむを得ない事由により、本サービスの全部または一部を変更・中止することがあります。</p>
+
+          <h2>第15条（免責）</h2>
+          <p>当スクールの責に帰すべき事由による場合を除き、当スクールは本サービスに関連して利用者に生じた損害について責任を負わないものとします。ただし、消費者契約法その他の強行法規により認められる範囲でこの限りではありません。</p>
+
+          <h2>第16条（規約の変更）</h2>
+          <p>当スクールは、必要に応じて本規約を変更できます。変更後の規約は、当スクール所定の方法で周知した時点から効力を生じるものとします。</p>
+
+          <h2>第17条（準拠法・協議）</h2>
+          <p>本規約の準拠法は日本法とします。本サービスに関して紛争が生じた場合、誠意をもって協議のうえ解決を図るものとし、協議によっても解決しない場合には、当スクールの所在地を管轄する裁判所を第一審の専属的合意管轄とします。</p>
+
+          <p class="doc-note">
+            本規約は公開前の初期案であり、最終公開前に専門家（弁護士等）による確認を行う前提です。内容は必要に応じて更新される場合があります。
+          </p>
+        </article>
+      </div>
+    </main>
+
+    <footer class="doc-footer">
+      <div class="container">
+        <div class="doc-footer-links">
+          <a href="index.html">トップページへ戻る</a>
+          <a href="privacy.html">個人情報の取り扱い</a>
+          <a href="legal.html">特定商取引法に基づく表記</a>
+        </div>
+        <p>© VISIQ Academy</p>
+      </div>
+    </footer>
+  </body>
+</html>
