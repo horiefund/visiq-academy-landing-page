@@ -114,6 +114,15 @@
         font-weight: 600;
       }
 
+      #elementary .lead-heading {
+        margin-top: 36px;
+        margin-bottom: 12px;
+        font-size: clamp(1.12rem, 2.1vw, 1.32rem);
+        color: var(--ink);
+        max-width: 74ch;
+        line-height: 1.45;
+      }
+
       .site-header {
         position: fixed;
         inset: 0 0 auto 0;
@@ -1473,25 +1482,32 @@
 
       <section id="elementary" class="section soft">
         <div class="container reveal">
-          <h2>小学生からしか入会できない理由</h2>
+          <h2>なぜ、小学生期から始めるのか</h2>
           <p class="section-intro">
-            小学生のうちは、学習習慣と「考え方」がまだ作り替えられる時期です。
-            VISIQ Academyは、“問題が表面化してから対処する”のではなく、学び方と自走力の土台を今のうちに整えます。
+            小学生期は、学習習慣や考え方の土台がまだ柔らかい時期です。
+            中学以降に問題が表面化してから対処するのではなく、今のうちから学び方と自走力の土台を整えることに、VISIQ Academyは取り組みます。
+          </p>
+          <h3 class="lead-heading">小学生なら、何年生からでも始められます。</h3>
+          <p class="section-intro">
+            VISIQ Academyでは、学年に関係なく、全員がまずCAMP（3か月基礎編）から始めます。いきなり先取り学習や応用に進むのではなく、タイピング・学習ログ・AI対話・作戦会議を通して、学び方の土台を整えていきます。
           </p>
           <div class="card-grid grid-3">
             <article class="card">
-              <h3>低学年（1-2年）</h3>
-              <p>始める・続ける・振り返る「型」を身につけます。</p>
+              <h3>何年生からでもスタート可能</h3>
+              <p>小学生であれば、今の学年や学力に関係なく始められます。</p>
             </article>
             <article class="card">
-              <h3>中学年（3-4年）</h3>
-              <p>問いを立て、考えを言語化する力を育てます。</p>
+              <h3>全員CAMPフェーズから開始</h3>
+              <p>まずは学び方の型、記録、振り返り、作戦会議の流れを身につけます。</p>
             </article>
             <article class="card">
-              <h3>高学年（5-6年）</h3>
-              <p>探究と計画づくりで「自分で回す」学びへ進みます。</p>
+              <h3>順番に自走学習へ進む</h3>
+              <p>土台が整ってから、教科学習・探究・ランク制度へ段階的に進みます。</p>
             </article>
           </div>
+          <p class="section-note">
+            大切なのは、何年生から始めるかより、学び方の土台を順番に整えることです。
+          </p>
           <p class="section-note">
             こんなご家庭に向いています：小学生の今から「学び方の土台」と自走力を整えたい方です。
           </p>
@@ -1876,8 +1892,17 @@
                   </select>
                 </div>
                 <div class="field-block">
-                  <label class="field-label" for="trial-date">参加希望日<span class="optional">任意</span></label>
-                  <input id="trial-date" name="preferredDate" type="text" placeholder="例）土日午前・平日夕方 など" />
+                  <label class="field-label" for="trial-date">参加希望日<span class="required">必須</span></label>
+                  <select id="trial-date" name="preferredDate" required>
+                    <option value="">選択してください</option>
+                    <option value="2026年7月1日（水）16:00〜17:00">2026年7月1日（水）16:00〜17:00</option>
+                    <option value="2026年7月4日（土）16:00〜17:00">2026年7月4日（土）16:00〜17:00</option>
+                    <option value="2026年7月8日（水）16:00〜17:00">2026年7月8日（水）16:00〜17:00</option>
+                    <option value="2026年7月11日（土）16:00〜17:00">2026年7月11日（土）16:00〜17:00</option>
+                    <option value="2026年7月15日（水）16:00〜17:00">2026年7月15日（水）16:00〜17:00</option>
+                    <option value="2026年7月18日（土）16:00〜17:00">2026年7月18日（土）16:00〜17:00</option>
+                    <option value="個別相談を希望">個別相談を希望</option>
+                  </select>
                 </div>
                 <div class="field-block field-full">
                   <label class="field-label" for="trial-note">相談したいこと<span class="optional">任意</span></label>
