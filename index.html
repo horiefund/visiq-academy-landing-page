@@ -14,8 +14,10 @@
       content="家庭環境に左右されない学びの力を、すべての子に。AI × 対面コーチングで自走力を育てる無料体験会受付中。"
     />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://visiq.example/" />
-    <meta property="og:image" content="https://visiq.example/assets/ogp.jpg" />
+    <meta property="og:url" content="https://visiq-academy-landing-page.vercel.app/" />
+    <meta property="og:image" content="https://visiq-academy-landing-page.vercel.app/assets/ogp.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://visiq-academy-landing-page.vercel.app/assets/ogp.jpg" />
     <meta name="theme-color" content="#142b63" />
     <style>
       :root {
@@ -179,9 +181,12 @@
 
       .header-cta {
         min-height: 42px;
+        max-width: 220px;
         padding: 9px 14px;
-        font-size: 0.86rem;
-        white-space: nowrap;
+        font-size: 0.82rem;
+        line-height: 1.35;
+        white-space: normal;
+        text-align: center;
       }
 
       .cta-btn:focus-visible,
@@ -220,8 +225,8 @@
       }
 
       .hero {
-        padding-top: 64px;
-        padding-bottom: 48px;
+        padding-top: 72px;
+        padding-bottom: 56px;
       }
 
       .hero-grid {
@@ -237,21 +242,153 @@
         padding-inline: clamp(4px, 2.8vw, 26px);
       }
 
-      .hero-statement {
+      .hero-hook {
+        margin: 0 0 24px;
+        padding: 28px 24px 26px;
+        border: 1px solid var(--line-soft);
+        border-left: 4px solid var(--teal);
+        border-radius: 14px;
+        background: linear-gradient(165deg, #ffffff 0%, #f2fafb 52%, #f5f8ff 100%);
+        box-shadow: 0 10px 24px rgba(22, 47, 104, 0.06);
+      }
+
+      .hero-hook-heading {
+        margin: 0 0 16px;
+        color: var(--navy-deep);
+        font-size: clamp(1.32rem, 2.8vw, 2rem);
+        font-weight: 700;
+        line-height: 1.48;
+        letter-spacing: 0.02em;
+      }
+
+      .hero-hook-heading-line {
+        display: block;
+      }
+
+      .hero-hook-heading-line + .hero-hook-heading-line {
+        margin-top: 6px;
+      }
+
+      .hero-hook-body {
         margin: 0;
-        padding: 18px 20px;
-        border-left: 4px solid #2e57aa;
+        color: var(--ink-soft);
+        font-size: clamp(0.96rem, 1.5vw, 1.06rem);
+        line-height: 1.88;
+        max-width: 62ch;
+      }
+
+      .hero-hook-body + .hero-hook-body {
+        margin-top: 12px;
+      }
+
+      .lead-block {
+        border: 1px solid var(--line-soft);
+        border-radius: var(--radius);
+        background: #fff;
+        padding: 22px 22px 20px;
+        box-shadow: var(--shadow);
+      }
+
+      .lead-block h2 {
+        margin-bottom: 10px;
+        color: var(--navy-deep);
+        font-size: clamp(1.2rem, 2.2vw, 1.5rem);
+      }
+
+      .lead-block p {
+        margin: 0;
+        color: var(--ink-soft);
+        font-size: clamp(0.96rem, 1.5vw, 1.04rem);
+        line-height: 1.88;
+        max-width: 68ch;
+      }
+
+      .pdf-highlights {
+        margin-bottom: 28px;
+      }
+
+      .pdf-highlights h3 {
+        margin: 0 0 14px;
+        color: var(--navy-deep);
+        font-size: 1.05rem;
+      }
+
+      .pdf-highlights-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .pdf-highlight-item {
+        margin: 0;
+        padding: 14px 14px 12px;
+        border: 1px solid var(--line-soft);
         border-radius: 12px;
-        background: linear-gradient(170deg, #ffffff 0%, #f4f8ff 100%);
-        box-shadow: 0 8px 18px rgba(22, 47, 104, 0.07);
-        color: var(--ink);
-        font-size: clamp(1rem, 1.5vw, 1.15rem);
-        line-height: 1.85;
-        letter-spacing: 0.01em;
+        background: #fff;
+        color: var(--ink-soft);
+        font-size: 0.94rem;
+        line-height: 1.65;
+      }
+
+      .value-includes-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+        margin: 16px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .value-include-item {
+        margin: 0;
+        padding: 12px 12px 10px;
+        border: 1px solid var(--line-soft);
+        border-left: 3px solid var(--teal);
+        border-radius: 12px;
+        background: #fff;
+        color: var(--navy-deep);
+        font-size: 0.92rem;
+        font-weight: 600;
+        line-height: 1.5;
+      }
+
+      .trial-experience-grid {
+        margin-top: 18px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .trial-experience-card {
+        border-left: 3px solid var(--teal);
+        padding: 12px 13px 11px;
+      }
+
+      .trial-experience-card h3 {
+        margin: 0;
+        color: var(--navy-deep);
+        font-size: 0.96rem;
+        line-height: 1.45;
+      }
+
+      .trial-session-cta {
+        margin-top: 16px;
+      }
+
+      .trial-form-lead {
+        margin: 0 0 12px;
+        color: var(--ink-soft);
+        font-size: 0.96rem;
+        line-height: 1.7;
+      }
+
+      .pre-trial-cta {
+        margin-top: 14px;
       }
 
       .hero-actions {
-        margin-top: 14px;
+        margin-top: 6px;
       }
 
       .hero-note {
@@ -1074,7 +1211,7 @@
         }
 
         body {
-          padding-bottom: calc(var(--mobile-cta-height) + 14px);
+          padding-bottom: calc(var(--mobile-cta-height) + 20px);
           line-height: 1.82;
         }
 
@@ -1141,10 +1278,147 @@
           padding-inline: 0;
         }
 
-        .hero-statement {
-          padding: 14px 14px 14px 16px;
-          font-size: 1rem;
-          line-height: 1.88;
+        .hero-hook {
+          margin-bottom: 16px;
+          padding: 16px 14px 14px;
+        }
+
+        .hero-hook-heading {
+          margin-bottom: 10px;
+          font-size: clamp(1.12rem, 4.6vw, 1.36rem);
+          line-height: 1.44;
+        }
+
+        .hero-hook-heading-line + .hero-hook-heading-line {
+          margin-top: 4px;
+        }
+
+        .hero-hook-body {
+          font-size: 0.94rem;
+          line-height: 1.8;
+        }
+
+        .hero-hook-body + .hero-hook-body {
+          margin-top: 10px;
+        }
+
+        .section.soft:has(.lead-block) {
+          padding: 44px 0;
+        }
+
+        .lead-block {
+          padding: 14px 14px 12px;
+        }
+
+        .lead-block h2 {
+          font-size: clamp(1.1rem, 5vw, 1.28rem);
+          line-height: 1.4;
+        }
+
+        .lead-block p {
+          font-size: 0.94rem;
+          line-height: 1.8;
+        }
+
+        .pdf-highlights {
+          margin-bottom: 24px;
+        }
+
+        .pdf-highlights-grid {
+          grid-template-columns: 1fr;
+          gap: 10px;
+        }
+
+        .pdf-highlight-item {
+          padding: 12px;
+          font-size: 0.92rem;
+        }
+
+        #pricing-value {
+          padding: 40px 0;
+        }
+
+        .value-includes-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 8px;
+          margin-top: 12px;
+        }
+
+        .value-include-item {
+          padding: 9px 10px;
+          font-size: 0.86rem;
+          line-height: 1.42;
+        }
+
+        .trial-experience-grid {
+          grid-template-columns: 1fr;
+          gap: 7px;
+          margin-top: 10px;
+        }
+
+        .trial-experience-card {
+          padding: 9px 10px;
+        }
+
+        .trial-experience-card h3 {
+          font-size: 0.88rem;
+          line-height: 1.38;
+        }
+
+        .trial-session-cta {
+          margin-top: 12px;
+        }
+
+        #trial-session {
+          padding: 40px 0;
+        }
+
+        #trial-session h2 {
+          margin-bottom: 10px;
+        }
+
+        #trial-session .section-intro {
+          margin-bottom: 10px;
+          font-size: 0.94rem;
+          line-height: 1.78;
+        }
+
+        #trial-session .section-note {
+          margin-top: 10px;
+          font-size: 0.88rem;
+        }
+
+        #trial-application {
+          padding-top: 48px;
+        }
+
+        #trial-application .survey-card:first-of-type {
+          padding: 16px;
+        }
+
+        #trial-application .survey-card:first-of-type .section-intro {
+          margin-bottom: 8px;
+          font-size: 0.94rem;
+          line-height: 1.76;
+        }
+
+        .pre-trial-cta {
+          margin-top: 12px;
+        }
+
+        .trial-form-lead {
+          font-size: 0.94rem;
+        }
+
+        #download-form,
+        #trial-application,
+        #contract-application {
+          padding-bottom: calc(58px + var(--mobile-cta-height) + 28px);
+        }
+
+        #download-form .form-actions,
+        #trial-application .form-actions {
+          margin-bottom: 4px;
         }
 
         .cta-actions {
@@ -1160,9 +1434,9 @@
         .final-cta-actions .sub-btn,
         .final-cta-actions .cta-btn {
           min-height: 48px;
-          padding: 10px 10px;
-          font-size: 0.85rem;
-          line-height: 1.4;
+          padding: 10px 8px;
+          font-size: 0.8rem;
+          line-height: 1.34;
         }
 
         .survey-card {
@@ -1278,10 +1552,10 @@
         .mobile-cta .cta-btn {
           width: 100%;
           min-width: 0;
-          min-height: 48px;
-          padding: 10px 8px;
-          font-size: 0.85rem;
-          line-height: 1.38;
+          min-height: 50px;
+          padding: 12px 8px;
+          font-size: 0.82rem;
+          line-height: 1.36;
           white-space: normal;
           text-align: center;
           box-sizing: border-box;
@@ -1319,7 +1593,7 @@
             </span>
             <span class="hamburger-label">メニュー</span>
           </button>
-          <a class="cta-btn header-cta" href="#trial-application">無料体験会に参加する</a>
+          <a class="cta-btn header-cta" href="#trial-application">無料体験会で「作戦会議」を体験する</a>
         </div>
         <div id="mobile-menu" class="mobile-menu" hidden>
           <a class="mobile-menu-link" href="#about">ABOUT</a>
@@ -1328,7 +1602,7 @@
           <a class="mobile-menu-link" href="#examples">成長の実例</a>
           <a class="mobile-menu-link" href="#faq">FAQ</a>
           <a class="mobile-menu-link" href="#intro-video">まず紹介動画を見る</a>
-          <a class="cta-btn mobile-menu-cta" href="#trial-application">無料体験会に参加する</a>
+          <a class="cta-btn mobile-menu-cta" href="#trial-application">無料体験会で「作戦会議」を体験する</a>
         </div>
       </div>
     </header>
@@ -1340,19 +1614,21 @@
             <img src="assets/hero-placeholder.png" alt="VISIQ Academyの教室空間で子どもが主体的に学ぶイメージ" />
           </div>
           <div class="reveal hero-copy">
-            <p class="hero-statement">
-              VISIQ Academyは、小学生からしか入会できません。
-              教科の点数だけを目指すのではなく、AIと対面コーチングで「学び方そのもの」を育てます。だから“問題が表面化する前”に、自走力の土台を整えられます。
-            </p>
+            <div class="hero-hook">
+              <p class="hero-hook-heading">
+                <span class="hero-hook-heading-line">教材はある。</span>
+                <span class="hero-hook-heading-line">でも、自分で学びが続かない。</span>
+              </p>
+              <p class="hero-hook-body">その課題に、小学生期から向き合うのがVISIQ Academyです。</p>
+              <p class="hero-hook-body">
+                VISIQ Academyは、勉強を教える塾ではありません。小学生のうちから、自分で考え、決め、進め、振り返る力を育てる教育プログラムです。
+              </p>
+            </div>
             <div class="cta-actions hero-actions">
               <a class="sub-btn" href="#intro-video">まず紹介動画を見る</a>
-              <a class="cta-btn" href="#trial-application">無料体験会に参加する（約1時間）</a>
+              <a class="cta-btn" href="#trial-application">無料体験会で「作戦会議」を体験する</a>
             </div>
             <p class="hero-note">最短ルート：紹介動画→無料体験会。売り込みなしで、ご家庭に合うかを見極められます。</p>
-            <p class="hero-origin">
-              VISIQ Academyは、代表自身が家庭で積み重ねてきた教育実践と実績をもとに生まれた、自ら学ぶ力を育てる教育プログラムです。
-              その実践を再現性のある形に体系化し、現在の優れた教材やAI、対面コーチングを組み合わせて、小学生のうちから学び方の土台と自走力を育てます。
-            </p>
           </div>
         </div>
       </section>
@@ -1497,7 +1773,7 @@
               <p>小学生であれば、今の学年や学力に関係なく始められます。</p>
             </article>
             <article class="card">
-              <h3>全員CAMPフェーズから開始</h3>
+              <h3>全員CAMP（3か月基礎編）から開始</h3>
               <p>まずは学び方の型、記録、振り返り、作戦会議の流れを身につけます。</p>
             </article>
             <article class="card">
@@ -1595,13 +1871,51 @@
             <a class="sub-btn" href="#intro-video"
               >まず紹介動画を見る</a
             >
-            <a class="cta-btn" href="#trial-application">無料体験会に参加する</a>
+            <a class="cta-btn" href="#trial-application">無料体験会で「作戦会議」を体験する</a>
           </div>
+        </div>
+      </section>
+
+      <section class="section soft">
+        <div class="container reveal">
+          <div class="lead-block">
+            <h2>学びの履歴を、未来の自己証明へ</h2>
+            <p>
+              VISIQ Academyでは、学習ログ、問い、振り返り、検定、ランクの成長履歴を記録し、子どもの成長を見える形で蓄積していきます。その積み重ねが、将来の進路選択や自己表現につながる“学びの資産”になります。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing-value" class="section soft">
+        <div class="container reveal">
+          <div class="lead-block">
+            <h2>料金は、授業時間ではなく“学び方の伴走”への対価です</h2>
+            <p>
+              VISIQ Academyの月額には、週1回の作戦会議だけでなく、家庭学習の設計、AI活用サポート、学習ログ運用、保護者共有、ランク制度、タイピング指導、振り返りの伴走が含まれます。授業を受けて終わるのではなく、1週間の学びを自分で回せるようにするための仕組みです。
+            </p>
+          </div>
+          <ul class="value-includes-grid" aria-label="月額に含まれる主な価値">
+            <li class="value-include-item">週1回の作戦会議</li>
+            <li class="value-include-item">家庭学習の設計</li>
+            <li class="value-include-item">AI活用サポート</li>
+            <li class="value-include-item">学習ログ運用</li>
+            <li class="value-include-item">保護者共有</li>
+            <li class="value-include-item">ランク制度・成長の可視化</li>
+          </ul>
         </div>
       </section>
 
       <section id="download-form" class="section">
         <div class="container reveal survey-wrap">
+          <div class="pdf-highlights">
+            <h3>資料でわかること</h3>
+            <ul class="pdf-highlights-grid">
+              <li class="pdf-highlight-item">VISIQ Academyの学習モデル</li>
+              <li class="pdf-highlight-item">CAMP（3か月基礎編）の流れ</li>
+              <li class="pdf-highlight-item">料金・無料体験会・入会までの流れ</li>
+            </ul>
+          </div>
           <p class="form-kicker">資料請求アンケートフォーム</p>
           <h2>資料ダウンロードの前に、簡単なアンケートにご協力ください</h2>
           <p class="section-intro">
@@ -1683,7 +1997,7 @@
               <p class="section-note">ご回答ありがとうございます。次のご希望に合わせてお進みください。</p>
               <div class="cta-actions">
                 <a class="sub-btn" href="assets/VISIQ_Academy.pdf" target="_blank" rel="noopener noreferrer">資料をダウンロードする</a>
-                <a class="cta-btn" href="#trial-application">無料体験会に参加する</a>
+                <a class="cta-btn" href="#trial-application">無料体験会で「作戦会議」を体験する</a>
               </div>
             </div>
           </div>
@@ -1750,11 +2064,13 @@
             </article>
             <article class="faq-item">
               <button class="faq-question" type="button" aria-expanded="false">
-                勉強が苦手でも大丈夫ですか？
+                一般的な塾と何が違いますか？
                 <span class="faq-toggle" aria-hidden="true">＋</span>
               </button>
               <div class="faq-answer">
-                <p>大丈夫です。現在地に合わせて段階設計し、つまずいた際の立て直しもコーチが伴走します。</p>
+                <p>
+                  VISIQ Academyは、教科を一方的に教える塾ではありません。自宅で学んだ内容をもとに、教室で振り返り、次の作戦を立てることで、子どもが自分で学びを回せるようになることを目指します。
+                </p>
               </div>
             </article>
             <article class="faq-item">
@@ -1763,25 +2079,49 @@
                 <span class="faq-toggle" aria-hidden="true">＋</span>
               </button>
               <div class="faq-answer">
-                <p>主に言語化・振り返り・思考整理に活用します。正解を出すだけでなく、考え方を育てるための補助として使います。</p>
+                <p>学習ログの振り返りや問いの言語化など、思考を深める場面で活用します。</p>
               </div>
             </article>
             <article class="faq-item">
               <button class="faq-question" type="button" aria-expanded="false">
-                保護者はどれくらい関わりますか？
+                AIを使うことに不安があります。大丈夫ですか？
                 <span class="faq-toggle" aria-hidden="true">＋</span>
               </button>
               <div class="faq-answer">
-                <p>毎日の細かい管理は不要です。必要な共有は教室側が行い、家庭の負担を減らす運用を重視しています。</p>
+                <p>
+                  VISIQ Academyでは、AIを答えを丸写しする道具としてではなく、考えを整理し、言葉にするための壁打ち相手として使います。メンターが使い方を確認しながら、子どもの思考を奪わない形で活用します。
+                </p>
               </div>
             </article>
             <article class="faq-item">
               <button class="faq-question" type="button" aria-expanded="false">
-                3か月の基礎編では何をしますか？
+                CAMP（3か月基礎編）では何をしますか？
                 <span class="faq-toggle" aria-hidden="true">＋</span>
               </button>
               <div class="faq-answer">
                 <p>1か月目で学び方の型を整え、2か月目で問いと振り返りを育て、3か月目で自分で回す感覚をつくります。</p>
+              </div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                スタディサプリなどの教材は、誰が契約しますか？
+                <span class="faq-toggle" aria-hidden="true">＋</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  スタディサプリ等のオンライン教材は、各ご家庭で個別にご契約・ご利用いただきます。VISIQ Academyは、教材そのものを販売・提供するものではなく、家庭学習を進めるための計画設計、振り返り、作戦会議を行う教育プログラムです。
+                </p>
+              </div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                一般的な塾と比べて高く感じます。何が違いますか？
+                <span class="faq-toggle" aria-hidden="true">＋</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  VISIQ Academyの月額は、授業時間に対する料金ではありません。週1回の作戦会議に加え、家庭学習設計、AI活用サポート、学習ログ運用、保護者共有、ランク制度などを通じて、1週間の学びを自分で回せるように伴走します。
+                </p>
               </div>
             </article>
             <article class="faq-item">
@@ -1800,15 +2140,28 @@
 
       <section id="trial-session" class="section">
         <div class="container reveal">
-          <h2>無料体験会でわかること</h2>
+          <h2>無料体験会では、“はじめての作戦会議”を体験できます</h2>
           <p class="section-intro">
-            無料体験会では、売り込みではなく「小学生の今だからこそ伸ばせる学び方」を確かめます。
+            約1時間、親子で進めるはじめての作戦会議を体感できます。普通の体験授業ではなく、VISIQ Academyの学び方をその場で確かめます。
           </p>
-          <ul class="benefit-list">
-            <li><strong>無料体験会：</strong>学び方の違いをその場で体験します（売り込みなし）。</li>
-            <li><strong>CAMP（3か月基礎編）：</strong>自走力の基礎を作る進め方をイメージできます。</li>
-            <li><strong>本コース（Advance/Beyond/Synergy）：</strong>小学生の今から伸ばす「学びを回す力」の先がわかります。</li>
-          </ul>
+          <div class="card-grid trial-experience-grid">
+            <article class="card trial-experience-card">
+              <h3>お子さまの今の学び方を確認</h3>
+            </article>
+            <article class="card trial-experience-card">
+              <h3>タイピング・AI・学習ログを体験</h3>
+            </article>
+            <article class="card trial-experience-card">
+              <h3>今週の作戦を一緒に立案</h3>
+            </article>
+            <article class="card trial-experience-card">
+              <h3>CAMP（3か月基礎編）を確認</h3>
+            </article>
+          </div>
+          <p class="section-note">売り込みなし。ご家庭に合うかをその場で確かめられます。</p>
+          <div class="cta-actions trial-session-cta">
+            <a class="cta-btn" href="#trial-application-form">無料体験会で「作戦会議」を体験する</a>
+          </div>
         </div>
       </section>
 
@@ -1818,16 +2171,11 @@
           <div class="survey-card">
             <h2>無料体験会の前に、ぜひご覧ください</h2>
             <p class="section-intro">
-              VISIQ Academyは、早期詰め込み教育ではありません。
-              小学生のうちから、自分で考え、進め、振り返る“学び方の土台”を育てるための教育プログラムです。
+              「まだ早いのではないか」「AIが不安」といった方に向けた事前説明です。体験会前にご覧ください。
             </p>
-            <p class="section-intro">
-              「まだ早いのではないか」「AIを使うのは少し不安」そう感じる方にこそ、まず知っていただきたい内容を動画にまとめました。
-              体験会をより有意義な時間にするため、事前にこちらをご覧ください。
-            </p>
-            <div class="cta-actions">
-              <a class="sub-btn" href="#pre-trial-video" data-open-details-target="pre-trial-video">事前説明動画を見る</a>
-              <a class="cta-btn" href="#trial-application-form">無料体験会に申し込む</a>
+            <div class="cta-actions pre-trial-cta">
+              <a class="cta-btn" href="#pre-trial-video" data-open-details-target="pre-trial-video">事前説明動画を見る</a>
+              <a class="sub-btn" href="#trial-application-form">申し込みフォームへ進む</a>
             </div>
             <details id="pre-trial-video" class="fold-form">
               <summary>事前説明動画を再生する</summary>
@@ -1846,8 +2194,7 @@
           </div>
           <p class="form-kicker">無料体験会申込フォーム</p>
           <h2>無料体験会のお申し込み</h2>
-          <p class="section-intro">ご希望内容を確認のうえ、担当より日程調整のご連絡を差し上げます。</p>
-          <p class="section-note">まずは無料体験会で、学び方の違いをご体感ください。</p>
+          <p class="trial-form-lead">まずは無料体験会で、お子さまの今の学び方を一緒に確認します。</p>
           <div class="survey-card">
             <form class="survey-form js-form" id="trial-application-form" data-form-type="trialSession" novalidate>
               <div class="form-grid">
@@ -2022,15 +2369,15 @@
           <div class="final-cta">
             <h2>未来への作戦会議を、無料体験会から始めよう。</h2>
             <p class="cta-sub">
-              VISIQ Academyは小学生からしか入会できません。
-              だからこそ、無料体験会（約1時間）で学び方の違いを確かめ、CAMP（3か月基礎編）へ進むかを落ち着いてご判断ください。
+              現在は小学生のお子さまを対象としています。
+              無料体験会（約1時間）で学び方の違いを確かめ、CAMP（3か月基礎編）へ進むかを落ち着いてご判断ください。
             </p>
             <div class="cta-actions final-cta-actions">
               <a class="sub-btn" href="#download-form"
                 >資料をダウンロードする</a
               >
               <a class="cta-btn" href="#trial-application"
-                >無料体験会に参加する</a
+                >無料体験会で「作戦会議」を体験する</a
               >
             </div>
           </div>
@@ -2066,8 +2413,8 @@
 
     <div class="mobile-cta" aria-label="スマホ固定CTA">
       <div class="mobile-cta-inner">
-        <a class="sub-btn" href="#download-form">資料をダウンロードする</a>
-        <a class="cta-btn" href="#trial-application">無料体験会に参加する</a>
+        <a class="sub-btn" href="#download-form">資料を受け取る</a>
+        <a class="cta-btn" href="#trial-application">作戦会議を体験する</a>
       </div>
     </div>
 
