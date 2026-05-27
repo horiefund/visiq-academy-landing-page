@@ -477,6 +477,131 @@
         line-height: 1.75;
       }
 
+      .mentor-panel {
+        margin-top: 20px;
+        display: grid;
+        gap: 22px;
+        align-items: center;
+        border: 1px solid var(--line-soft);
+        border-radius: var(--radius);
+        background: linear-gradient(165deg, #ffffff 0%, #f5f9ff 100%);
+        box-shadow: var(--shadow);
+        padding: 22px;
+      }
+
+      .mentor-copy .mentor-kicker {
+        margin-bottom: 6px;
+        color: #4d67a1;
+        font-size: 0.82rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+      }
+
+      .mentor-copy .mentor-name {
+        margin-bottom: 4px;
+        color: var(--navy-deep);
+        font-size: clamp(1.18rem, 2.1vw, 1.42rem);
+        line-height: 1.35;
+        font-weight: 700;
+      }
+
+      .mentor-copy .mentor-name-en {
+        margin-bottom: 14px;
+        color: var(--ink-soft);
+        font-size: 0.9rem;
+      }
+
+      .mentor-copy p {
+        color: var(--ink-soft);
+        line-height: 1.85;
+      }
+
+      .mentor-copy p + p {
+        margin-top: 10px;
+      }
+
+      .mentor-detail {
+        scroll-margin-top: calc(var(--header-height) + 24px);
+        margin-top: 12px;
+        padding-top: 12px;
+        border-top: 1px solid var(--line-soft);
+        color: #3e5f9f;
+        font-size: 0.94rem;
+        font-weight: 600;
+        line-height: 1.75;
+      }
+
+      .mentor-visual {
+        border-radius: 14px;
+        border: 1px solid var(--line-soft);
+        box-shadow: 0 10px 24px rgba(19, 46, 104, 0.1);
+        background: #fff;
+        padding: 10px;
+      }
+
+      .mentor-photo {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: contain;
+        object-position: center;
+        border-radius: 8px;
+      }
+
+      .classroom-gallery {
+        margin-top: 20px;
+        display: grid;
+        gap: 16px;
+      }
+
+      .classroom-photo-card {
+        margin: 0;
+        border: 1px solid var(--line-soft);
+        border-radius: var(--radius);
+        background: #fff;
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .classroom-photo-card img {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .classroom-caption {
+        margin: 0;
+        padding: 12px 14px;
+        color: var(--ink-soft);
+        font-size: 0.9rem;
+        line-height: 1.65;
+      }
+
+      @media (min-width: 721px) {
+        .mentor-panel {
+          grid-template-columns: 1fr 1fr;
+          gap: 32px;
+          padding: 28px;
+          align-items: center;
+        }
+
+        .mentor-copy {
+          order: 1;
+        }
+
+        .mentor-visual {
+          order: 2;
+          width: 100%;
+          max-width: none;
+        }
+
+        .classroom-gallery {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 18px;
+        }
+      }
+
       .flow-note {
         margin-top: 4px;
         margin-bottom: 0;
@@ -1661,6 +1786,14 @@
           display: none;
         }
 
+        #classroom-space .classroom-photo-card img {
+          width: 100%;
+          height: 200px;
+          aspect-ratio: auto;
+          object-fit: cover;
+          object-position: center;
+        }
+
         .compare-head {
           display: none;
         }
@@ -1897,6 +2030,41 @@
         </div>
       </section>
 
+      <section id="mentor-message" class="section soft">
+        <div class="container content-wide reveal">
+          <h2>代表メンターからのメッセージ</h2>
+          <div class="mentor-panel">
+            <div class="mentor-visual">
+              <img
+                class="mentor-photo"
+                src="assets/mentor-norimitsu-horie.jpg"
+                alt="VISIQ Academy 創設者・代表メンター 堀江祝光"
+                width="1448"
+                height="1086"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="mentor-copy">
+              <p class="mentor-kicker">創設者 / 代表メンター</p>
+              <p class="mentor-name">堀江 祝光</p>
+              <p class="mentor-name-en">Norimitsu Horie</p>
+              <p>
+                VISIQ Academyは、子どもに正解を押し付ける場所ではありません。
+                今どこで止まっているのか、何を変えれば動き出せるのかを一緒に見つける場所です。
+              </p>
+              <p>
+                無料体験会では、お子さまの今の学び方を見える化し、
+                家庭で取り組める小さな作戦を一緒に立てていきます。
+              </p>
+              <p class="mentor-detail" id="mentor-detail">
+                お子さまを評価するのではなく、今の学び方を一緒に見える化します。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="why-now" class="section soft">
         <div class="container content-wide reveal">
           <h2>WHY NOW｜なぜ今、必要なのか</h2>
@@ -1966,6 +2134,43 @@
             <article class="step-item"><span class="step-num">A</span><h3>Action（教室）</h3><p>次の一歩を再設計し、継続可能な形へアップデートします。</p></article>
           </div>
           <p class="section-note">授業を受ける場所ではなく、未来への作戦会議を行う場所です。</p>
+        </div>
+      </section>
+
+      <section id="classroom-space" class="section soft">
+        <div class="container content-wide reveal">
+          <h2>落ち着いて対話できる、小グループの作戦会議スペース</h2>
+          <p class="section-intro">
+            VISIQ Academyの教室は、一方的に授業を受ける場所ではありません。
+            子どもが1週間の学びを振り返り、メンターや仲間と対話しながら、次の作戦を立てる場所です。
+          </p>
+          <p class="section-note">
+            4〜5人程度の小グループで、顔の見える距離感を大切にしながら、家庭学習につながる振り返りと計画づくりを行います。
+          </p>
+          <div class="classroom-gallery">
+            <figure class="classroom-photo-card">
+              <img
+                src="assets/classroom-space-01.png"
+                alt="VISIQ Academyの教室とホワイトボード"
+                width="960"
+                height="720"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption class="classroom-caption">ホワイトボードを使いながら、今週の作戦を整理します。</figcaption>
+            </figure>
+            <figure class="classroom-photo-card">
+              <img
+                src="assets/classroom-space-02.png"
+                alt="VISIQ Academyの小グループ作戦会議スペース"
+                width="960"
+                height="720"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption class="classroom-caption">少人数で対話しやすい、落ち着いた教室環境です。</figcaption>
+            </figure>
+          </div>
         </div>
       </section>
 
