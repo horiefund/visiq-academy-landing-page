@@ -75,6 +75,12 @@
         margin: 0 auto;
       }
 
+      @media (min-width: 1025px) {
+        .container.content-wide {
+          width: min(1240px, calc(100% - 48px));
+        }
+      }
+
       .section {
         padding: 84px 0;
       }
@@ -373,7 +379,8 @@
       }
 
       .trial-session-cta {
-        margin-top: 16px;
+        margin-top: 18px;
+        gap: 12px;
       }
 
       .trial-form-lead {
@@ -388,13 +395,150 @@
       }
 
       .hero-actions {
-        margin-top: 6px;
+        margin-top: 10px;
+        gap: 12px;
+      }
+
+      .pc-only-download-cta {
+        display: none;
+      }
+
+      .hero-note-desktop {
+        display: none;
+      }
+
+      .hero-note-mobile {
+        display: block;
+      }
+
+      @media (min-width: 1025px) {
+        .hero-actions,
+        .trial-phase-cta {
+          flex-wrap: nowrap;
+          gap: 10px;
+          align-items: stretch;
+        }
+
+        .pc-only-download-cta {
+          display: inline-flex;
+        }
+
+        .hero-actions .sub-btn,
+        .hero-actions .cta-btn,
+        .trial-phase-cta .sub-btn,
+        .trial-phase-cta .cta-btn {
+          flex: 1 1 0;
+          min-width: 0;
+          min-height: 50px;
+          padding: 11px 14px;
+          font-size: 0.86rem;
+          line-height: 1.35;
+          white-space: normal;
+          text-align: center;
+        }
+
+        .hero-actions .cta-btn,
+        .trial-phase-cta .cta-btn {
+          flex: 1.2 1 0;
+          font-size: 0.92rem;
+        }
+
+        .hero-note-desktop {
+          display: block;
+        }
+
+        .hero-note-mobile {
+          display: none;
+        }
       }
 
       .hero-note {
-        margin-top: 8px;
+        margin-top: 10px;
         color: #5f76a7;
         font-size: 0.9rem;
+        line-height: 1.65;
+      }
+
+      .hero-note a {
+        color: var(--navy);
+        font-weight: 700;
+        text-decoration: underline;
+      }
+
+      .trust-note {
+        margin-top: 18px;
+        padding: 14px 16px;
+        border: 1px solid var(--line-soft);
+        border-left: 3px solid var(--teal);
+        border-radius: 12px;
+        background: #fff;
+        color: var(--ink-soft);
+        font-size: 0.94rem;
+        line-height: 1.75;
+      }
+
+      .flow-note {
+        margin-top: 4px;
+        margin-bottom: 0;
+      }
+
+      .flow-step {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 1.65rem;
+        height: 1.65rem;
+        margin-bottom: 8px;
+        border-radius: 999px;
+        background: var(--teal-soft);
+        color: var(--teal);
+        font-size: 0.82rem;
+        font-weight: 700;
+        line-height: 1;
+      }
+
+      .flow-grid .flow-card h3 {
+        margin-bottom: 8px;
+      }
+
+      @media (min-width: 721px) {
+        .flow-grid .flow-card {
+          position: relative;
+        }
+
+        .flow-grid .flow-card:not(:last-child)::after {
+          content: "→";
+          position: absolute;
+          top: 50%;
+          right: -11px;
+          transform: translateY(-50%);
+          color: #8aa3d4;
+          font-size: 1.1rem;
+          font-weight: 700;
+          pointer-events: none;
+        }
+      }
+
+      .trial-session-cta .cta-btn {
+        min-height: 50px;
+        padding: 12px 22px;
+      }
+
+      .final-cta .cta-prompt {
+        margin: 0 auto 10px;
+        max-width: 52ch;
+        color: var(--navy-deep);
+        font-size: clamp(1.02rem, 2vw, 1.15rem);
+        font-weight: 700;
+        line-height: 1.55;
+      }
+
+      .final-cta .cta-detail {
+        margin: 0 auto 16px;
+        max-width: 62ch;
+        color: var(--ink-soft);
+        font-size: 0.94rem;
+        line-height: 1.7;
       }
 
       .hero-origin {
@@ -1513,6 +1657,10 @@
           grid-template-columns: 1fr;
         }
 
+        .flow-grid .flow-card:not(:last-child)::after {
+          display: none;
+        }
+
         .compare-head {
           display: none;
         }
@@ -1627,14 +1775,18 @@
               </p>
               <p class="hero-hook-body">その課題に、小学生期から向き合うのがVISIQ Academyです。</p>
               <p class="hero-hook-body">
-                VISIQ Academyは、勉強を教える塾ではありません。小学生のうちから、自分で考え、決め、進め、振り返る力を育てる教育プログラムです。
+                VISIQ Academyは、教科を教えることだけを目的にした塾ではありません。子どもが自分で考え、決め、進め、振り返る「学び方」を育てる教育プログラムです。
               </p>
             </div>
             <div class="cta-actions hero-actions">
               <a class="sub-btn" href="#intro-video">まず紹介動画を見る</a>
+              <a class="sub-btn pc-only-download-cta" href="#download-form">資料を受け取る</a>
               <a class="cta-btn" href="#trial-application">無料体験会で「作戦会議」を体験する</a>
             </div>
-            <p class="hero-note">最短ルート：紹介動画→無料体験会。売り込みなしで、ご家庭に合うかを見極められます。</p>
+            <p class="hero-note">
+              <span class="hero-note-mobile">最短ルート：紹介動画→無料体験会。売り込みなしで、ご家庭に合うかを見極められます。</span>
+              <span class="hero-note-desktop">まずは動画や資料で確認し、気になる方は無料体験会で“作戦会議”を体験できます。</span>
+            </p>
           </div>
         </div>
       </section>
@@ -1660,20 +1812,24 @@
       </section>
 
       <section class="section">
-        <div class="container reveal">
+        <div class="container content-wide reveal">
           <h2>VISIQの3つの仕組み</h2>
           <p class="section-intro">学習を「家庭で実行できる形」にするために、次の3つを一体で設計しています。</p>
-          <div class="card-grid grid-3">
-            <article class="card">
-              <h3>自宅で学ぶ</h3>
+          <p class="section-note flow-note">1週間の学びを、次の作戦会議につなげる流れです。</p>
+          <div class="card-grid grid-3 flow-grid">
+            <article class="card flow-card">
+              <p class="flow-step" aria-hidden="true">1</p>
+              <h3>自宅でDo</h3>
               <p>スタディサプリなどの教材で、子どもが自分のペースで進めます。</p>
             </article>
-            <article class="card">
-              <h3>AIで言語化する</h3>
+            <article class="card flow-card">
+              <p class="flow-step" aria-hidden="true">2</p>
+              <h3>AIで言語化</h3>
               <p>AIは答えを出す道具ではなく、考えを言葉にする壁打ち相手として使います。</p>
             </article>
-            <article class="card">
-              <h3>教室で作戦会議する</h3>
+            <article class="card flow-card">
+              <p class="flow-step" aria-hidden="true">3</p>
+              <h3>教室で作戦会議</h3>
               <p>振り返りを行い、次の1週間の学び方を子ども自身が設計します。</p>
             </article>
           </div>
@@ -1681,36 +1837,36 @@
       </section>
 
       <section id="worries" class="section soft">
-        <div class="container reveal">
+        <div class="container content-wide reveal">
           <h2>こんなお悩みはありませんか？</h2>
           <p class="section-intro">ご家庭で見え始める学習課題に対して、VISIQ Academyは小学生期から整えるアプローチを重視しています。</p>
           <div class="card-grid grid-4">
             <article class="card">
               <div class="pain-icon" aria-hidden="true">🗣️</div>
-              <h3>「勉強しなさい」と言っても、自分から動くようにならない</h3>
-              <p>声かけを重ねても、学習の主導権が子どもに移らない。</p>
+              <h3>「勉強しなさい」と言うたびに、親子で疲れてしまう</h3>
+              <p>声かけを重ねても、学習の主導権が子どもに移りにくい。</p>
             </article>
             <article class="card">
               <div class="pain-icon" aria-hidden="true">⏱️</div>
-              <h3>スタサプや教材はあるのに、家庭学習がうまく回らない</h3>
-              <p>環境は整っていても、実行の型がなく継続しにくい。</p>
+              <h3>教材はあるのに、なぜか続かない</h3>
+              <p>環境は整っていても、家庭で回す型がなく続きにくい。</p>
             </article>
             <article class="card">
               <div class="pain-icon" aria-hidden="true">🪑</div>
-              <h3>塾に通っていても、受け身のままに見える</h3>
-              <p>教室では進んでも、家庭での学び方に接続しづらい。</p>
+              <h3>塾に行っていても、家では自分から動かない</h3>
+              <p>教室では進んでも、家庭での学び方につながりにくい。</p>
             </article>
             <article class="card">
               <div class="pain-icon" aria-hidden="true">😓</div>
-              <h3>親が管理しないと止まってしまう</h3>
-              <p>毎日の管理負担が大きく、家庭だけで回すのが難しい。</p>
+              <h3>このままで、中学以降に自分で学べるのか不安</h3>
+              <p>今の学び方のままでは、先の学習が心配になる。</p>
             </article>
           </div>
         </div>
       </section>
 
       <section id="about" class="section">
-        <div class="container reveal">
+        <div class="container content-wide reveal">
           <h2>ABOUT｜教える塾ではなく、学び方を育てる場です</h2>
           <p class="section-intro">
             VISIQ Academyは、小学生の今だからこそ伸ばせる「学び方」を整える教育設計です。
@@ -1742,7 +1898,7 @@
       </section>
 
       <section id="why-now" class="section soft">
-        <div class="container reveal">
+        <div class="container content-wide reveal">
           <h2>WHY NOW｜なぜ今、必要なのか</h2>
           <p class="section-intro">教材不足の時代ではありません。いま不足しているのは、自走力です。</p>
           <div class="card-grid grid-3">
@@ -1759,11 +1915,14 @@
               <p>「教わるだけ」では変わりにくい領域に、いまの子どもたちは立っています。</p>
             </article>
           </div>
+          <p class="trust-note">
+            家庭での実践から生まれた教育モデルです。VISIQ Academyは、子どもが自分で学びを進め、考え、選べるようになるための家庭での実践をもとに設計されています。
+          </p>
         </div>
       </section>
 
       <section id="elementary" class="section soft">
-        <div class="container reveal">
+        <div class="container content-wide reveal">
           <h2>なぜ、小学生期から始めるのか</h2>
           <p class="section-intro">
             小学生期は、学習習慣や考え方の土台がまだ柔らかい時期です。
@@ -1797,7 +1956,7 @@
       </section>
 
       <section id="model" class="section">
-        <div class="container reveal">
+        <div class="container content-wide reveal">
           <h2>学習モデル｜教室は「作戦会議」の場</h2>
           <p class="section-intro">VISIQの学習サイクルは、教室でPlanし、家庭でDoし、教室でCheck/Actionする設計です。</p>
           <div class="step-flow">
@@ -1811,7 +1970,7 @@
       </section>
 
       <section id="trial" class="section soft">
-        <div class="container reveal">
+        <div class="container content-wide reveal">
           <h2>全体カリキュラム：4つのフェーズ</h2>
           <p class="section-intro">
             無料体験会で「学び方の違い」を体感し、
@@ -1873,17 +2032,16 @@
             </article>
           </div>
           <p class="section-note">各フェーズの詳細、指導設計、料金・運用の詳しい内容は資料PDFでご確認いただけます。</p>
-          <div class="cta-actions">
-            <a class="sub-btn" href="#intro-video"
-              >まず紹介動画を見る</a
-            >
+          <div class="cta-actions trial-phase-cta">
+            <a class="sub-btn" href="#intro-video">まず紹介動画を見る</a>
+            <a class="sub-btn pc-only-download-cta" href="#download-form">資料を受け取る</a>
             <a class="cta-btn" href="#trial-application">無料体験会で「作戦会議」を体験する</a>
           </div>
         </div>
       </section>
 
       <section class="section soft">
-        <div class="container reveal">
+        <div class="container content-wide reveal">
           <div class="lead-block">
             <h2>学びの履歴を、未来の自己証明へ</h2>
             <p>
@@ -1894,7 +2052,7 @@
       </section>
 
       <section id="pricing-value" class="section soft">
-        <div class="container reveal">
+        <div class="container content-wide reveal">
           <div class="lead-block">
             <h2>料金は、授業時間ではなく“学び方の伴走”への対価です</h2>
             <p>
@@ -1923,9 +2081,9 @@
             </ul>
           </div>
           <p class="form-kicker">資料請求アンケートフォーム</p>
-          <h2>資料ダウンロードの前に、簡単なアンケートにご協力ください</h2>
+          <h2>資料を受け取る前に、1分のアンケートにご協力ください</h2>
           <p class="section-intro">
-            お子さまの学年や関心に合わせて、今後のご案内をより分かりやすくお届けするための簡単なアンケートです。1分ほどで完了します。
+            お子さまの学年や関心に合わせて、今後のご案内をより分かりやすくお届けするための簡単なアンケートです。必須項目以外は、わかる範囲でご記入いただければ大丈夫です。
           </p>
           <p class="section-note">学習モデル・4フェーズ・よくある質問の詳細は、資料PDFでまとめて確認いただけます。</p>
           <div class="survey-card">
@@ -2056,7 +2214,7 @@
       </section>
 
       <section id="faq" class="section">
-        <div class="container reveal">
+        <div class="container content-wide reveal">
           <h2>よくあるご質問</h2>
           <p class="section-intro">保護者の方からよくいただくご質問を、参加前に確認しやすい形でまとめました。</p>
           <div class="faq-list" aria-label="よくあるご質問一覧">
@@ -2067,6 +2225,28 @@
               </button>
               <div class="faq-answer">
                 <p>学習習慣をつけたい子、受け身学習から抜け出したい子、考える力を育てたい子に向いています。</p>
+              </div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                勉強が苦手な子でも参加できますか？
+                <span class="faq-toggle" aria-hidden="true">＋</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  はい。VISIQ Academyは、点数を一気に上げることより、学び方の土台を整えることから始めます。タイピングや学習ログ、AI対話、作戦会議を通して、無理のないペースで進めます。
+                </p>
+              </div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">
+                パソコン操作に慣れていなくても大丈夫ですか？
+                <span class="faq-toggle" aria-hidden="true">＋</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  大丈夫です。タイピングやAIの使い方は、CAMP（3か月基礎編）の中で段階的に慣れていける設計です。メンターが使い方を確認しながら伴走します。
+                </p>
               </div>
             </article>
             <article class="faq-item">
@@ -2146,7 +2326,7 @@
       </section>
 
       <section id="trial-session" class="section">
-        <div class="container reveal">
+        <div class="container content-wide reveal">
           <h2>無料体験会では、“はじめての作戦会議”を体験できます</h2>
           <p class="section-intro">
             約1時間、親子で進めるはじめての作戦会議を体感できます。普通の体験授業ではなく、VISIQ Academyの学び方をその場で確かめます。
@@ -2168,6 +2348,7 @@
           <p class="section-note">売り込みなし。ご家庭に合うかをその場で確かめられます。</p>
           <div class="cta-actions trial-session-cta">
             <a class="cta-btn" href="#trial-application-form">無料体験会で「作戦会議」を体験する</a>
+            <a class="sub-btn" href="#download-form">まずは資料で詳しく見る</a>
           </div>
         </div>
       </section>
@@ -2378,6 +2559,10 @@
             <p class="cta-sub">
               現在は小学生のお子さまを対象としています。
               無料体験会（約1時間）で学び方の違いを確かめ、CAMP（3か月基礎編）へ進むかを落ち着いてご判断ください。
+            </p>
+            <p class="cta-prompt">まずは、お子さまの今の学び方を一緒に見える化しませんか？</p>
+            <p class="cta-detail">
+              無料体験会では、タイピング・AI対話・学習ログ・作戦会議の流れを親子で体験できます。
             </p>
             <div class="cta-actions final-cta-actions">
               <a class="sub-btn" href="#download-form"
