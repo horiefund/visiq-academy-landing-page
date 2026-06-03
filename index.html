@@ -309,6 +309,10 @@
         max-width: 68ch;
       }
 
+      .lead-block p + p {
+        margin-top: 12px;
+      }
+
       .pdf-highlights {
         margin-bottom: 28px;
       }
@@ -359,6 +363,82 @@
         font-size: 0.92rem;
         font-weight: 600;
         line-height: 1.5;
+      }
+
+      #pricing-value .lead-block h2 {
+        font-size: clamp(1.28rem, 2.4vw, 1.62rem);
+        font-weight: 800;
+        line-height: 1.42;
+        letter-spacing: 0.01em;
+      }
+
+      #pricing-value .lead-block p {
+        color: #3a5589;
+        font-size: clamp(1rem, 1.6vw, 1.08rem);
+        font-weight: 500;
+        line-height: 1.85;
+      }
+
+      #pricing-value .lead-block strong {
+        color: var(--navy-deep);
+        font-weight: 700;
+      }
+
+      #pricing-value .value-includes-grid {
+        margin-top: 20px;
+        gap: 12px;
+      }
+
+      #pricing-value .value-include-item {
+        padding: 14px 14px 12px;
+        border-left-width: 4px;
+        border-color: #c5d8e8;
+        color: var(--navy-deep);
+        font-size: clamp(0.94rem, 1.4vw, 1rem);
+        font-weight: 700;
+        line-height: 1.55;
+      }
+
+      @media (min-width: 721px) {
+        .section-intro {
+          max-width: 78ch;
+          text-wrap: pretty;
+        }
+
+        #intro-video .video-card .section-intro {
+          max-width: none;
+        }
+
+        .lead-block h2 {
+          max-width: none;
+          text-wrap: balance;
+        }
+
+        .lead-block p {
+          max-width: 76ch;
+          text-wrap: pretty;
+        }
+
+        .section.soft > .container.content-wide > .lead-block:only-child {
+          max-width: 760px;
+          margin-inline: auto;
+          padding: 26px 28px 24px;
+        }
+
+        .section.soft > .container.content-wide > .lead-block:only-child p {
+          max-width: none;
+        }
+
+        #pricing-value .lead-block {
+          max-width: 900px;
+          margin-inline: auto;
+          padding: 26px 28px 24px;
+        }
+
+        #pricing-value .lead-block h2,
+        #pricing-value .lead-block p {
+          max-width: none;
+        }
       }
 
       .trial-experience-grid {
@@ -520,15 +600,18 @@
         margin-top: 10px;
       }
 
-      .mentor-detail {
+      #mentor-message .mentor-detail {
         scroll-margin-top: calc(var(--header-height) + 24px);
-        margin-top: 12px;
-        padding-top: 12px;
-        border-top: 1px solid var(--line-soft);
-        color: #3e5f9f;
-        font-size: 0.94rem;
-        font-weight: 600;
-        line-height: 1.75;
+        margin-top: 14px;
+        padding: 14px 16px;
+        border: 1px solid #d4e3f4;
+        border-left: 3px solid var(--teal);
+        border-radius: 12px;
+        background: linear-gradient(165deg, #f7fbff 0%, #eef5fc 100%);
+        color: var(--navy-deep);
+        font-size: clamp(0.96rem, 1.4vw, 1.02rem);
+        font-weight: 700;
+        line-height: 1.72;
       }
 
       .mentor-visual {
@@ -599,6 +682,20 @@
         .classroom-gallery {
           grid-template-columns: repeat(2, minmax(0, 1fr));
           gap: 18px;
+          max-width: 1040px;
+          margin-inline: auto;
+        }
+
+        #classroom-space .classroom-photo-card {
+          align-self: start;
+        }
+
+        #classroom-space .classroom-photo-card img {
+          width: 100%;
+          height: clamp(280px, 24vw, 400px);
+          aspect-ratio: auto;
+          object-fit: cover;
+          object-position: center;
         }
       }
 
@@ -1613,6 +1710,28 @@
           padding: 40px 0;
         }
 
+        #pricing-value .lead-block h2 {
+          font-size: clamp(1.22rem, 5.2vw, 1.4rem);
+        }
+
+        #pricing-value .lead-block p {
+          font-size: 0.98rem;
+          line-height: 1.82;
+        }
+
+        #pricing-value .value-includes-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 10px;
+          margin-top: 14px;
+        }
+
+        #pricing-value .value-include-item {
+          padding: 11px 12px;
+          font-size: 0.9rem;
+          font-weight: 700;
+          line-height: 1.48;
+        }
+
         .value-includes-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
           gap: 8px;
@@ -2261,16 +2380,19 @@
           <div class="lead-block">
             <h2>料金は、授業時間ではなく“学び方の伴走”への対価です</h2>
             <p>
-              VISIQ Academyの月額には、週1回の作戦会議だけでなく、家庭学習の設計、AI活用サポート、学習ログ運用、保護者共有、ランク制度、タイピング指導、振り返りの伴走が含まれます。授業を受けて終わるのではなく、1週間の学びを自分で回せるようにするための仕組みです。
+              個別指導、学習管理、オンライン教材、AI活用、保護者共有を別々に整えようとすると、<strong>費用も手間も分散しがち</strong>です。VISIQ Academyでは、それらを単に足し合わせるのではなく、子どもが自分で学びを回せるようになるための<strong>「学び方を整える仕組み」</strong>として、一つにつなげています。
+            </p>
+            <p>
+              週1回の作戦会議、家庭学習の設計、学習ログの運用、AI活用サポート、保護者共有、振り返りと次の作戦づくりまで。授業を受けて終わるのではなく、<strong>1週間の学びを自分で回せるための伴走</strong>が含まれます。
             </p>
           </div>
           <ul class="value-includes-grid" aria-label="月額に含まれる主な価値">
-            <li class="value-include-item">週1回の作戦会議</li>
             <li class="value-include-item">家庭学習の設計</li>
+            <li class="value-include-item">週1回の作戦会議</li>
             <li class="value-include-item">AI活用サポート</li>
-            <li class="value-include-item">学習ログ運用</li>
+            <li class="value-include-item">学習ログの運用</li>
             <li class="value-include-item">保護者共有</li>
-            <li class="value-include-item">ランク制度・成長の可視化</li>
+            <li class="value-include-item">振り返りと次の作戦づくり</li>
           </ul>
         </div>
       </section>
