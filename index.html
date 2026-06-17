@@ -441,6 +441,256 @@
         }
       }
 
+      .preopen-announcement {
+        padding: 20px 0 28px;
+        background: var(--bg-soft);
+        border-bottom: 1px solid var(--line-soft);
+      }
+
+      .preopen-announcement-card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 18px 22px;
+        border: 1px solid #c5d4ec;
+        border-left: 4px solid var(--navy);
+        border-radius: var(--radius);
+        background: #fff;
+        box-shadow: var(--shadow);
+      }
+
+      .preopen-announcement-copy {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .preopen-announcement-kicker {
+        margin: 0 0 6px;
+        color: var(--navy-deep);
+        font-size: 0.95rem;
+        font-weight: 800;
+        letter-spacing: 0.02em;
+      }
+
+      .preopen-announcement-text {
+        margin: 0;
+        color: var(--ink-soft);
+        font-size: 0.9rem;
+        line-height: 1.7;
+      }
+
+      .preopen-announcement-text + .preopen-announcement-text {
+        margin-top: 4px;
+      }
+
+      .preopen-announcement-badge {
+        display: inline-block;
+        margin-right: 4px;
+        padding: 2px 8px;
+        border-radius: 999px;
+        background: #f5edd8;
+        color: #7a5f1a;
+        font-size: 0.82rem;
+        font-weight: 700;
+        vertical-align: baseline;
+      }
+
+      .preopen-announcement-action {
+        flex-shrink: 0;
+      }
+
+      .preopen-announcement-action .cta-btn {
+        white-space: nowrap;
+        font-size: 0.88rem;
+        padding: 11px 18px;
+      }
+
+      .preopen-benefits {
+        margin-top: 36px;
+        padding-top: 32px;
+        border-top: 1px solid var(--line-soft);
+      }
+
+      .preopen-benefits h3 {
+        margin: 0 0 12px;
+        color: var(--navy-deep);
+        font-size: clamp(1.15rem, 2.2vw, 1.38rem);
+        line-height: 1.4;
+      }
+
+      .preopen-benefits-intro {
+        margin: 0 0 20px;
+        color: var(--ink-soft);
+        font-size: clamp(0.94rem, 1.5vw, 1.02rem);
+        line-height: 1.82;
+        max-width: 76ch;
+      }
+
+      .preopen-benefits-intro p {
+        margin: 0 0 10px;
+      }
+
+      .preopen-benefits-intro p:last-child {
+        margin-bottom: 0;
+      }
+
+      .preopen-benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+        margin-top: 20px;
+      }
+
+      .preopen-benefit-card {
+        padding: 18px 18px 16px;
+        border: 1px solid var(--line-soft);
+        border-top: 3px solid var(--navy);
+        border-radius: var(--radius);
+        background: #fff;
+      }
+
+      .preopen-benefit-label {
+        margin: 0 0 8px;
+        color: #6580bd;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+      }
+
+      .preopen-benefit-card h4 {
+        margin: 0 0 10px;
+        color: var(--navy-deep);
+        font-size: 1rem;
+        line-height: 1.45;
+      }
+
+      .preopen-benefit-body {
+        margin: 0 0 8px;
+        color: var(--ink);
+        font-size: 0.94rem;
+        line-height: 1.72;
+      }
+
+      .preopen-benefit-price {
+        color: var(--navy-deep);
+        font-weight: 700;
+      }
+
+      .preopen-benefit-note {
+        margin: 0;
+        color: var(--ink-soft);
+        font-size: 0.84rem;
+        line-height: 1.65;
+      }
+
+      .provisional-entry {
+        margin-top: 28px;
+        margin-bottom: 28px;
+        padding: 22px 22px 20px;
+        border: 1px solid var(--line-soft);
+        border-radius: var(--radius);
+        background: #fff;
+        box-shadow: var(--shadow);
+      }
+
+      .provisional-entry h3 {
+        margin: 0 0 10px;
+        color: var(--navy-deep);
+        font-size: clamp(1.1rem, 2.2vw, 1.28rem);
+        line-height: 1.4;
+      }
+
+      .provisional-entry-intro {
+        margin: 0 0 18px;
+        color: var(--ink-soft);
+        font-size: 0.94rem;
+        line-height: 1.78;
+      }
+
+      .entry-steps {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+        margin: 0 0 16px;
+        padding: 0;
+        list-style: none;
+      }
+
+      .entry-step {
+        position: relative;
+        margin: 0;
+        padding: 14px 12px 12px;
+        border: 1px solid var(--line-soft);
+        border-radius: 12px;
+        background: var(--bg-soft);
+      }
+
+      .entry-step-num {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 1.6rem;
+        height: 1.6rem;
+        margin-bottom: 8px;
+        border-radius: 999px;
+        background: var(--teal-soft);
+        color: var(--teal);
+        font-size: 0.8rem;
+        font-weight: 700;
+        line-height: 1;
+      }
+
+      .entry-step-text {
+        margin: 0;
+        color: var(--navy-deep);
+        font-size: 0.86rem;
+        font-weight: 600;
+        line-height: 1.55;
+      }
+
+      @media (min-width: 721px) {
+        .entry-step:not(:last-child)::after {
+          content: "→";
+          position: absolute;
+          top: 50%;
+          right: -10px;
+          transform: translateY(-50%);
+          color: #8aa3d4;
+          font-size: 1rem;
+          font-weight: 700;
+          pointer-events: none;
+        }
+      }
+
+      .provisional-entry-caution {
+        margin: 0 0 14px;
+        padding: 10px 12px;
+        border-radius: 10px;
+        background: #f2f6ff;
+        color: #3e5f9f;
+        font-size: 0.86rem;
+        font-weight: 600;
+        line-height: 1.65;
+      }
+
+      .legal-notes {
+        margin: 14px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .legal-notes li {
+        margin: 0 0 4px;
+        color: #6a7fa8;
+        font-size: 0.8rem;
+        line-height: 1.6;
+      }
+
+      .legal-notes li:last-child {
+        margin-bottom: 0;
+      }
+
       .trial-experience-grid {
         margin-top: 18px;
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -589,6 +839,17 @@
         margin-bottom: 14px;
         color: var(--ink-soft);
         font-size: 0.9rem;
+      }
+
+      .mentor-copy .mentor-principle {
+        margin: 0 0 14px;
+        padding-left: 11px;
+        border-left: 2px solid #b8cae8;
+        color: var(--navy-deep);
+        font-size: clamp(0.98rem, 1.5vw, 1.06rem);
+        font-weight: 700;
+        line-height: 1.58;
+        letter-spacing: 0.01em;
       }
 
       .mentor-copy p {
@@ -1732,6 +1993,52 @@
           line-height: 1.48;
         }
 
+        .preopen-announcement {
+          padding: 14px 0 20px;
+        }
+
+        .preopen-announcement-card {
+          flex-direction: column;
+          align-items: stretch;
+          gap: 14px;
+          padding: 14px 14px 13px;
+        }
+
+        .preopen-announcement-action .cta-btn {
+          width: 100%;
+          white-space: normal;
+          text-align: center;
+        }
+
+        .preopen-benefits {
+          margin-top: 24px;
+          padding-top: 22px;
+        }
+
+        .preopen-benefits-grid {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+
+        .preopen-benefit-card {
+          padding: 14px 14px 12px;
+        }
+
+        .entry-steps {
+          grid-template-columns: 1fr;
+          gap: 8px;
+        }
+
+        .entry-step:not(:last-child)::after {
+          display: none;
+        }
+
+        .provisional-entry {
+          margin-top: 20px;
+          margin-bottom: 20px;
+          padding: 16px 14px 14px;
+        }
+
         .value-includes-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
           gap: 8px;
@@ -1905,6 +2212,23 @@
           display: none;
         }
 
+        .mentor-copy .mentor-kicker,
+        .mentor-copy .mentor-name,
+        .mentor-copy .mentor-name-en {
+          display: none;
+        }
+
+        .mentor-copy .mentor-principle {
+          margin-top: 0;
+          margin-bottom: 12px;
+          padding-left: 10px;
+          font-size: 1rem;
+        }
+
+        .mentor-panel {
+          gap: 16px;
+        }
+
         #classroom-space .classroom-photo-card img {
           width: 100%;
           height: 200px;
@@ -2043,6 +2367,25 @@
         </div>
       </section>
 
+      <div class="preopen-announcement" role="region" aria-label="プレオープン告知">
+        <div class="container">
+          <div class="preopen-announcement-card">
+            <div class="preopen-announcement-copy">
+              <p class="preopen-announcement-kicker">プレオープン第1期生 募集中</p>
+              <p class="preopen-announcement-text">
+                2026年9月開講予定。<span class="preopen-announcement-badge">先着50名限定</span>の特別特典あり。
+              </p>
+              <p class="preopen-announcement-text">
+                詳細は無料体験説明会「はじめての作戦会議」にてご案内します。
+              </p>
+            </div>
+            <div class="preopen-announcement-action">
+              <a class="cta-btn" href="#trial-application-form">無料体験説明会に申し込む</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <section id="intro-video" class="section video-intro">
         <div class="container reveal">
           <div class="video-card">
@@ -2168,6 +2511,7 @@
               <p class="mentor-kicker">創設者 / 代表メンター</p>
               <p class="mentor-name">堀江 祝光</p>
               <p class="mentor-name-en">Norimitsu Horie</p>
+              <p class="mentor-principle">正解を教える前に、まず一緒に考える。</p>
               <p>
                 VISIQ Academyは、子どもに正解を押し付ける場所ではありません。
                 今どこで止まっているのか、何を変えれば動き出せるのかを一緒に見つける場所です。
@@ -2394,6 +2738,48 @@
             <li class="value-include-item">保護者共有</li>
             <li class="value-include-item">振り返りと次の作戦づくり</li>
           </ul>
+
+          <div class="preopen-benefits">
+            <h3>プレオープン第1期生｜<span class="preopen-announcement-badge">先着50名限定</span>特典</h3>
+            <div class="preopen-benefits-intro">
+              <p>
+                VISIQ Academyは、2026年9月より少人数でプレオープンします。最初から大きく広げるのではなく、第1期生のご家庭と一緒に、子どもが自分で学びを回せる環境を丁寧に育てていきます。
+              </p>
+              <p>
+                そのため、プレオープン期に参加してくださる先着50名のご家庭には、創業初期メンバーとしての特別特典をご用意しています。
+              </p>
+            </div>
+            <div class="preopen-benefits-grid">
+              <article class="preopen-benefit-card">
+                <p class="preopen-benefit-label">特典1</p>
+                <h4>CAMP料金のまま継続可能</h4>
+                <p class="preopen-benefit-body">
+                  CAMP（3か月基礎編）修了後も、<strong>在籍継続中に限り</strong>、<span class="preopen-benefit-price">月額19,800円</span>で継続いただけます。
+                </p>
+                <p class="preopen-benefit-note">
+                  通常はフェーズが進むにつれて、Advance・Beyond／Synergyの料金体系へ移行します。
+                </p>
+              </article>
+              <article class="preopen-benefit-card">
+                <p class="preopen-benefit-label">特典2</p>
+                <h4>ノートPC無料貸し出し期間を付与</h4>
+                <p class="preopen-benefit-body">
+                  CAMP修了後、次のフェーズへ進む際に、タイピング・AI活用・学習ログ運用を家庭で始めやすくするため、ノートPC無料貸し出し期間を付与します。
+                </p>
+                <p class="preopen-benefit-note">
+                  貸し出しは台数・在庫・利用条件に基づき順次実施します。
+                </p>
+              </article>
+            </div>
+            <ul class="legal-notes" aria-label="特典に関する注意事項">
+              <li>※特典は、正式申込および初回決済が完了した方から先着順で適用されます。</li>
+              <li>※仮エントリーのみでは、入会契約・受講枠・特典は確定しません。</li>
+              <li>※CAMP料金継続特典は、在籍継続中・ご本人のみ有効です。退会後の再入会時には適用されません。</li>
+              <li>※外部教材費、検定料、イベント参加費、特別講座、機器補償費等は別途必要になる場合があります。</li>
+              <li>※ノートPC貸し出しは、台数・在庫・利用条件に基づき順次実施します。</li>
+              <li>※内容はプレオープン期間中の特典であり、今後変更または終了する場合があります。</li>
+            </ul>
+          </div>
         </div>
       </section>
 
@@ -2707,6 +3093,40 @@
               </div>
             </details>
           </div>
+
+          <div class="provisional-entry reveal" role="region" aria-label="仮エントリーについて">
+            <h3>9月開講に向けた仮エントリーについて</h3>
+            <p class="provisional-entry-intro">
+              無料体験説明会にご参加後、希望される方は、2026年9月開講予定のプレオープン第1期生として仮エントリーできます。仮エントリーにより、正式申込開始時の優先案内順位を確保できます。
+            </p>
+            <ol class="entry-steps">
+              <li class="entry-step">
+                <span class="entry-step-num" aria-hidden="true">1</span>
+                <p class="entry-step-text">無料体験説明会に参加</p>
+              </li>
+              <li class="entry-step">
+                <span class="entry-step-num" aria-hidden="true">2</span>
+                <p class="entry-step-text">希望者は仮エントリー</p>
+              </li>
+              <li class="entry-step">
+                <span class="entry-step-num" aria-hidden="true">3</span>
+                <p class="entry-step-text">2026年8月20日頃より正式申込受付開始</p>
+              </li>
+              <li class="entry-step">
+                <span class="entry-step-num" aria-hidden="true">4</span>
+                <p class="entry-step-text">正式申込・初回決済完了で先着50名特典が確定</p>
+              </li>
+            </ol>
+            <p class="provisional-entry-caution">
+              仮エントリーだけでは、入会契約・受講枠・特典は確定しません。正式申込および初回決済が完了した方から先着順で特典が適用されます。
+            </p>
+            <ul class="legal-notes" aria-label="仮エントリーに関する注意事項">
+              <li>※仮エントリーのみでは、入会契約・受講枠・特典は確定しません。</li>
+              <li>※特典は、正式申込および初回決済が完了した方から先着順で適用されます。</li>
+              <li>※CAMP料金継続特典は、在籍継続中・ご本人のみ有効です。退会後の再入会時には適用されません。</li>
+            </ul>
+          </div>
+
           <p class="form-kicker">無料体験会申込フォーム</p>
           <h2>無料体験会のお申し込み</h2>
           <p class="trial-form-lead">まずは無料体験会で、お子さまの今の学び方を一緒に確認します。</p>

@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>VISIQ Academy 資料（改訂版）</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #ffffff;
+        --bg-soft: #f5f8ff;
+        --ink: #162f68;
+        --navy: #183b87;
+        --navy-deep: #122d65;
+        --teal: #158f9a;
+        --teal-soft: #e8f7f8;
+        --line: #d8e2f4;
+        --accent-green: #1a9a6f;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      @page {
+        size: 1920px 1080px;
+        margin: 0;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Noto Sans JP", "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+        color: var(--ink);
+        background: var(--bg);
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .slide {
+        width: 1920px;
+        height: 1080px;
+        page-break-after: always;
+        position: relative;
+        overflow: hidden;
+        padding: 72px 96px 88px;
+        background: var(--bg);
+      }
+
+      .slide:last-child {
+        page-break-after: auto;
+      }
+
+      .slide.soft {
+        background: linear-gradient(165deg, #ffffff 0%, var(--bg-soft) 100%);
+      }
+
+      .logo {
+        position: absolute;
+        right: 56px;
+        bottom: 44px;
+        width: 140px;
+        height: auto;
+        opacity: 0.88;
+      }
+
+      .kicker {
+        margin: 0 0 12px;
+        color: var(--teal);
+        font-size: 22px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+      }
+
+      h1 {
+        margin: 0 0 20px;
+        color: var(--navy-deep);
+        font-size: 52px;
+        font-weight: 700;
+        line-height: 1.35;
+      }
+
+      h2 {
+        margin: 0 0 16px;
+        color: var(--navy-deep);
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 1.4;
+      }
+
+      h3 {
+        margin: 0 0 10px;
+        color: var(--navy);
+        font-size: 26px;
+        font-weight: 700;
+        line-height: 1.45;
+      }
+
+      p {
+        margin: 0 0 14px;
+        color: #4e638f;
+        font-size: 24px;
+        line-height: 1.75;
+        max-width: 92%;
+      }
+
+      .lead {
+        font-size: 30px;
+        line-height: 1.6;
+        color: var(--navy-deep);
+        font-weight: 600;
+      }
+
+      .accent {
+        color: var(--accent-green);
+        font-weight: 700;
+      }
+
+      .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-top: 24px;
+      }
+
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-top: 24px;
+      }
+
+      .grid-4 {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+        margin-top: 24px;
+      }
+
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: #fff;
+        padding: 22px 24px;
+        border-left: 4px solid var(--teal);
+        box-shadow: 0 8px 20px rgba(22, 47, 104, 0.06);
+      }
+
+      .card p {
+        margin: 0;
+        font-size: 20px;
+        line-height: 1.65;
+        max-width: 100%;
+      }
+
+      .card-num {
+        margin: 0 0 8px;
+        color: var(--teal);
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      .flow {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        margin-top: 28px;
+      }
+
+      .flow-item {
+        border-radius: 16px;
+        background: var(--teal-soft);
+        border: 1px solid #c5e8eb;
+        padding: 22px 20px;
+        text-align: center;
+      }
+
+      .flow-item strong {
+        display: block;
+        color: var(--navy-deep);
+        font-size: 28px;
+        margin-bottom: 8px;
+      }
+
+      .flow-item span {
+        display: block;
+        color: #4e638f;
+        font-size: 20px;
+        line-height: 1.55;
+      }
+
+      .compare {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        margin: 28px 0;
+      }
+
+      .compare-bad,
+      .compare-good {
+        border-radius: 16px;
+        padding: 28px;
+        font-size: 24px;
+        line-height: 1.65;
+      }
+
+      .compare-bad {
+        background: #fff5f5;
+        border: 1px solid #f0d0d0;
+        color: #8a4545;
+      }
+
+      .compare-good {
+        background: var(--teal-soft);
+        border: 1px solid #b8e4e8;
+        color: var(--navy-deep);
+      }
+
+      .price-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+        margin-top: 24px;
+      }
+
+      .price-card {
+        border-radius: 18px;
+        border: 1px solid var(--line);
+        background: #fff;
+        padding: 26px 24px;
+        box-shadow: 0 10px 24px rgba(22, 47, 104, 0.07);
+      }
+
+      .price-card.featured {
+        border-color: var(--teal);
+        background: linear-gradient(170deg, #fff 0%, var(--teal-soft) 100%);
+      }
+
+      .price-label {
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--teal);
+        margin-bottom: 8px;
+      }
+
+      .price-name {
+        font-size: 26px;
+        font-weight: 700;
+        color: var(--navy-deep);
+        margin-bottom: 12px;
+      }
+
+      .price-amount {
+        font-size: 34px;
+        font-weight: 700;
+        color: var(--navy-deep);
+        margin-bottom: 16px;
+      }
+
+      .price-list {
+        margin: 0;
+        padding-left: 20px;
+        font-size: 18px;
+        line-height: 1.6;
+        color: #4e638f;
+      }
+
+      .price-foot {
+        margin-top: 20px;
+        padding: 16px 20px;
+        border-radius: 12px;
+        background: var(--bg-soft);
+        font-size: 17px;
+        line-height: 1.55;
+        color: #4e638f;
+      }
+
+      .faq-item {
+        margin-bottom: 18px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .faq-item:last-child {
+        border-bottom: 0;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .faq-q {
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--navy-deep);
+        margin-bottom: 8px;
+      }
+
+      .faq-a {
+        font-size: 20px;
+        line-height: 1.65;
+        color: #4e638f;
+        margin: 0;
+        max-width: 100%;
+      }
+
+      .cta-slide {
+        display: grid;
+        grid-template-columns: 1fr 360px;
+        gap: 48px;
+        align-items: center;
+        margin-top: 20px;
+      }
+
+      .cta-box {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 18px 36px;
+        border-radius: 999px;
+        background: var(--navy);
+        color: #fff;
+        font-size: 28px;
+        font-weight: 700;
+      }
+
+      .qr-wrap img {
+        width: 320px;
+        height: 320px;
+        display: block;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: #fff;
+        padding: 12px;
+      }
+
+      .cover {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        padding-bottom: 120px;
+      }
+
+      .cover h1 {
+        font-size: 72px;
+        margin-bottom: 28px;
+      }
+
+      .cover .tagline {
+        font-size: 44px;
+        line-height: 1.55;
+        color: var(--navy-deep);
+        font-weight: 600;
+        max-width: 85%;
+      }
+
+      .cover .sub {
+        margin-top: 36px;
+        font-size: 28px;
+        color: #4e638f;
+      }
+
+      .rank-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+        margin-top: 20px;
+      }
+
+      .rank-item {
+        padding: 14px 16px;
+        border-radius: 12px;
+        background: #fff;
+        border: 1px solid var(--line);
+        font-size: 17px;
+        line-height: 1.5;
+      }
+
+      .rank-item strong {
+        display: block;
+        color: var(--navy-deep);
+        font-size: 19px;
+        margin-bottom: 4px;
+      }
+
+      ul.bullets {
+        margin: 12px 0 0;
+        padding-left: 28px;
+        font-size: 22px;
+        line-height: 1.7;
+        color: #4e638f;
+      }
+
+      .steps {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-top: 24px;
+      }
+
+      .step-card {
+        border-radius: 16px;
+        padding: 24px;
+        background: var(--bg-soft);
+        border: 1px solid var(--line);
+      }
+
+      .step-card .num {
+        color: var(--teal);
+        font-weight: 700;
+        font-size: 20px;
+        margin-bottom: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 1 表紙 -->
+    <section class="slide soft">
+      <div class="cover">
+        <p class="kicker">EDUCATION PROGRAM</p>
+        <h1>VISIQ Academy</h1>
+        <p class="tagline">学びを<span class="accent">“消費”</span>から<span class="accent">“資産”</span>へ。</p>
+        <p class="tagline" style="margin-top: 20px; font-size: 36px">
+          子どもが自分で学びを回せるようになる教育へ。<br />未来への作戦会議を、始めよう。
+        </p>
+        <p class="sub">思考力 × 学力 × 学びの自走力</p>
+      </div>
+      <img class="logo" src="../assets/visiq-logo.png" alt="VISIQ Academy" />
+    </section>
+
+    <!-- 2 保護者の課題 -->
+    <section class="slide">
+      <p class="kicker">保護者の課題</p>
+      <h1>教材はある。<br />でも、自分で学びが続かない。</h1>
+      <p>
+        今の子どもたちは、学べる環境に恵まれています。動画教材、AI、アプリ、参考書、オンライン学習。けれど、環境があることと、自分で学べることは同じではありません。
+      </p>
+      <h3>こんなお悩みはありませんか？</h3>
+      <div class="grid-4">
+        <div class="card">
+          <h3>教材はあるのに続かない</h3>
+          <p>スタディサプリやアプリを用意しても、親が言わないと進まない。</p>
+        </div>
+        <div class="card">
+          <h3>塾に行っても受け身のまま</h3>
+          <p>授業は受けているけれど、自分から学ぶ姿勢が育っていない。</p>
+        </div>
+        <div class="card">
+          <h3>中学以降が不安</h3>
+          <p>定期テスト、部活、受験が始まったとき、自分で学びを管理できるか心配。</p>
+        </div>
+        <div class="card">
+          <h3>AI時代の学び方がわからない</h3>
+          <p>AIを使わせたいけれど、答えを写すだけにならないか不安。</p>
+        </div>
+      </div>
+      <p style="margin-top: 20px; font-weight: 600; color: var(--navy-deep)">
+        VISIQ Academyは、教材を増やす場所ではありません。学びを自分で回す力を育てる教育プログラムです。
+      </p>
+      <img class="logo" src="../assets/visiq-logo.png" alt="" />
+    </section>
+
+    <!-- 3 VISIQ Academyとは -->
+    <section class="slide soft">
+      <p class="kicker">VISIQ Academyとは何か</p>
+      <h1>一般的な“塾”ではありません。</h1>
+      <p>
+        VISIQ Academyは、教科を一方的に教えることを目的にした塾ではありません。子どもが自分で考え、決め、進め、振り返り、次の一歩を選べるようになるための教育プログラムです。
+      </p>
+      <div class="grid-3">
+        <div class="card"><p class="card-num">01</p><h3>学び方を育てる</h3><p>知識を渡すのではなく、学ぶ力そのものを育てる。</p></div>
+        <div class="card"><p class="card-num">02</p><h3>自走力を作る</h3><p>問い、調べ、考え、振り返り、次の一歩を自分で回せるようにする。</p></div>
+        <div class="card"><p class="card-num">03</p><h3>人生を設計する土台</h3><p>学力は結果。本質は、自分の人生を主体的に設計する力。</p></div>
+      </div>
+      <img class="logo" src="../assets/visiq-logo.png" alt="" />
+    </section>
+
+    <!-- 4 なぜ今 -->
+    <section class="slide">
+      <p class="kicker">なぜ今、必要なのか</p>
+      <h1>学べる環境は、かつてないほど整っている。<br />それでも、学びに向かう力が弱まっている。</h1>
+      <p class="lead">教材ではなく、自走力の問題です。</p>
+      <div class="grid-3">
+        <div class="card"><p class="card-num">01</p><h3>“環境がある” ≠ “学べている”</h3><p>情報も教材もアプリも豊富です。けれど、それを使いこなす力が育っていなければ、学びにはつながりません。</p></div>
+        <div class="card"><p class="card-num">02</p><h3>問題は“足りない”ことではない</h3><p>不足しているのは、知識や教材ではなく、学びの自走力そのものです。</p></div>
+        <div class="card"><p class="card-num">03</p><h3>教科指導だけでは足りない</h3><p>やり方を“教わる”だけでは届かない領域に、今の子どもたちは立っています。</p></div>
+      </div>
+      <img class="logo" src="../assets/visiq-logo.png" alt="" />
+    </section>
+
+    <!-- 5 VISIQ -->
+    <section class="slide soft">
+      <p class="kicker">VISIQという言葉の意味</p>
+      <h1 style="font-size: 56px">Vision × IQ = Resolution</h1>
+      <div class="grid-3">
+        <div class="card"><h3>Vision</h3><p>見えるものの、その先を捉える視点。</p></div>
+        <div class="card"><h3>IQ</h3><p>知識・理解・処理・思考の質。</p></div>
+        <div class="card"><h3>Resolution</h3><p>世界の見え方がくっきりする力。物事を高い解像度で捉える力。</p></div>
+      </div>
+      <p style="margin-top: 24px; font-weight: 700; color: var(--navy-deep); font-size: 28px">育てたいのは、偏差値の高い子ではなく、解像度の高い人。</p>
+      <p>VISIQ Academyが目指すのは、点数だけで語られる子どもではありません。背景、構造、文脈、未来とのつながりまで見通せる人を育てることです。</p>
+      <img class="logo" src="../assets/visiq-logo.png" alt="" />
+    </section>
+
+    <!-- 6 教育思想 -->
+    <section class="slide">
+      <p class="kicker">教育思想</p>
+      <h1>教育思想</h1>
+      <div class="grid-2" style="margin-top: 16px">
+        <div class="card"><p class="card-num">1</p><h3>勉強を嫌いにさせない</h3><p>“嫌い”にしてしまった瞬間、未来の選択肢が一気に閉じます。</p></div>
+        <div class="card"><p class="card-num">2</p><h3>人生は学びの連続</h3><p>学びは学校で終わるものではありません。一生、自分で回し続けるものです。</p></div>
+        <div class="card"><p class="card-num">3</p><h3>親は最初のメンター</h3><p>家庭は最初で、最も影響の大きい学びの場です。</p></div>
+        <div class="card"><p class="card-num">4</p><h3>親にしかできない教育がある</h3><p>けれど、それを親一人で背負う必要はありません。</p></div>
+      </div>
+      <div class="card" style="margin-top: 18px"><p class="card-num">5</p><h3>第三者のまなざしが必要</h3><p>親と子の関係を、外側からそっと整える存在が必要です。</p></div>
+      <img class="logo" src="../assets/visiq-logo.png" alt="" />
+    </section>
+
+    <!-- 7 メンター -->
+    <section class="slide soft">
+      <p class="kicker">メンターという存在の定義</p>
+      <p>前提は、相手を「自分とは別人格の独立した一人の人間」と見ることです。</p>
+      <h1>だから、メンターは答えを与える人ではありません。</h1>
+      <div class="grid-3">
+        <div class="card"><p class="card-num">01</p><h3>選択肢を見せる</h3><p>今あなたが立っている分かれ道は、こういう形をしているよ、と見せる。</p></div>
+        <div class="card"><p class="card-num">02</p><h3>その先の未来を見せる</h3><p>それぞれを選ぶと、何が起きうるのかを描いて渡す。</p></div>
+        <div class="card"><p class="card-num">03</p><h3>判断材料を渡す</h3><p>決めるために必要な材料を、噛み砕いて手渡す。</p></div>
+      </div>
+      <p style="margin-top: 20px; font-weight: 700; color: var(--navy-deep)">最後に決めるのは、本人。</p>
+      <p>VISIQ Academyのメンターは、子どもの代わりに決める人ではありません。子どもが自分で決められる状態を整える人です。</p>
+      <img class="logo" src="../assets/visiq-logo.png" alt="" />
+    </section>
+
+    <!-- 8 小学生 -->
+    <section class="slide">
+      <p class="kicker">なぜ、小学生のうちからなのか</p>
+      <h1>4年生の壁。<br />それは、学力の壁ではなく、思考の壁。</h1>
+      <p>小学生期は、習慣、学び方、自己認識がまだ固まりきっていない時期です。だからこそ、学び方の土台を作り直すことができます。</p>
+      <div class="steps">
+        <div class="step-card"><p class="num">小学校</p><h3>土台が動かせる時期</h3></div>
+        <div class="step-card"><p class="num">中学校</p><h3>修正コストが上がる時期</h3><p style="font-size: 18px">定期テスト、内申、部活、受験が重なる。</p></div>
+        <div class="step-card"><p class="num">高校以降</p><h3>やり直しが難しくなる時期</h3><p style="font-size: 18px">進路、探究、大学入試、社会接続が始まる。</p></div>
+      </div>
+      <p style="margin-top: 24px; font-weight: 700; color: var(--navy-deep); font-size: 28px">だから、小学生のうちに。</p>
+      <p>VISIQ Academyは、問題が表面化してから対処するのではなく、小学生期から学び方のOSを整えることを重視します。</p>
+      <img class="logo" src="../assets/visiq-logo.png" alt="" />
+    </section>
+
+    <!-- 9 学習モデル -->
+    <section class="slide soft">
+      <p class="kicker">学習モデル</p>
+      <h1>教室は、授業を受ける場所ではありません。<br />“作戦会議”をする場所です。</h1>
+      <div class="flow">
+        <div class="flow-item"><strong>Plan｜計画する</strong><span>教室で、今週の作戦を立てる。</span></div>
+        <div class="flow-item"><strong>Do｜やってみる</strong><span>家庭で、自分の作戦を実行する。</span></div>
+        <div class="flow-item"><strong>Check｜振り返る</strong><span>教室で、うまくいったこと・止まったことを振り返る。</span></div>
+        <div class="flow-item"><strong>Action｜次を決める</strong><span>次の一週間で何を変えるかを決める。</span></div>
+      </div>
+      <div class="grid-3" style="margin-top: 22px">
+        <div class="card"><h3>小グループ制</h3><p>顔の見える人数で、対話の質を担保します。</p></div>
+        <div class="card"><h3>プレゼン共有</h3><p>学びを言葉にして、外に出す習慣を作ります。</p></div>
+        <div class="card"><h3>学びが循環するコミュニティ</h3><p>一人の工夫が、別の誰かの学びになります。</p></div>
+      </div>
+      <img class="logo" src="../assets/visiq-logo.png" alt="" />
+    </section>
+
+    <!-- 10 タイピング -->
+    <section class="slide">
+      <p class="kicker">なぜ、タイピングを入口にするのか</p>
+      <h1>Typing<br /><span style="font-size: 36px">思考を、外に出す技術。</span></h1>
+      <p>タイピングは、ただのPCスキルではありません。学び方そのものの入口です。</p>
+      <div class="grid-3">
+        <div class="card"><p class="card-num">01</p><h3>思考を外に出す</h3><p>頭の中のもやもやを、文字にして客観視します。</p></div>
+        <div class="card"><p class="card-num">02</p><h3>AIとの対話の前提</h3><p>AIに問いを立てるための、最初の道具になります。</p></div>
+        <div class="card"><p class="card-num">03</p><h3>学び方が変わる入口</h3><p>書く速度が変われば、考える速度が変わります。</p></div>
+      </div>
+      <img class="logo" src="../assets/visiq-logo.png" alt="" />
+    </section>
+
+    <!-- 11 AI -->
+    <section class="slide soft">
+      <p class="kicker">AIの位置づけ</p>
+      <h1>AIの位置づけ</h1>
+      <div class="compare">
+        <div class="compare-bad"><strong>✕ AIに考えてもらう</strong><br />答えを丸写しするための道具ではありません。</div>
+        <div class="compare-good"><strong>◎ AIと一緒に考える</strong><br />学びを深めるパートナーとして使います。</div>
+      </div>
+      <div class="grid-3">
+        <div class="card"><h3>問いを整理する</h3><p>もやもやした疑問を、扱える問いの形に整えます。</p></div>
+        <div class="card"><h3>別の視点を出す</h3><p>自分にはない角度を、AIから引き出します。</p></div>
+        <div class="card"><h3>背景や文脈に接続する</h3><p>点で知った知識を、線や面に広げます。</p></div>
+      </div>
+      <p style="margin-top: 18px; font-weight: 600; color: var(--navy-deep)">
+        VISIQ Academyでは、AIを思考を奪うものではなく、子どもの考えを外に出し、広げ、深めるための壁打ち相手として活用します。
+      </p>
+      <img class="logo" src="../assets/visiq-logo.png" alt="" />
+    </section>
+
+    <!-- 12 人物像 -->
+    <section class="slide">
+      <p class="kicker">育てたい人物像</p>
+      <h1>VISIQ Academyが育てたい人物像</h1>
+      <div class="grid-3" style="grid-template-rows: 1fr 1fr">
+        <div class="card"><p class="card-num">01</p><h3>問いを立てられる</h3><p>答えを探す前に、問いの形を整えられる。</p></div>
+        <div class="card"><p class="card-num">02</p><h3>複数の視点を持てる</h3><p>一つの正解に固執しない。</p></div>
+        <div class="card"><p class="card-num">03</p><h3>感情を整理して判断できる</h3><p>感情と事実を混ぜずに考えられる。</p></div>
+        <div class="card"><p class="card-num">04</p><h3>自分で学び続けられる</h3><p>学びを止めない技術を持っている。</p></div>
+        <div class="card"><p class="card-num">05</p><h3>将来を主体的に設計できる</h3><p>“決められる”側ではなく、“決める”側に立てる。</p></div>
+        <div class="card"><p class="card-num">06</p><h3>偏差値だけで語られない</h3><p>数値化できない強さを持っている。</p></div>
+      </div>
+      <img class="logo" src="../assets/visiq-logo.png" alt="" />
+    </section>
+
+    <!-- 13 カリキュラム -->
+    <section class="slide soft">
+      <p class="kicker">全体カリキュラム</p>
+      <h1>4つのフェーズ</h1>
+      <div class="grid-2" style="gap: 18px">
+        <div class="card">
+          <p class="card-num">Phase 1｜CAMP（3か月基礎編）</p>
+          <h3>学びの土台づくり</h3>
+          <ul class="bullets"><li>タイピング</li><li>学習ログ</li><li>AI対話入門</li><li>問いの立て方</li><li>作戦会議の型</li></ul>
+        </div>
+        <div class="card">
+          <p class="card-num">Phase 2｜Advance</p>
+          <h3>自走型学習への移行</h3>
+          <ul class="bullets"><li>教科の先取り</li><li>PDCA運用</li><li>小さな探究</li><li>検定の導入</li></ul>
+        </div>
+        <div class="card">
+          <p class="card-num">Phase 3｜Beyond</p>
+          <h3>解像度を高める</h3>
+          <ul class="bullets"><li>多面的な思考</li><li>社会・経済・歴史</li><li>未来設計</li><li>論理と思考整理</li></ul>
+        </div>
+        <div class="card">
+          <p class="card-num">Phase 4｜Synergy</p>
+          <h3>学びの好循環を生む</h3>
+          <ul class="bullets"><li>他者支援</li><li>協働プロジェクト</li><li>後輩への伴走</li><li>Community接続</li></ul>
+        </div>
+      </div>
+      <img class="logo" src="../assets/visiq-logo.png" alt="" />
+    </section>
+
+    <!-- 14 CAMP -->
+    <section class="slide">
+      <p class="kicker">Phase 1｜CAMP（3か月基礎編）</p>
+      <h1>CAMPは無料体験ではありません。</h1>
+      <p>入会後、全員が最初に取り組む「学び方の土台を整える正式フェーズ」です。</p>
+      <div class="steps">
+        <div class="step-card">
+          <p class="num">1か月目</p>
+          <h3>学び方を整える</h3>
+          <p>学習の型、道具、記録、タイピング、AIに触れる。</p>
+        </div>
+        <div class="step-card">
+          <p class="num">2か月目</p>
+          <h3>問いを立てる／振り返る</h3>
+          <p>“なぜ”を立て、振り返り、次の行動につなげる。</p>
+        </div>
+        <div class="step-card">
+          <p class="num">3か月目</p>
+          <h3>自分で回す感覚を持つ</h3>
+          <p>Plan → Do → Check → Action を、自分の言葉で回していく。</p>
+        </div>
+      </div>
+      <p style="margin-top: 22px; font-weight: 700; color: var(--navy-deep)">
+        目的は、成績を一気に上げることではありません。“学び方が変わる入口”を作ることです。
+      </p>
+      <img class="logo" src="../assets/visiq-logo.png" alt="" />
+    </section>
+
+    <!-- 15 学びの履歴 -->
+    <section class="slide soft">
+      <p class="kicker">学びの履歴</p>
+      <h1>学びの履歴を、未来の自己証明へ。</h1>
+      <p>
+        VISIQ Academyでは、日々の学習をその場限りで終わらせません。学習ログ、問い、振り返り、検定、ランク、探究活動を記録し、子どもの成長を見える形で蓄積していきます。
+      </p>
+      <h3>蓄積していくもの</h3>
+      <div class="grid-4" style="grid-template-columns: repeat(4, 1fr)">
+        <div class="card"><p>学習ログ</p></div>
+        <div class="card"><p>問いの履歴</p></div>
+        <div class="card"><p>振り返りの記録</p></div>
+        <div class="card"><p>検定履歴</p></div>
+        <div class="card"><p>ランク成長</p></div>
+        <div class="card"><p>探究・制作活動</p></div>
+        <div class="card" style="grid-column: span 2"><p>AI対話による思考の変化</p></div>
+      </div>
+      <p style="margin-top: 20px; font-weight: 600; color: var(--navy-deep)">
+        その積み重ねが、将来の進路選択や自己表現につながる“学びの資産”になります。
+      </p>
+      <img class="logo" src="../assets/visiq-logo.png" alt="" />
+    </section>
+
+    <!-- 16 ランク -->
+    <section class="slide">
+      <p class="kicker">ランク制度</p>
+      <h1>ランクは“競争”ではありません。<br />“成長の可視化”です。</h1>
+      <h3 style="margin-top: 16px">一般ランク</h3>
+      <div class="rank-grid">
+        <div class="rank-item"><strong>BRONZE</strong>基礎の形成／スタートライン</div>
+        <div class="rank-item"><strong>SILVER</strong>継続力の芽生え／習慣の定着</div>
+        <div class="rank-item"><strong>GOLD</strong>自主学習への移行／基本の自走</div>
+        <div class="rank-item"><strong>DIAMOND</strong>理解の質が上がる／思考力の芽生え</div>
+        <div class="rank-item"><strong>PLATINUM</strong>自走力の確立／高度な学習管理</div>
+        <div class="rank-item"><strong>INSIGHT</strong>洞察・本質理解</div>
+        <div class="rank-item"><strong>NEXUS</strong>つながり・共創・信頼の中心</div>
+        <div class="rank-item"><strong>VISIONARY</strong>構想力・未来創造</div>
+      </div>
+      <p style="margin-top: 18px; font-weight: 700; color: var(--navy-deep)">比べるのは、他人ではありません。昨日の自分です。</p>
+      <img class="logo" src="../assets/visiq-logo.png" alt="" />
+    </section>
+
+    <!-- 17 Community -->
+    <section class="slide soft">
+      <p class="kicker">VISIQ Community構想</p>
+      <h1>学びが、循環する場所。</h1>
+      <p>
+        VISIQ Academyでは、学びを一人の中だけで終わらせません。一人の工夫が、別の誰かの学びになり、一人の挑戦が、別の誰かの視野を広げる。そんな学び合いの場を育てていきます。
+      </p>
+      <div class="grid-3">
+        <div class="card"><h3>学びが循環するコミュニティ</h3><p>学んだことを、他者に手渡せる場をつくる。</p></div>
+        <div class="card"><h3>解像度の高い人材のネットワーク</h3><p>自分で考え、学び、動ける人同士がつながる。</p></div>
+        <div class="card"><h3>学び合い・支え合い・共創する場へ</h3><p>将来的には、学びを“資産”に変えていく土台へ発展させます。</p></div>
+      </div>
+      <img class="logo" src="../assets/visiq-logo.png" alt="" />
+    </section>
+
+    <!-- 18 料金 -->
+    <section class="slide">
+      <p class="kicker">料金体系</p>
+      <h1>授業料ではなく、<br />「学び方の設計と伴走」に対する料金設計です。</h1>
+      <div class="price-grid">
+        <div class="price-card">
+          <p class="price-label">初期フェーズ</p>
+          <p class="price-name">CAMP（3か月基礎編）</p>
+          <p class="price-amount">月額 19,800円<br /><span style="font-size: 22px">＋ 入会・登録料 11,000円</span></p>
+          <ul class="price-list">
+            <li>学び方の土台を整える</li>
+            <li>タイピング・学習ログ・AI活用の導入</li>
+            <li>作戦会議と家庭学習の型を身につける</li>
+            <li>自分で学びを回す入口をつくる3か月</li>
+          </ul>
+        </div>
+        <div class="price-card featured">
+          <p class="price-label">推奨</p>
+          <p class="price-name">Advance（本コース）</p>
+          <p class="price-amount">月額 24,800円</p>
+          <p style="font-size: 18px; color: var(--teal); font-weight: 700; margin-bottom: 12px">VISIQの基本プラン</p>
+          <ul class="price-list">
+            <li>週1回のオフライン作戦会議</li>
+            <li>4〜5人グループでの振り返り・計画設計</li>
+            <li>タイピング指導・AI活用サポート</li>
+            <li>学習ログ運用・家庭学習設計・保護者共有</li>
+          </ul>
+        </div>
+        <div class="price-card">
+          <p class="price-label">個別強化</p>
+          <p class="price-name">Beyond・Synergy（上位伴走コース）</p>
+          <p class="price-amount">月額 34,800円</p>
+          <p style="font-size: 18px; color: #4e638f; margin-bottom: 12px">より手厚い伴走型プラン</p>
+          <ul class="price-list">
+            <li>本コース内容をすべて含む</li>
+            <li>保護者面談・個別戦略面談を追加</li>
+            <li>学習ログへの追加フィードバック</li>
+            <li>検定・進路相談・個別伴走を強化</li>
+          </ul>
+        </div>
+      </div>
+      <p class="price-foot">
+        月額に含まれるもの：週1回の作戦会議 / AI活用サポート / 保護者共有 / 小グループでの振り返り / 学習ログ運用 / ランク制度運用 / タイピング指導 / 家庭学習設計 / 学び方の伴走
+      </p>
+      <img class="logo" src="../assets/visiq-logo.png" alt="" />
+    </section>
+
+    <!-- 19 保護者 -->
+    <section class="slide soft">
+      <p class="kicker">保護者との関係</p>
+      <h1>保護者との関係</h1>
+      <div class="grid-2">
+        <div class="card"><p class="card-num">01</p><h3>親の代わりにはならない</h3><p>VISIQ Academyは、家庭の代替ではありません。</p></div>
+        <div class="card"><p class="card-num">02</p><h3>親を責めるものではない</h3><p>子育ての“正解”を押し付ける場でもありません。</p></div>
+        <div class="card"><p class="card-num">03</p><h3>親と第三者をつなぐ</h3><p>親のまなざしと、第三者のまなざしを重ねていきます。</p></div>
+        <div class="card"><p class="card-num">04</p><h3>保護者にもAI体験を</h3><p>学びの土台を、家庭にも一緒にインストールしていきます。</p></div>
+      </div>
+      <p style="margin-top: 20px; font-weight: 600; color: var(--navy-deep)">
+        VISIQ Academyは、親の代わりになるのではなく、保護者とともに、子どもの学び方を整えていく存在です。
+      </p>
+      <img class="logo" src="../assets/visiq-logo.png" alt="" />
+    </section>
+
+    <!-- 20 FAQ -->
+    <section class="slide">
+      <p class="kicker">よくあるご質問</p>
+      <h1>よくあるご質問</h1>
+      <div style="margin-top: 8px">
+        <div class="faq-item">
+          <p class="faq-q">Q. 一般的な塾と何が違いますか？</p>
+          <p class="faq-a">VISIQ Academyは、教科を一方的に教える塾ではありません。自宅で学んだ内容をもとに、教室で振り返り、次の作戦を立てることで、子どもが自分で学びを回せるようになることを目指します。</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Q. AIを使うことに不安があります。大丈夫ですか？</p>
+          <p class="faq-a">VISIQ Academyでは、AIを答えを丸写しする道具としてではなく、考えを整理し、言葉にするための壁打ち相手として使います。メンターが使い方を確認しながら、子どもの思考を奪わない形で活用します。</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Q. CAMP（3か月基礎編）では何をしますか？</p>
+          <p class="faq-a">タイピング、学習ログ、AI対話、問いの立て方、作戦会議の型を通じて、学び方の土台を整えます。成績を一気に上げることではなく、自分で学びを回す入口を作ることが目的です。</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Q. スタディサプリなどの教材は、誰が契約しますか？</p>
+          <p class="faq-a">スタディサプリ等のオンライン教材は、各ご家庭で個別にご契約・ご利用いただきます。VISIQ Academyは、教材そのものを販売・提供するものではなく、家庭学習を進めるための計画設計、振り返り、作戦会議を行う教育プログラムです。</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Q. 一般的な塾と比べて高く感じます。何が違いますか？</p>
+          <p class="faq-a">VISIQ Academyの月額は、授業時間に対する料金ではありません。週1回の作戦会議に加え、家庭学習設計、AI活用サポート、学習ログ運用、保護者共有、ランク制度などを通じて、1週間の学びを自分で回せるように伴走します。</p>
+        </div>
+      </div>
+      <img class="logo" src="../assets/visiq-logo.png" alt="" />
+    </section>
+
+    <!-- 21 CTA -->
+    <section class="slide soft">
+      <p class="kicker">無料体験会</p>
+      <h1>まずは、はじめての作戦会議へ。</h1>
+      <div class="cta-slide">
+        <div>
+          <p>VISIQ Academyが合うかどうかは、実際に体験していただくのが一番です。</p>
+          <p>無料体験会では、お子さまの今の学び方を確認し、タイピング・AI対話・学習ログ・作戦会議の流れを体験できます。</p>
+          <h3 style="margin-top: 20px">無料体験会で体験できること</h3>
+          <ul class="bullets">
+            <li>お子さまの今の学び方を確認する</li>
+            <li>タイピング・AI対話・学習ログの流れを体験する</li>
+            <li>今週の小さな作戦を一緒に立てる</li>
+            <li>CAMP（3か月基礎編）で整える内容を知る</li>
+          </ul>
+          <p class="cta-box">無料体験会で“作戦会議”を体験する</p>
+          <p style="font-size: 20px; margin-top: 12px">https://visiq-academy-landing-page.vercel.app/</p>
+        </div>
+        <div class="qr-wrap">
+          <img src="../assets/visiq-trial-qr.png" alt="無料体験会申込 QRコード" />
+          <p style="font-size: 18px; text-align: center; margin-top: 12px">
+            スマートフォンでQRコードを読み取って、<br />無料体験会のお申し込みページへお進みください。
+          </p>
+        </div>
+      </div>
+      <img class="logo" src="../assets/visiq-logo.png" alt="" />
+    </section>
+
+    <!-- 22 クロージング -->
+    <section class="slide soft">
+      <div class="cover">
+        <h1>学びを<span class="accent">“消費”</span>から、<br /><span class="accent">“資産”</span>へ。</h1>
+        <p class="tagline" style="font-size: 32px; margin-top: 28px">
+          VISIQ Academyは、ただの塾ではありません。<br /><br />
+          子どもが、自分で問いを立て、自分で考え、自分で次を決められるように。小学生のうちから、学びの自走力と解像度を育てていきます。<br /><br />
+          学びを通して、自分の人生を主体的に設計できる人へ。
+        </p>
+        <p class="sub" style="margin-top: 40px">Vision × IQ = Resolution</p>
+        <p class="sub" style="font-size: 32px; font-weight: 700; color: var(--navy-deep)">VISIQ Academy</p>
+      </div>
+      <img class="logo" src="../assets/visiq-logo.png" alt="" />
+    </section>
+  </body>
+</html>

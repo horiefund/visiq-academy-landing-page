@@ -1,0 +1,12 @@
+{
+  "name": "visiq-academy-landing-page",
+  "private": true,
+  "scripts": {
+    "generate-pdf": "node scripts/generate-visiq-pdf.js",
+    "generate-qr": "node scripts/generate-visiq-qr.js"
+  },
+  "devDependencies": {
+    "puppeteer": "^24.36.1",
+    "qrcode": "^1.5.4"
+  }
+}
