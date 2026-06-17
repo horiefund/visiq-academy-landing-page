@@ -720,6 +720,33 @@
         line-height: 1.7;
       }
 
+      .trial-venue-note {
+        margin: 0;
+        padding: 12px 14px;
+        border: 1px solid var(--line-soft);
+        border-left: 3px solid #8fa5dc;
+        border-radius: 12px;
+        background: #f2f6ff;
+        color: var(--ink-soft);
+        font-size: 0.9rem;
+        line-height: 1.72;
+      }
+
+      .trial-venue-note-title {
+        margin: 0 0 6px;
+        color: var(--navy-deep);
+        font-size: 0.92rem;
+        font-weight: 700;
+      }
+
+      .trial-venue-note p {
+        margin: 0;
+      }
+
+      .trial-venue-note p + p {
+        margin-top: 6px;
+      }
+
       .pre-trial-cta {
         margin-top: 14px;
       }
@@ -2111,6 +2138,12 @@
           font-size: 0.94rem;
         }
 
+        .trial-venue-note {
+          padding: 11px 12px;
+          font-size: 0.88rem;
+          line-height: 1.68;
+        }
+
         #download-form,
         #trial-application,
         #contract-application {
@@ -3172,6 +3205,16 @@
                     <option value="2人">2人</option>
                     <option value="3人以上">3人以上</option>
                   </select>
+                </div>
+                <div class="field-block field-full">
+                  <div class="trial-venue-note" role="note" aria-label="開催予定場所">
+                    <p class="trial-venue-note-title">開催予定場所：</p>
+                    <p>JR船橋駅北口 徒歩圏内の会議室</p>
+                    <p>
+                      会場の詳細住所・入室方法は、お申し込み後に個別にご案内します。<br />
+                      日程により、近隣会場へ変更となる場合があります。
+                    </p>
+                  </div>
                 </div>
                 <div class="field-block">
                   <label class="field-label" for="trial-date">参加希望日<span class="required">必須</span></label>
